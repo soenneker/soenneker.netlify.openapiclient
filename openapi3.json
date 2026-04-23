@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.52.0",
+    "version": "2.53.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -6646,8 +6646,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       },
       "post": {
         "tags": [
@@ -6698,8 +6697,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       },
       "delete": {
         "tags": [
@@ -6724,8 +6722,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/branch": {
@@ -6779,8 +6776,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/branches": {
@@ -6814,8 +6810,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/branch/{branch_id}": {
@@ -6873,8 +6868,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       },
       "delete": {
         "tags": [
@@ -6908,8 +6902,85 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
+        }
+      }
+    },
+    "/sites/{site_id}/database/branch/{branch_id}/reset": {
+      "post": {
+        "tags": [
+          "database"
+        ],
+        "description": "Resets a non-production database branch by re-forking it from a source branch (defaults to the production branch). If the target branch is already in sync with the source, returns the existing connection string without performing a reset, unless `force=true` is passed. The production branch cannot be reset.",
+        "operationId": "resetSiteDatabaseBranch",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch_id",
+            "in": "path",
+            "description": "The branch ID to reset",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "If true, resets the branch even when it is already in sync with the source.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "The database role to use for the returned connection string. Defaults to netlifydb_owner if not specified.",
+            "schema": {
+              "enum": [
+                "netlifydb_owner",
+                "netlifydb_readonly"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/resetDatabaseBranchRequest"
+              }
+            }
+          }
         },
-        "x-internal": true
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resetDatabaseBranchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request — for example, the target is the production branch or the source branch is the same as the target."
+          },
+          "404": {
+            "description": "Database or branch not found"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
       }
     },
     "/sites/{site_id}/database/branch/{branch_id}/compute/settings": {
@@ -6965,8 +7036,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/compute/settings": {
@@ -7003,8 +7073,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       },
       "put": {
         "tags": [
@@ -7049,8 +7118,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       },
       "delete": {
         "tags": [
@@ -7078,8 +7146,112 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
+      }
+    },
+    "/sites/{site_id}/database/migrations": {
+      "get": {
+        "tags": [
+          "database"
+        ],
+        "description": "Returns the list of migrations available for the specified branch, indicating which ones have been applied to the database.",
+        "operationId": "listSiteDatabaseMigrations",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "description": "The branch ID to list migrations for. Defaults to \"production\" if not specified.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/listDatabaseMigrationsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Database or branch not found"
+          },
+          "423": {
+            "description": "Database is disabled"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/sites/{site_id}/database/migrations/{name}": {
+      "get": {
+        "tags": [
+          "database"
+        ],
+        "description": "Returns the contents of a named migration for the specified branch.",
+        "operationId": "getSiteDatabaseMigration",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "description": "The migration name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "description": "The branch ID to look up the migration on. Defaults to the currently published deploy's branch.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/databaseMigrationDetail"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Migration, database, or branch not found"
+          },
+          "423": {
+            "description": "Database is disabled"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
       }
     },
     "/sites/{site_id}/database/migrations/{deploy_id}": {
@@ -7130,8 +7302,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/snapshot": {
@@ -7174,8 +7345,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/snapshots": {
@@ -7209,8 +7379,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/snapshot/{snapshot_id}": {
@@ -7246,8 +7415,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     },
     "/sites/{site_id}/database/snapshot/{snapshot_id}/restore": {
@@ -7292,8 +7460,7 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        },
-        "x-internal": true
+        }
       }
     }
   },
@@ -7606,6 +7773,93 @@
           }
         },
         "description": "Request body for running database migrations"
+      },
+      "resetDatabaseBranchRequest": {
+        "type": "object",
+        "properties": {
+          "source_branch_id": {
+            "type": "string",
+            "description": "The ID of the branch to re-fork the target branch from. Defaults to \"production\" if not specified."
+          }
+        },
+        "description": "Request body for resetting a database branch"
+      },
+      "resetDatabaseBranchResponse": {
+        "type": "object",
+        "properties": {
+          "reset": {
+            "type": "boolean",
+            "description": "Whether the branch was actually re-forked. False when the target was already in sync with the source and `force=true` was not set."
+          },
+          "connection_string": {
+            "type": "string",
+            "description": "The connection string for the reset (or unchanged) branch"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the branch"
+          }
+        },
+        "description": "Response for a database branch reset"
+      },
+      "listDatabaseMigrationsResponse": {
+        "type": "object",
+        "properties": {
+          "migrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/databaseMigration"
+            },
+            "description": "List of migrations"
+          }
+        },
+        "description": "Response containing the list of migrations for a branch"
+      },
+      "databaseMigration": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "integer",
+            "description": "The migration version number",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The migration name"
+          },
+          "path": {
+            "type": "string",
+            "description": "The path to the migration file in the deploy bundle"
+          },
+          "applied": {
+            "type": "boolean",
+            "description": "Whether this migration has been applied to the branch"
+          }
+        },
+        "description": "A migration available to a database branch"
+      },
+      "databaseMigrationDetail": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "integer",
+            "description": "The migration version number",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The migration name"
+          },
+          "path": {
+            "type": "string",
+            "description": "The path to the migration file in the deploy bundle"
+          },
+          "content": {
+            "type": "string",
+            "description": "The raw contents of the migration file"
+          }
+        },
+        "description": "A migration with its file contents"
       },
       "DeployValidationsReport": {
         "type": "object",

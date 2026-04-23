@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Netlify.OpenApiClient.Models;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Compute;
+using Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Reset;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item
         public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Compute.ComputeRequestBuilder Compute
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The reset property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Reset.ResetRequestBuilder Reset
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.Reset.ResetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranch_ItemRequestBuilder"/> and sets the default values.

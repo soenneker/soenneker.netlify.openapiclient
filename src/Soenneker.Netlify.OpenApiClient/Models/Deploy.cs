@@ -112,6 +112,22 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule> FunctionSchedules { get; set; }
 #endif
+        /// <summary>The functions region for this deploy as an airport code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FunctionsRegion { get; set; }
+#nullable restore
+#else
+        public string FunctionsRegion { get; set; }
+#endif
+        /// <summary>Functions in the deploy that explicitly specify their own region(airport code).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.Deploy_functions_region_overrides>? FunctionsRegionOverrides { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.Deploy_functions_region_overrides> FunctionsRegionOverrides { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,6 +292,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "framework", n => { Framework = n.GetStringValue(); } },
                 { "function_schedules", n => { FunctionSchedules = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>(global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "functions_region", n => { FunctionsRegion = n.GetStringValue(); } },
+                { "functions_region_overrides", n => { FunctionsRegionOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Deploy_functions_region_overrides>(global::Soenneker.Netlify.OpenApiClient.Models.Deploy_functions_region_overrides.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -316,6 +334,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("error_message", ErrorMessage);
             writer.WriteStringValue("framework", Framework);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>("function_schedules", FunctionSchedules);
+            writer.WriteStringValue("functions_region", FunctionsRegion);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Deploy_functions_region_overrides>("functions_region_overrides", FunctionsRegionOverrides);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("locked", Locked);
             writer.WriteStringValue("name", Name);

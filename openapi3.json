@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.53.0",
+    "version": "2.54.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -8522,6 +8522,9 @@
           },
           "sha": {
             "type": "string"
+          },
+          "region": {
+            "type": "string"
           }
         }
       },
@@ -8676,6 +8679,25 @@
             "items": {
               "$ref": "#/components/schemas/functionSchedule"
             }
+          },
+          "functions_region": {
+            "type": "string",
+            "description": "The functions region for this deploy as an airport code.\n"
+          },
+          "functions_region_overrides": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Functions in the deploy that explicitly specify their own region\n(airport code).\n"
           }
         }
       },
@@ -9935,6 +9957,9 @@
           },
           "priority": {
             "type": "integer"
+          },
+          "region": {
+            "type": "string"
           },
           "traffic_rules": {
             "$ref": "#/components/schemas/trafficRulesConfig"

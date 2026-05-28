@@ -81,10 +81,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The onboarding_progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress? OnboardingProgress { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.UserOnboardingProgress? OnboardingProgress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress OnboardingProgress { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.UserOnboardingProgress OnboardingProgress { get; set; }
 #endif
         /// <summary>The site_count property</summary>
         public long? SiteCount { get; set; }
@@ -129,7 +129,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_login", n => { LastLogin = n.GetStringValue(); } },
                 { "login_providers", n => { LoginProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "onboarding_progress", n => { OnboardingProgress = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress>(global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress.CreateFromDiscriminatorValue); } },
+                { "onboarding_progress", n => { OnboardingProgress = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.UserOnboardingProgress>(global::Soenneker.Netlify.OpenApiClient.Models.UserOnboardingProgress.CreateFromDiscriminatorValue); } },
                 { "site_count", n => { SiteCount = n.GetLongValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
@@ -149,7 +149,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_login", LastLogin);
             writer.WriteCollectionOfPrimitiveValues<string>("login_providers", LoginProviders);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress>("onboarding_progress", OnboardingProgress);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.UserOnboardingProgress>("onboarding_progress", OnboardingProgress);
             writer.WriteLongValue("site_count", SiteCount);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);

@@ -5,49 +5,55 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
+namespace Soenneker.Netlify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithKeyPatchRequestBody : IAdditionalDataHolder, IParsable
+    public partial class PaymentMethodData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deploy context in which this value will be used. `dev` refers to local development when running `netlify dev`. `branch` must be provided with a value in `context_parameter`.</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody_context? Context { get; set; }
-        /// <summary>An additional parameter for custom branches. Currently, this is used for providing a branch name when `context=branch`.</summary>
+        /// <summary>The card_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextParameter { get; set; }
+        public string? CardType { get; set; }
 #nullable restore
 #else
-        public string ContextParameter { get; set; }
+        public string CardType { get; set; }
 #endif
-        /// <summary>The environment variable&apos;s unencrypted value</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Email { get; set; }
+#endif
+        /// <summary>The last4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Last4 { get; set; }
+#nullable restore
+#else
+        public string Last4 { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData"/> and sets the default values.
         /// </summary>
-        public WithKeyPatchRequestBody()
+        public PaymentMethodData()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody();
+            return new global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +63,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody_context>(); } },
-                { "context_parameter", n => { ContextParameter = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "card_type", n => { CardType = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "last4", n => { Last4 = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +75,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody_context>("context", Context);
-            writer.WriteStringValue("context_parameter", ContextParameter);
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("card_type", CardType);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("last4", Last4);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

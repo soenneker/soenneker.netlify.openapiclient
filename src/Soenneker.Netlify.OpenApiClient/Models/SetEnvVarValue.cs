@@ -9,35 +9,45 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class User_onboarding_progress : IAdditionalDataHolder, IParsable
+    public partial class SetEnvVarValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The slides property</summary>
+        /// <summary>The deploy context in which this value will be used. `dev` refers to local development when running `netlify dev`. `branch` must be provided with a value in `context_parameter`.</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue_context? Context { get; set; }
+        /// <summary>An additional parameter for custom branches. Currently, this is used for providing a branch name when `context=branch`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slides { get; set; }
+        public string? ContextParameter { get; set; }
 #nullable restore
 #else
-        public string Slides { get; set; }
+        public string ContextParameter { get; set; }
+#endif
+        /// <summary>The environment variable&apos;s unencrypted value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue"/> and sets the default values.
         /// </summary>
-        public User_onboarding_progress()
+        public SetEnvVarValue()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.User_onboarding_progress();
+            return new global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "slides", n => { Slides = n.GetStringValue(); } },
+                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue_context>(); } },
+                { "context_parameter", n => { ContextParameter = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +69,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("slides", Slides);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue_context>("context", Context);
+            writer.WriteStringValue("context_parameter", ContextParameter);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

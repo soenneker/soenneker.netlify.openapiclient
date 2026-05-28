@@ -25,10 +25,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethod_data? Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethod_data Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData Data { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethod_data>(global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethod_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData>(global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "method_name", n => { MethodName = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethod_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.PaymentMethodData>("data", Data);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("method_name", MethodName);
             writer.WriteStringValue("state", State);

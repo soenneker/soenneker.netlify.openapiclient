@@ -23,10 +23,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The minutes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus_minutes? Minutes { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes? Minutes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus_minutes Minutes { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes Minutes { get; set; }
 #endif
         /// <summary>The pending_concurrency property</summary>
         public int? PendingConcurrency { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "active", n => { Active = n.GetIntValue(); } },
                 { "build_count", n => { BuildCount = n.GetIntValue(); } },
                 { "enqueued", n => { Enqueued = n.GetIntValue(); } },
-                { "minutes", n => { Minutes = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus_minutes>(global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus_minutes.CreateFromDiscriminatorValue); } },
+                { "minutes", n => { Minutes = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes>(global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes.CreateFromDiscriminatorValue); } },
                 { "pending_concurrency", n => { PendingConcurrency = n.GetIntValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteIntValue("active", Active);
             writer.WriteIntValue("build_count", BuildCount);
             writer.WriteIntValue("enqueued", Enqueued);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus_minutes>("minutes", Minutes);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes>("minutes", Minutes);
             writer.WriteIntValue("pending_concurrency", PendingConcurrency);
             writer.WriteAdditionalData(AdditionalData);
         }

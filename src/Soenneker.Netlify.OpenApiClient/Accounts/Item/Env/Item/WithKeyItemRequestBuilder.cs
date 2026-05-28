@@ -42,16 +42,17 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <summary>
         /// Deletes an environment variable
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -59,7 +60,7 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
             {
                 { "XXX", global::Soenneker.Netlify.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns an individual environment variable.
@@ -94,11 +95,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar?> PatchAsync(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar?> PatchAsync(global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar> PatchAsync(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar> PatchAsync(global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -119,11 +120,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar?> PutAsync(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar?> PutAsync(global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar> PutAsync(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar> PutAsync(global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -180,11 +181,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.SetEnvVarValue body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -202,11 +203,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

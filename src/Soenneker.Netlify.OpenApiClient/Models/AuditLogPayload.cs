@@ -9,7 +9,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AuditLog_payload : IAdditionalDataHolder, IParsable
+    public partial class AuditLogPayload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
@@ -63,21 +63,21 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string Timestamp { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AuditLog_payload"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AuditLogPayload"/> and sets the default values.
         /// </summary>
-        public AuditLog_payload()
+        public AuditLogPayload()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AuditLog_payload"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AuditLogPayload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Models.AuditLog_payload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Models.AuditLogPayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.AuditLog_payload();
+            return new global::Soenneker.Netlify.OpenApiClient.Models.AuditLogPayload();
         }
         /// <summary>
         /// The deserialization information for the current model

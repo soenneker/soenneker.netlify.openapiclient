@@ -9,29 +9,27 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Site_processing_settings_html : IAdditionalDataHolder, IParsable
+    public partial class UpdateDeployValidations_secrets_scan : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The pretty_urls property</summary>
-        public bool? PrettyUrls { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings_html"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidations_secrets_scan"/> and sets the default values.
         /// </summary>
-        public Site_processing_settings_html()
+        public UpdateDeployValidations_secrets_scan()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings_html"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidations_secrets_scan"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings_html CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidations_secrets_scan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings_html();
+            return new global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidations_secrets_scan();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +39,6 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pretty_urls", n => { PrettyUrls = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +48,6 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("pretty_urls", PrettyUrls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

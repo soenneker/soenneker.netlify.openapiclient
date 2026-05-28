@@ -5,39 +5,32 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Netlify.OpenApiClient.Models
+namespace Soenneker.Netlify.OpenApiClient.Purge
 {
+    /// <summary>
+    /// Default response schema
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Site_default_hooks_data : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PurgePostResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access_token property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccessToken { get; set; }
-#nullable restore
-#else
-        public string AccessToken { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Purge.PurgePostResponse"/> and sets the default values.
         /// </summary>
-        public Site_default_hooks_data()
+        public PurgePostResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Purge.PurgePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Purge.PurgePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data();
+            return new global::Soenneker.Netlify.OpenApiClient.Purge.PurgePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +40,6 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_token", n => { AccessToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +49,6 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_token", AccessToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

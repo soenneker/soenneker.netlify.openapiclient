@@ -2,15 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Soenneker.Netlify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
+namespace Soenneker.Netlify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithKeyPutRequestBody : IAdditionalDataHolder, IParsable
+    public partial class UpdateEnvVar : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,10 +27,10 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         /// <summary>The scopes that this environment variable is set to (Pro plans and above)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody_scopes?>? Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar_scopes?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody_scopes?> Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar_scopes?> Scopes { get; set; }
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,21 +41,21 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
         public List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue> Values { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar"/> and sets the default values.
         /// </summary>
-        public WithKeyPutRequestBody()
+        public UpdateEnvVar()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody();
+            return new global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +67,7 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
             {
                 { "is_secret", n => { IsSecret = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody_scopes>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar_scopes>()?.AsList(); } },
                 { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue>(global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -81,7 +80,7 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_secret", IsSecret);
             writer.WriteStringValue("key", Key);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Item.WithKeyPutRequestBody_scopes>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.UpdateEnvVar_scopes>("scopes", Scopes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }

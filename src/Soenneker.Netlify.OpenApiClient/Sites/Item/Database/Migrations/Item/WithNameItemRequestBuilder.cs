@@ -12,25 +12,25 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\database\migrations\{deploy_-id}
+    /// Builds and executes requests for operations under \sites\{site_id}\database\migrations\{name}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Deploy_ItemRequestBuilder : BaseRequestBuilder
+    public partial class WithNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deploy_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/migrations/{deploy_%2Did}{?branch*}", pathParameters)
+        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/migrations/{name}{?branch*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deploy_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/migrations/{deploy_%2Did}{?branch*}", rawUrl)
+        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/migrations/{name}{?branch*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigrationDetail?> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder.Deploy_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigrationDetail?> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder.WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigrationDetail> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder.Deploy_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigrationDetail> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder.WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -88,11 +88,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder.Deploy_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder.WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder.Deploy_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder.WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -125,17 +125,17 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.Deploy_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Migrations.Item.WithNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Returns the contents of a named migration for the specified branch.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Deploy_ItemRequestBuilderGetQueryParameters 
+        public partial class WithNameItemRequestBuilderGetQueryParameters 
         {
             /// <summary>The branch ID to look up the migration on. Defaults to the currently published deploy&apos;s branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

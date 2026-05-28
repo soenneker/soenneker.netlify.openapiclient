@@ -49,10 +49,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountMembership_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountMembershipCapabilities? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountMembership_capabilities Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountMembershipCapabilities Capabilities { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -171,7 +171,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "billing_email", n => { BillingEmail = n.GetStringValue(); } },
                 { "billing_name", n => { BillingName = n.GetStringValue(); } },
                 { "billing_period", n => { BillingPeriod = n.GetStringValue(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountMembership_capabilities>(global::Soenneker.Netlify.OpenApiClient.Models.AccountMembership_capabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountMembershipCapabilities>(global::Soenneker.Netlify.OpenApiClient.Models.AccountMembershipCapabilities.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -196,7 +196,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("billing_email", BillingEmail);
             writer.WriteStringValue("billing_name", BillingName);
             writer.WriteStringValue("billing_period", BillingPeriod);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountMembership_capabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountMembershipCapabilities>("capabilities", Capabilities);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

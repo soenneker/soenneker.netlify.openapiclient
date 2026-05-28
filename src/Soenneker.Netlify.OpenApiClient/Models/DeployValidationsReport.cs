@@ -33,10 +33,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The secret_scan_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport_SecretScanResult? SecretScanResult { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult? SecretScanResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport_SecretScanResult SecretScanResult { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult SecretScanResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "deploy_id", n => { DeployId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "secret_scan_result", n => { SecretScanResult = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport_SecretScanResult>(global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport_SecretScanResult.CreateFromDiscriminatorValue); } },
+                { "secret_scan_result", n => { SecretScanResult = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult>(global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deploy_id", DeployId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReport_SecretScanResult>("secret_scan_result", SecretScanResult);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult>("secret_scan_result", SecretScanResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

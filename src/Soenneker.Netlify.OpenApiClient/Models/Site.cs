@@ -97,10 +97,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The default_hooks_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data? DefaultHooksData { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData? DefaultHooksData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data DefaultHooksData { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData DefaultHooksData { get; set; }
 #endif
         /// <summary>The deploy_hook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,10 +215,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The processing_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings? ProcessingSettings { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteProcessingSettings? ProcessingSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings ProcessingSettings { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteProcessingSettings ProcessingSettings { get; set; }
 #endif
         /// <summary>The published_deploy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -321,7 +321,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities>(global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "custom_domain", n => { CustomDomain = n.GetStringValue(); } },
-                { "default_hooks_data", n => { DefaultHooksData = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data>(global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data.CreateFromDiscriminatorValue); } },
+                { "default_hooks_data", n => { DefaultHooksData = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData>(global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData.CreateFromDiscriminatorValue); } },
                 { "deploy_hook", n => { DeployHook = n.GetStringValue(); } },
                 { "deploy_preview_custom_domain", n => { DeployPreviewCustomDomain = n.GetStringValue(); } },
                 { "deploy_url", n => { DeployUrl = n.GetStringValue(); } },
@@ -338,7 +338,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "plan", n => { Plan = n.GetStringValue(); } },
                 { "prerender", n => { Prerender = n.GetStringValue(); } },
                 { "prevent_non_git_prod_deploys", n => { PreventNonGitProdDeploys = n.GetBoolValue(); } },
-                { "processing_settings", n => { ProcessingSettings = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings>(global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings.CreateFromDiscriminatorValue); } },
+                { "processing_settings", n => { ProcessingSettings = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteProcessingSettings>(global::Soenneker.Netlify.OpenApiClient.Models.SiteProcessingSettings.CreateFromDiscriminatorValue); } },
                 { "published_deploy", n => { PublishedDeploy = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Deploy>(global::Soenneker.Netlify.OpenApiClient.Models.Deploy.CreateFromDiscriminatorValue); } },
                 { "screenshot_url", n => { ScreenshotUrl = n.GetStringValue(); } },
                 { "session_id", n => { SessionId = n.GetStringValue(); } },
@@ -367,7 +367,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities>("capabilities", Capabilities);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("custom_domain", CustomDomain);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_default_hooks_data>("default_hooks_data", DefaultHooksData);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData>("default_hooks_data", DefaultHooksData);
             writer.WriteStringValue("deploy_hook", DeployHook);
             writer.WriteStringValue("deploy_preview_custom_domain", DeployPreviewCustomDomain);
             writer.WriteStringValue("deploy_url", DeployUrl);
@@ -384,7 +384,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("plan", Plan);
             writer.WriteStringValue("prerender", Prerender);
             writer.WriteBoolValue("prevent_non_git_prod_deploys", PreventNonGitProdDeploys);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_processing_settings>("processing_settings", ProcessingSettings);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteProcessingSettings>("processing_settings", ProcessingSettings);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Deploy>("published_deploy", PublishedDeploy);
             writer.WriteStringValue("screenshot_url", ScreenshotUrl);
             writer.WriteStringValue("session_id", SessionId);

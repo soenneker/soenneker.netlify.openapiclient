@@ -36,16 +36,17 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Disable
         /// <summary>
         /// Disables a site, preventing it from serving content. The site can be re-enabled later using the enable endpoint.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Disable.DisableRequestBuilder.DisableRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Disable.DisableRequestBuilder.DisableRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Disable.DisableRequestBuilder.DisableRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Disable.DisableRequestBuilder.DisableRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
@@ -53,7 +54,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Disable
             {
                 { "XXX", global::Soenneker.Netlify.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disables a site, preventing it from serving content. The site can be re-enabled later using the enable endpoint.

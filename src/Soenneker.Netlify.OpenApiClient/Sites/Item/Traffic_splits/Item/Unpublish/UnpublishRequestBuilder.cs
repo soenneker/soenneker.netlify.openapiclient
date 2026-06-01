@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits.Item.Unpublish
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\traffic_splits\{split_test_id}\unpublish
+    /// Builds and executes requests for operations under \sites\{siteId}\traffic_splits\{splitTestId}\unpublish
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnpublishRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits.Item.Unpubli
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/traffic_splits/{split_test_id}/unpublish", pathParameters)
+        public UnpublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/traffic_splits/{splitTestId}/unpublish", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits.Item.Unpubli
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/traffic_splits/{split_test_id}/unpublish", rawUrl)
+        public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/traffic_splits/{splitTestId}/unpublish", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\database\branch
+    /// Builds and executes requests for operations under \sites\{siteId}\database\branch
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BranchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.sites.item.database.branch.item collection</summary>
         /// <param name="position">The branch ID</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranch_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranch_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranchItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranchItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("branch_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranch_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("branchId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch.Item.WithBranchItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/branch", pathParameters)
+        public BranchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/database/branch", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Branch
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/branch", rawUrl)
+        public BranchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/database/branch", rawUrl)
         {
         }
         /// <summary>

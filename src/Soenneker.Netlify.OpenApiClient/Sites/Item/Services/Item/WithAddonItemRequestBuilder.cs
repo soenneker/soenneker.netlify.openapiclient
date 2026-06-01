@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Services.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\services\{addon}
+    /// Builds and executes requests for operations under \sites\{siteId}\services\{addon}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAddonItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Services.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAddonItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/services/{addon}", pathParameters)
+        public WithAddonItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/services/{addon}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Services.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAddonItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/services/{addon}", rawUrl)
+        public WithAddonItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/services/{addon}", rawUrl)
         {
         }
     }

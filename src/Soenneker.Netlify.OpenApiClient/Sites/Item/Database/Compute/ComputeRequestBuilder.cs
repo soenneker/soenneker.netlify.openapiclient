@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Compute
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\database\compute
+    /// Builds and executes requests for operations under \sites\{siteId}\database\compute
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComputeRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Compute
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ComputeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/compute", pathParameters)
+        public ComputeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/database/compute", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Database.Compute
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ComputeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/database/compute", rawUrl)
+        public ComputeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/database/compute", rawUrl)
         {
         }
     }

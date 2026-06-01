@@ -38,10 +38,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>A hash mapping file paths to SHA1 digests of the file contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_files? Files { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty? Files { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_files Files { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty Files { get; set; }
 #endif
         /// <summary>The framework property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,10 +62,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions? Functions { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty? Functions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions Functions { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty Functions { get; set; }
 #endif
         /// <summary>The function_schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +78,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The functions_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions_config? FunctionsConfig { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty? FunctionsConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions_config FunctionsConfig { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty FunctionsConfig { get; set; }
 #endif
         /// <summary>A zip file containing the site files to deploy. Alternative to &apos;files&apos;.To use this field, set Content-Type to &apos;application/json&apos; and include the zip content here.Alternatively, you can set Content-Type to &apos;application/zip&apos; and send the zip as the raw request body (not as JSON).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,12 +120,12 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "draft", n => { Draft = n.GetBoolValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>(global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "files", n => { Files = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_files>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_files.CreateFromDiscriminatorValue); } },
+                { "files", n => { Files = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty.CreateFromDiscriminatorValue); } },
                 { "framework", n => { Framework = n.GetStringValue(); } },
                 { "framework_version", n => { FrameworkVersion = n.GetStringValue(); } },
                 { "function_schedules", n => { FunctionSchedules = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>(global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "functions", n => { Functions = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions.CreateFromDiscriminatorValue); } },
-                { "functions_config", n => { FunctionsConfig = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions_config>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions_config.CreateFromDiscriminatorValue); } },
+                { "functions", n => { Functions = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty.CreateFromDiscriminatorValue); } },
+                { "functions_config", n => { FunctionsConfig = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty.CreateFromDiscriminatorValue); } },
                 { "zip", n => { Zip = n.GetByteArrayValue(); } },
             };
         }
@@ -140,12 +140,12 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("branch", Branch);
             writer.WriteBoolValue("draft", Draft);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>("environment", Environment);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_files>("files", Files);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty>("files", Files);
             writer.WriteStringValue("framework", Framework);
             writer.WriteStringValue("framework_version", FrameworkVersion);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions>("functions", Functions);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty>("functions", Functions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>("function_schedules", FunctionSchedules);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFiles_functions_config>("functions_config", FunctionsConfig);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty>("functions_config", FunctionsConfig);
             writer.WriteByteArrayValue("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);
         }

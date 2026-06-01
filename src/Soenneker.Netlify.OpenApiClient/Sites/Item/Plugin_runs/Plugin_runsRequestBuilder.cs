@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\plugin_runs
+    /// Builds and executes requests for operations under \sites\{siteId}\plugin_runs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Plugin_runsRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Plugin_runsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/plugin_runs", pathParameters)
+        public Plugin_runsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/plugin_runs", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Plugin_runsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/plugin_runs", rawUrl)
+        public Plugin_runsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/plugin_runs", rawUrl)
         {
         }
     }

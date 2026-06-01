@@ -18,10 +18,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Deploy information associated with the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadata_deploy? Deploy { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadataDeployProperty? Deploy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadata_deploy Deploy { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadataDeployProperty Deploy { get; set; }
 #endif
         /// <summary>The source that created the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploy", n => { Deploy = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadata_deploy>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadata_deploy.CreateFromDiscriminatorValue); } },
+                { "deploy", n => { Deploy = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadataDeployProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadataDeployProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadata_deploy>("deploy", Deploy);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseSnapshotMetadataDeployProperty>("deploy", Deploy);
             writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -25,7 +25,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string Message { get; set; }
 #endif
         /// <summary>The section property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsg_section? Section { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsgSection? Section { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsg"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "error", n => { Error = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "section", n => { Section = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsg_section>(); } },
+                { "section", n => { Section = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsgSection>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("error", Error);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsg_section>("section", Section);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.BuildLogMsgSection>("section", Section);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

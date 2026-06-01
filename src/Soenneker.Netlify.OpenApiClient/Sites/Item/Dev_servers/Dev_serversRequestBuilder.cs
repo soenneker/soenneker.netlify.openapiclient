@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\dev_servers
+    /// Builds and executes requests for operations under \sites\{siteId}\dev_servers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dev_serversRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.sites.item.dev_servers.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDev_server_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDev_server_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDevServerItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDevServerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dev_server_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDev_server_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("devServerId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item.WithDevServerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dev_serversRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/dev_servers{?branch*,page*,per_page*}", pathParameters)
+        public Dev_serversRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dev_serversRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/dev_servers{?branch*,page*,per_page*}", rawUrl)
+        public Dev_serversRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*,page*,per_page*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

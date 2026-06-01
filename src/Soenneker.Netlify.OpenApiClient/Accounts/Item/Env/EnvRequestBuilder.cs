@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_id}\env
+    /// Builds and executes requests for operations under \accounts\{accountId}\env
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_id}/env{?context_name*,scope*,site_id*}", pathParameters)
+        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/env{?context_name*,scope*,site_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_id}/env{?context_name*,scope*,site_id*}", rawUrl)
+        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/env{?context_name*,scope*,site_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -80,11 +80,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar>?> PostAsync(List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Env> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar>?> PostAsync(List<global::Soenneker.Netlify.OpenApiClient.Models.CreateEnvVarsRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar>> PostAsync(List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Env> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar>> PostAsync(List<global::Soenneker.Netlify.OpenApiClient.Models.CreateEnvVarsRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -123,11 +123,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Env> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Netlify.OpenApiClient.Models.CreateEnvVarsRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.Env> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Netlify.OpenApiClient.Models.CreateEnvVarsRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -154,10 +154,10 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Env
         {
             /// <summary>Filter by deploy context</summary>
             [QueryParameter("context_name")]
-            public global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.GetContext_nameQueryParameterType? ContextName { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.GetEnvVarsContextNameParameter? ContextName { get; set; }
             /// <summary>Filter by scope</summary>
             [QueryParameter("scope")]
-            public global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Env.GetScopeQueryParameterType? Scope { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.GetEnvVarsScopeParameter? Scope { get; set; }
             /// <summary>If specified, only return environment variables set on this site</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

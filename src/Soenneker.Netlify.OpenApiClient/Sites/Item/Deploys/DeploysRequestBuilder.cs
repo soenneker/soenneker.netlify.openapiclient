@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\deploys
+    /// Builds and executes requests for operations under \sites\{siteId}\deploys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeploysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.sites.item.deploys.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeploy_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeploy_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeployItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeployItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("deploy_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeploy_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deployId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeployItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", pathParameters)
+        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", rawUrl)
+        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Deploy&gt;</returns>
@@ -158,7 +158,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
             [QueryParameter("production")]
             public bool? Production { get; set; }
             [QueryParameter("state")]
-            public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.GetStateQueryParameterType? State { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.ListSiteDeploysStateParameter? State { get; set; }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         #pragma warning disable CS1591
@@ -181,7 +181,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
             [QueryParameter("production")]
             public bool? Production { get; set; }
             [QueryParameter("state")]
-            public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.PostStateQueryParameterType? State { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.CreateSiteDeployStateParameter? State { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("title")]

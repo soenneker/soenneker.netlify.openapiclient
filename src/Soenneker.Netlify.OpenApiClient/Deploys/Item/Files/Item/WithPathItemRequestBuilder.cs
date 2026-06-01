@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \deploys\{deploy_id}\files\{path}
+    /// Builds and executes requests for operations under \deploys\{deployId}\files\{path}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPathItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deploy_id}/files/{path}{?size*}", pathParameters)
+        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/files/{path}{?size*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deploy_id}/files/{path}{?size*}", rawUrl)
+        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/files/{path}{?size*}", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.FileObject"/></returns>

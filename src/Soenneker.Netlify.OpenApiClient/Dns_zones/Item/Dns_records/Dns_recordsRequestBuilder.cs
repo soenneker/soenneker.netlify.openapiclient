@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records
 {
     /// <summary>
-    /// Builds and executes requests for operations under \dns_zones\{zone_id}\dns_records
+    /// Builds and executes requests for operations under \dns_zones\{zoneId}\dns_records
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dns_recordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.dns_zones.item.dns_records.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dns_record_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dnsRecordId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zone_id}/dns_records", pathParameters)
+        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zoneId}/dns_records", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Dns_records
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zone_id}/dns_records", rawUrl)
+        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zoneId}/dns_records", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.DnsRecord&gt;</returns>

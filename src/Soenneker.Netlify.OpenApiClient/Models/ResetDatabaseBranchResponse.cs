@@ -26,10 +26,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Metadata associated with the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponse_metadata? Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponseMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponse_metadata Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponseMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>Whether the branch was actually re-forked. False when the target was already in sync with the source and `force=true` was not set.</summary>
         public bool? Reset { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connection_string", n => { ConnectionString = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponse_metadata>(global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponse_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponseMetadataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponseMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "reset", n => { Reset = n.GetBoolValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_string", ConnectionString);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponse_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ResetDatabaseBranchResponseMetadataProperty>("metadata", Metadata);
             writer.WriteBoolValue("reset", Reset);
             writer.WriteAdditionalData(AdditionalData);
         }

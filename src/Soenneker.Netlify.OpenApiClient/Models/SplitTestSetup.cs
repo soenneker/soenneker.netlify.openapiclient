@@ -17,10 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The branch_tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup_branch_tests? BranchTests { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty? BranchTests { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup_branch_tests BranchTests { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty BranchTests { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branch_tests", n => { BranchTests = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup_branch_tests>(global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup_branch_tests.CreateFromDiscriminatorValue); } },
+                { "branch_tests", n => { BranchTests = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty>(global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetup_branch_tests>("branch_tests", BranchTests);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty>("branch_tests", BranchTests);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

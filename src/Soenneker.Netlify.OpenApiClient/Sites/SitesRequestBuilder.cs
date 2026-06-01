@@ -20,14 +20,14 @@ namespace Soenneker.Netlify.OpenApiClient.Sites
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.sites.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSite_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSite_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("site_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSite_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("siteId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -152,7 +152,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites
         public partial class SitesRequestBuilderGetQueryParameters 
         {
             [QueryParameter("filter")]
-            public global::Soenneker.Netlify.OpenApiClient.Sites.GetFilterQueryParameterType? Filter { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.ListSitesFilterParameter? Filter { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]

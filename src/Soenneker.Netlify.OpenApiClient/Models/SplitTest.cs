@@ -19,10 +19,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The branches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest_branches>? Branches { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestBranchesItemProperty>? Branches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest_branches> Branches { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestBranchesItemProperty> Branches { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest_branches>(global::Soenneker.Netlify.OpenApiClient.Models.SplitTest_branches.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestBranchesItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.SplitTestBranchesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -124,7 +124,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest_branches>("branches", Branches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SplitTestBranchesItemProperty>("branches", Branches);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

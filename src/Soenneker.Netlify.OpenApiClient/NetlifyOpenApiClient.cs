@@ -123,14 +123,14 @@ namespace Soenneker.Netlify.OpenApiClient
         }
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Item.Account_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Item.Account_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Item.AccountItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Item.AccountItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("account_%2Did", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Item.Account_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("account%2Did", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Item.AccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

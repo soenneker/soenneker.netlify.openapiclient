@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\ssl
+    /// Builds and executes requests for operations under \sites\{siteId}\ssl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SslRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/ssl{?ca_certificates*,certificate*,key*}", pathParameters)
+        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/ssl{?ca_certificates*,certificate*,key*}", rawUrl)
+        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate"/></returns>

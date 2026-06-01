@@ -20,7 +20,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Minimum compute units for autoscaling</summary>
         public double? AutoscalingLimitMinCu { get; set; }
         /// <summary>The current state of the compute endpoint</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute_current_state? CurrentState { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState? CurrentState { get; set; }
         /// <summary>When the compute endpoint was last active</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "autoscaling_limit_max_cu", n => { AutoscalingLimitMaxCu = n.GetDoubleValue(); } },
                 { "autoscaling_limit_min_cu", n => { AutoscalingLimitMinCu = n.GetDoubleValue(); } },
-                { "current_state", n => { CurrentState = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute_current_state>(); } },
+                { "current_state", n => { CurrentState = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState>(); } },
                 { "last_active", n => { LastActive = n.GetStringValue(); } },
                 { "suspend_timeout_seconds", n => { SuspendTimeoutSeconds = n.GetLongValue(); } },
             };
@@ -72,7 +72,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("autoscaling_limit_max_cu", AutoscalingLimitMaxCu);
             writer.WriteDoubleValue("autoscaling_limit_min_cu", AutoscalingLimitMinCu);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute_current_state>("current_state", CurrentState);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState>("current_state", CurrentState);
             writer.WriteStringValue("last_active", LastActive);
             writer.WriteLongValue("suspend_timeout_seconds", SuspendTimeoutSeconds);
             writer.WriteAdditionalData(AdditionalData);

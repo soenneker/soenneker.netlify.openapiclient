@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.AiGateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\ai-gateway
+    /// Builds and executes requests for operations under \sites\{siteId}\ai-gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.AiGateway
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/ai-gateway", pathParameters)
+        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ai-gateway", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.AiGateway
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/ai-gateway", rawUrl)
+        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ai-gateway", rawUrl)
         {
         }
     }

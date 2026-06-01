@@ -26,10 +26,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Arbitrary metadata to associate with the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequestMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequest_metadata Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequestMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The ID of the parent branch to create the new branch from. Defaults to the production branch if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequest_metadata>(global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequest_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequestMetadataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "parent_branch_id", n => { ParentBranchId = n.GetStringValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequest_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.CreateDatabaseBranchRequestMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("parent_branch_id", ParentBranchId);
             writer.WriteAdditionalData(AdditionalData);
         }

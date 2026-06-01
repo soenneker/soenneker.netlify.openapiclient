@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\assets
+    /// Builds and executes requests for operations under \sites\{siteId}\assets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.sites.item.assets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAsset_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAsset_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAssetItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAssetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("asset_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAsset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("assetId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.WithAssetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/assets?content_type={content_type}&name={name}&size={size}{&visibility*}", pathParameters)
+        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets?content_type={content_type}&name={name}&size={size}{&visibility*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/assets?content_type={content_type}&name={name}&size={size}{&visibility*}", rawUrl)
+        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets?content_type={content_type}&name={name}&size={size}{&visibility*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Asset&gt;</returns>
@@ -98,7 +98,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sites/{site_id}/assets", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sites/{siteId}/assets", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

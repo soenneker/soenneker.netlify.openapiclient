@@ -25,10 +25,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_config? Config { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceConfigProperty? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_config Config { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceConfigProperty Config { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_env? Env { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceEnvProperty? Env { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_env Env { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceEnvProperty Env { get; set; }
 #endif
         /// <summary>The external_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_external_attributes? ExternalAttributes { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceExternalAttributesProperty? ExternalAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_external_attributes ExternalAttributes { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceExternalAttributesProperty ExternalAttributes { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The snippets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_snippets>? Snippets { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceSnippetsItemProperty>? Snippets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_snippets> Snippets { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceSnippetsItemProperty> Snippets { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,15 +136,15 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_url", n => { AuthUrl = n.GetStringValue(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_config>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_config.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceConfigProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceConfigProperty.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_env>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_env.CreateFromDiscriminatorValue); } },
-                { "external_attributes", n => { ExternalAttributes = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_external_attributes>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_external_attributes.CreateFromDiscriminatorValue); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceEnvProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceEnvProperty.CreateFromDiscriminatorValue); } },
+                { "external_attributes", n => { ExternalAttributes = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceExternalAttributesProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceExternalAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
                 { "service_path", n => { ServicePath = n.GetStringValue(); } },
                 { "service_slug", n => { ServiceSlug = n.GetStringValue(); } },
-                { "snippets", n => { Snippets = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_snippets>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_snippets.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "snippets", n => { Snippets = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceSnippetsItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceSnippetsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -157,15 +157,15 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("auth_url", AuthUrl);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_config>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceConfigProperty>("config", Config);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_env>("env", Env);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_external_attributes>("external_attributes", ExternalAttributes);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceEnvProperty>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceExternalAttributesProperty>("external_attributes", ExternalAttributes);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteStringValue("service_path", ServicePath);
             writer.WriteStringValue("service_slug", ServiceSlug);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance_snippets>("snippets", Snippets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstanceSnippetsItemProperty>("snippets", Snippets);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

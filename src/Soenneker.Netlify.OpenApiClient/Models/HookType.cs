@@ -25,10 +25,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.HookType_fields>? Fields { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.HookTypeFieldsItemProperty>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.HookType_fields> Fields { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.HookTypeFieldsItemProperty> Fields { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.HookType_fields>(global::Soenneker.Netlify.OpenApiClient.Models.HookType_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.HookTypeFieldsItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.HookTypeFieldsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.HookType_fields>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.HookTypeFieldsItemProperty>("fields", Fields);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

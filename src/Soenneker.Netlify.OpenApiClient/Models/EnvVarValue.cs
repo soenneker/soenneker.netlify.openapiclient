@@ -16,7 +16,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deploy context in which this value will be used. `dev` refers to local development when running `netlify dev`.</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue_context? Context { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValueContext? Context { get; set; }
         /// <summary>An additional parameter for custom branches. Currently, this is used for specifying a branch name when `context=branch`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue_context>(); } },
+                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValueContext>(); } },
                 { "context_parameter", n => { ContextParameter = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue_context>("context", Context);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValueContext>("context", Context);
             writer.WriteStringValue("context_parameter", ContextParameter);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("value", Value);

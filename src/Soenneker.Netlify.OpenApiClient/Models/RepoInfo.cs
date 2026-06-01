@@ -49,10 +49,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo_env? Env { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty? Env { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo_env Env { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty Env { get; set; }
 #endif
         /// <summary>The directory where Netlify can find your compiled functions to deploy them. Defaults to netlify/functions if not set. You can also define and override this setting in your project’s netlify.toml file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "cmd", n => { Cmd = n.GetStringValue(); } },
                 { "deploy_key_id", n => { DeployKeyId = n.GetStringValue(); } },
                 { "dir", n => { Dir = n.GetStringValue(); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo_env>(global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo_env.CreateFromDiscriminatorValue); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty>(global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty.CreateFromDiscriminatorValue); } },
                 { "functions_dir", n => { FunctionsDir = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "installation_id", n => { InstallationId = n.GetIntValue(); } },
@@ -157,7 +157,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("cmd", Cmd);
             writer.WriteStringValue("deploy_key_id", DeployKeyId);
             writer.WriteStringValue("dir", Dir);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty>("env", Env);
             writer.WriteStringValue("functions_dir", FunctionsDir);
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("installation_id", InstallationId);

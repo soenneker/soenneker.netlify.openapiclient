@@ -23,7 +23,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetup_role? Role { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetupRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetup"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetup_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetupRole>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetup_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountAddMemberSetupRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

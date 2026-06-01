@@ -20,14 +20,14 @@ namespace Soenneker.Netlify.OpenApiClient.Deploy_keys
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.deploy_keys.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKey_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKey_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("key_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKey_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("keyId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Deploy_keys.Item.WithKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

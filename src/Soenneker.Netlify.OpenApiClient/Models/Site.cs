@@ -73,10 +73,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteCapabilitiesProperty? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SiteCapabilitiesProperty Capabilities { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -318,7 +318,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "branch_deploy_custom_domain", n => { BranchDeployCustomDomain = n.GetStringValue(); } },
                 { "build_image", n => { BuildImage = n.GetStringValue(); } },
                 { "build_settings", n => { BuildSettings = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo>(global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities>(global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteCapabilitiesProperty>(global::Soenneker.Netlify.OpenApiClient.Models.SiteCapabilitiesProperty.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "custom_domain", n => { CustomDomain = n.GetStringValue(); } },
                 { "default_hooks_data", n => { DefaultHooksData = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData>(global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData.CreateFromDiscriminatorValue); } },
@@ -364,7 +364,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("branch_deploy_custom_domain", BranchDeployCustomDomain);
             writer.WriteStringValue("build_image", BuildImage);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo>("build_settings", BuildSettings);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Site_capabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteCapabilitiesProperty>("capabilities", Capabilities);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("custom_domain", CustomDomain);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SiteDefaultHooksData>("default_hooks_data", DefaultHooksData);

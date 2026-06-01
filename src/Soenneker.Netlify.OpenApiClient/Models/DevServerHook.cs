@@ -55,7 +55,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.DevServerHook_type? Type { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DevServerHookType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "site_id", n => { SiteId = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DevServerHook_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DevServerHookType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -110,7 +110,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("site_id", SiteId);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DevServerHook_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DevServerHookType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

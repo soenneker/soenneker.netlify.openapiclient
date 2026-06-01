@@ -17,10 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountType_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountTypeCapabilitiesProperty? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountType_capabilities Capabilities { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountTypeCapabilitiesProperty Capabilities { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountType_capabilities>(global::Soenneker.Netlify.OpenApiClient.Models.AccountType_capabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountTypeCapabilitiesProperty>(global::Soenneker.Netlify.OpenApiClient.Models.AccountTypeCapabilitiesProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "monthly_dollar_price", n => { MonthlyDollarPrice = n.GetIntValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountType_capabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountTypeCapabilitiesProperty>("capabilities", Capabilities);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("monthly_dollar_price", MonthlyDollarPrice);

@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \agent_runners\{agent_runner_id}\sessions
+    /// Builds and executes requests for operations under \agent_runners\{agentRunnerId}\sessions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SessionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.agent_runners.item.sessions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgent_runner_session_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgent_runner_session_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("agent_runner_session_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgent_runner_session_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("agentRunnerSessionId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agent_runner_id}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", pathParameters)
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agent_runner_id}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", rawUrl)
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession&gt;</returns>
@@ -136,13 +136,13 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
             [QueryParameter("from")]
             public int? From { get; set; }
             [QueryParameter("order_by")]
-            public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.ListAgentRunnerSessionsOrderByParameter? OrderBy { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             [QueryParameter("state")]
-            public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.GetStateQueryParameterType? State { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.ListAgentRunnerSessionsStateParameter? State { get; set; }
             [QueryParameter("to")]
             public int? To { get; set; }
         }

@@ -17,14 +17,14 @@ namespace Soenneker.Netlify.OpenApiClient.Api.V1.Sites
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.api.v1.sites.item collection</summary>
         /// <param name="position">Scope response to site_id</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSite_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSite_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSiteItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("site_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSite_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("siteId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.WithSiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

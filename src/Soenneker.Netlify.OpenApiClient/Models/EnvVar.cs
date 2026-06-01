@@ -28,10 +28,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The scopes that this environment variable is set to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar_scopes?>? Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar_scopes?> Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>The timestamp of when the value was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "is_secret", n => { IsSecret = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar_scopes>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarScopesItem>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_by", n => { UpdatedBy = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarUser>(global::Soenneker.Netlify.OpenApiClient.Models.EnvVarUser.CreateFromDiscriminatorValue); } },
                 { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue>(global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -93,7 +93,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_secret", IsSecret);
             writer.WriteStringValue("key", Key);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVar_scopes>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarScopesItem>("scopes", Scopes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarUser>("updated_by", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.EnvVarValue>("values", Values);

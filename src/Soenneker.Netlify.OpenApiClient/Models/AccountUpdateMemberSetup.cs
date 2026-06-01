@@ -15,9 +15,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_role? Role { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? Role { get; set; }
         /// <summary>The site_access property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_site_access? SiteAccess { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? SiteAccess { get; set; }
         /// <summary>The site_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_role>(); } },
-                { "site_access", n => { SiteAccess = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_site_access>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole>(); } },
+                { "site_access", n => { SiteAccess = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess>(); } },
                 { "site_ids", n => { SiteIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -63,8 +63,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_role>("role", Role);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup_site_access>("site_access", SiteAccess);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess>("site_access", SiteAccess);
             writer.WriteCollectionOfPrimitiveValues<string>("site_ids", SiteIds);
             writer.WriteAdditionalData(AdditionalData);
         }

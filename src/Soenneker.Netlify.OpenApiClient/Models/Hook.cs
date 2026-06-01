@@ -25,10 +25,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Hook_data? Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.HookDataProperty? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Hook_data Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.HookDataProperty Data { get; set; }
 #endif
         /// <summary>The disabled property</summary>
         public bool? Disabled { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Hook_data>(global::Soenneker.Netlify.OpenApiClient.Models.Hook_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.HookDataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.HookDataProperty.CreateFromDiscriminatorValue); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Hook_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.HookDataProperty>("data", Data);
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("event", Event);
             writer.WriteStringValue("id", Id);

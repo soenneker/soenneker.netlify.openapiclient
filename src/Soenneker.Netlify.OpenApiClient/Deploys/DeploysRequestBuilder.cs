@@ -17,14 +17,14 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.deploys.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeploy_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeploy_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeployItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeployItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("deploy_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeploy_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deployId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.WithDeployItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

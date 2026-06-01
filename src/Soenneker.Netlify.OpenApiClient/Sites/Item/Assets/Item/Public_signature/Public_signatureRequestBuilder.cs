@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.Public_signature
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sites\{site_id}\assets\{asset_id}\public_signature
+    /// Builds and executes requests for operations under \sites\{siteId}\assets\{assetId}\public_signature
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Public_signatureRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.Public_signatur
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_signatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/assets/{asset_id}/public_signature", pathParameters)
+        public Public_signatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets/{assetId}/public_signature", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.Public_signatur
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_signatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site_id}/assets/{asset_id}/public_signature", rawUrl)
+        public Public_signatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets/{assetId}/public_signature", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AssetPublicSignature"/></returns>

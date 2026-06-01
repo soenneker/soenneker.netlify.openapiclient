@@ -26,10 +26,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Metadata associated with the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse_metadata? Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponseMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse_metadata Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponseMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connection_string", n => { ConnectionString = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse_metadata>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponseMetadataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponseMetadataProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_string", ConnectionString);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponse_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchResponseMetadataProperty>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

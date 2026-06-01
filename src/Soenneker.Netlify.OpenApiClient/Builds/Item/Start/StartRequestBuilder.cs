@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
 {
     /// <summary>
-    /// Builds and executes requests for operations under \builds\{build_id}\start
+    /// Builds and executes requests for operations under \builds\{buildId}\start
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{build_id}/start{?build_version*,buildbot_version*,task_id*}", pathParameters)
+        public StartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{buildId}/start{?build_version*,buildbot_version*,task_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{build_id}/start{?build_version*,buildbot_version*,task_id*}", rawUrl)
+        public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{buildId}/start{?build_version*,buildbot_version*,task_id*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

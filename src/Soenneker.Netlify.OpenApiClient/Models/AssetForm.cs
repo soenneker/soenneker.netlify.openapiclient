@@ -17,10 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm_fields? Fields { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AssetFormFieldsProperty? Fields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm_fields Fields { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AssetFormFieldsProperty Fields { get; set; }
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AssetForm_fields>(global::Soenneker.Netlify.OpenApiClient.Models.AssetForm_fields.CreateFromDiscriminatorValue); } },
+                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AssetFormFieldsProperty>(global::Soenneker.Netlify.OpenApiClient.Models.AssetFormFieldsProperty.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AssetForm_fields>("fields", Fields);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AssetFormFieldsProperty>("fields", Fields);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

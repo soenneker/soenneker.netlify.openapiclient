@@ -17,14 +17,14 @@ namespace Soenneker.Netlify.OpenApiClient.Forms
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.forms.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithForm_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithForm_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithFormItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithFormItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("form_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithForm_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("formId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Forms.Item.WithFormItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

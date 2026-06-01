@@ -41,10 +41,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.Service_events>? Events { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceEventsItemProperty>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.Service_events> Events { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ServiceEventsItemProperty> Events { get; set; }
 #endif
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Service_events>(global::Soenneker.Netlify.OpenApiClient.Models.Service_events.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceEventsItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.ServiceEventsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "long_description", n => { LongDescription = n.GetStringValue(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Service_events>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ServiceEventsItemProperty>("events", Events);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("long_description", LongDescription);

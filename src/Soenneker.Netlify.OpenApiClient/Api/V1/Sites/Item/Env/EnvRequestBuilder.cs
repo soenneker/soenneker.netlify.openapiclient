@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v1\sites\{site_id}\env
+    /// Builds and executes requests for operations under \api\v1\sites\{siteId}\env
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/sites/{site_id}/env{?context_name*,scope*}", pathParameters)
+        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/sites/{siteId}/env{?context_name*,scope*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/sites/{site_id}/env{?context_name*,scope*}", rawUrl)
+        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v1/sites/{siteId}/env{?context_name*,scope*}", rawUrl)
         {
         }
         /// <summary>
@@ -93,10 +93,10 @@ namespace Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env
         {
             /// <summary>Filter by deploy context</summary>
             [QueryParameter("context_name")]
-            public global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env.GetContext_nameQueryParameterType? ContextName { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.GetSiteEnvVarsContextNameParameter? ContextName { get; set; }
             /// <summary>Filter by scope</summary>
             [QueryParameter("scope")]
-            public global::Soenneker.Netlify.OpenApiClient.Api.V1.Sites.Item.Env.GetScopeQueryParameterType? Scope { get; set; }
+            public global::Soenneker.Netlify.OpenApiClient.Models.GetSiteEnvVarsScopeParameter? Scope { get; set; }
         }
     }
 }

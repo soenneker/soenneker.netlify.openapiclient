@@ -41,10 +41,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Submission_data? Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SubmissionDataProperty? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Submission_data Data { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SubmissionDataProperty Data { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "company", n => { Company = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Submission_data>(global::Soenneker.Netlify.OpenApiClient.Models.Submission_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SubmissionDataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.SubmissionDataProperty.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -153,7 +153,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("company", Company);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.Submission_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.SubmissionDataProperty>("data", Data);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);

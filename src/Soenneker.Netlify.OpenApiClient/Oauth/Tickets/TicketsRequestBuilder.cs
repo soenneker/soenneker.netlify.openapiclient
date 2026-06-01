@@ -20,14 +20,14 @@ namespace Soenneker.Netlify.OpenApiClient.Oauth.Tickets
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.oauth.tickets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicket_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicket_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicketItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicketItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ticket_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicket_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ticketId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item.WithTicketItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace Soenneker.Netlify.OpenApiClient.Oauth.Tickets
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.Ticket?> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicket body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.Ticket?> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicketRequest body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.Ticket> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicket body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.Ticket> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicketRequest body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -77,11 +77,11 @@ namespace Soenneker.Netlify.OpenApiClient.Oauth.Tickets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicket body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicketRequest body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicket body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.CreateTicketRequest body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Oauth.Tickets.TicketsRequestBuilder.TicketsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

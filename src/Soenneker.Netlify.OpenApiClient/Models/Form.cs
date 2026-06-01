@@ -25,10 +25,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.Form_fields>? Fields { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FormFieldsItemProperty>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.Form_fields> Fields { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FormFieldsItemProperty> Fields { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Form_fields>(global::Soenneker.Netlify.OpenApiClient.Models.Form_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FormFieldsItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.FormFieldsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "paths", n => { Paths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.Form_fields>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FormFieldsItemProperty>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("paths", Paths);

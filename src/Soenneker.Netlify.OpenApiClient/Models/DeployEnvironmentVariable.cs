@@ -27,10 +27,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable_scopes?>? Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariableScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable_scopes?> Scopes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariableScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "is_secret", n => { IsSecret = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable_scopes>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariableScopesItem>()?.AsList(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_secret", IsSecret);
             writer.WriteStringValue("key", Key);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable_scopes>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariableScopesItem>("scopes", Scopes);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

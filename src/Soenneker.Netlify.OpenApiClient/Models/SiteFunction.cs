@@ -33,10 +33,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction_functions>? Functions { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunctionFunctionsItemProperty>? Functions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction_functions> Functions { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunctionFunctionsItemProperty> Functions { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "functions", n => { Functions = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction_functions>(global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction_functions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "functions", n => { Functions = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunctionFunctionsItemProperty>(global::Soenneker.Netlify.OpenApiClient.Models.SiteFunctionFunctionsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "log_type", n => { LogType = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branch", Branch);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction_functions>("functions", Functions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunctionFunctionsItemProperty>("functions", Functions);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("log_type", LogType);
             writer.WriteStringValue("provider", Provider);

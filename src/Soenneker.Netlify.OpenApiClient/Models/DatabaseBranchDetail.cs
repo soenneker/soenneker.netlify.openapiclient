@@ -60,10 +60,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Metadata associated with the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_metadata? Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_metadata Metadata { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The branch name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The current state of the branch</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_state? State { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailState? State { get; set; }
         /// <summary>When the branch was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,9 +114,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "last_active_at", n => { LastActiveAt = n.GetStringValue(); } },
                 { "logical_size_bytes", n => { LogicalSizeBytes = n.GetLongValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_metadata>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailMetadataProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -133,9 +133,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("last_active_at", LastActiveAt);
             writer.WriteLongValue("logical_size_bytes", LogicalSizeBytes);
-            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetailState>("state", State);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

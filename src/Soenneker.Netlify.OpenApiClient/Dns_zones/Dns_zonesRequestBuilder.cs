@@ -20,14 +20,14 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
     {
         /// <summary>Gets an item from the Soenneker.Netlify.OpenApiClient.dns_zones.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZone_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZone_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZoneItemRequestBuilder"/></returns>
+        public global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZoneItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("zone_id", position);
-                return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZone_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("zoneId", position);
+                return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.WithZoneItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
 {
     /// <summary>
-    /// Builds and executes requests for operations under \dns_zones\{zone_id}\transfer
+    /// Builds and executes requests for operations under \dns_zones\{zoneId}\transfer
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransferRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zone_id}/transfer?account_id={account_id}&transfer_account_id={transfer_account_id}&transfer_user_id={transfer_user_id}", pathParameters)
+        public TransferRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zoneId}/transfer?account_id={account_id}&transfer_account_id={transfer_account_id}&transfer_user_id={transfer_user_id}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransferRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zone_id}/transfer?account_id={account_id}&transfer_account_id={transfer_account_id}&transfer_user_id={transfer_user_id}", rawUrl)
+        public TransferRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zoneId}/transfer?account_id={account_id}&transfer_account_id={transfer_account_id}&transfer_user_id={transfer_user_id}", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DnsZone"/></returns>

@@ -33,7 +33,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public string PaymentMethodId { get; set; }
 #endif
         /// <summary>The period property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountSetup_period? Period { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountSetupPeriod? Period { get; set; }
         /// <summary>The type_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "extra_seats_block", n => { ExtraSeatsBlock = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountSetup_period>(); } },
+                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountSetupPeriod>(); } },
                 { "type_id", n => { TypeId = n.GetStringValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteIntValue("extra_seats_block", ExtraSeatsBlock);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("payment_method_id", PaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountSetup_period>("period", Period);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountSetupPeriod>("period", Period);
             writer.WriteStringValue("type_id", TypeId);
             writer.WriteAdditionalData(AdditionalData);
         }

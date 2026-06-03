@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", pathParameters)
+        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", rawUrl)
+        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Deploy&gt;</returns>

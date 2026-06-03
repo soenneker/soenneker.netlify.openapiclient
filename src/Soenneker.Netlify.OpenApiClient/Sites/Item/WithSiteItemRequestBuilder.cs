@@ -178,7 +178,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}{?feature_flags*}", pathParameters)
+        public WithSiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}", pathParameters)
         {
         }
         /// <summary>
@@ -186,7 +186,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}{?feature_flags*}", rawUrl)
+        public WithSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

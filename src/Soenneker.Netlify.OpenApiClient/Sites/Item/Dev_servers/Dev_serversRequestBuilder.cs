@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dev_serversRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*,page*,per_page*}", pathParameters)
+        public Dev_serversRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dev_serversRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*,page*,per_page*}", rawUrl)
+        public Dev_serversRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

@@ -41,7 +41,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", pathParameters)
+        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", rawUrl)
+        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner&gt;</returns>

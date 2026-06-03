@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentRunnerSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", pathParameters)
+        public WithAgentRunnerSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentRunnerSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", rawUrl)
+        public WithAgentRunnerSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>

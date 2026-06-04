@@ -136,7 +136,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder.WithAgentRunnerSessionItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -178,7 +178,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}", pathParameters)
+        public WithSiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}{?feature_flags*}", pathParameters)
         {
         }
         /// <summary>
@@ -186,7 +186,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}", rawUrl)
+        public WithSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}{?feature_flags*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>
@@ -287,7 +287,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.WithSiteItemRequestBuilder.WithSiteItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sites/{siteId}{?feature_flags*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

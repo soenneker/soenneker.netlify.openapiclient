@@ -28,7 +28,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeployItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys/{deployId}", pathParameters)
+        public WithDeployItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys/{deployId}{?commit_ref*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeployItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys/{deployId}", rawUrl)
+        public WithDeployItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys/{deployId}{?commit_ref*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>
@@ -146,7 +146,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/sites/{siteId}/deploys/{deployId}{?commit_ref*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

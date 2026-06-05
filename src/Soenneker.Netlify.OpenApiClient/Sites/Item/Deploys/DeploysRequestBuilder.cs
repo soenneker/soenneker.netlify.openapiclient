@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public DeploysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public DeploysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*,title*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Deploy&gt;</returns>
@@ -100,7 +100,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.DeploysRequestBuilder.DeploysRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,page*,per_page*,production*,state*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -118,7 +118,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/sites/{siteId}/deploys{?branch*,deploy%2Dpreviews*,latest%2Dpublished*,production*,state*,title*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -41,7 +41,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner&gt;</returns>
@@ -120,7 +120,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Agent_runnersRequestBuilder.Agent_runnersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,model*,parent_agent_runner_id*,prompt*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

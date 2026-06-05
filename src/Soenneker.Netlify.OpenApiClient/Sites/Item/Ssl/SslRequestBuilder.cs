@@ -28,7 +28,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", rawUrl)
         {
         }
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate"/></returns>
@@ -93,7 +93,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/sites/{siteId}/ssl", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -112,7 +112,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl.SslRequestBuilder.SslRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -35,7 +35,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?agent*,file_keys,from*,model*,order_by*,page*,per_page*,prompt*,state*,to*}", rawUrl)
         {
         }
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession&gt;</returns>
@@ -98,7 +98,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?from*,order_by*,page*,per_page*,state*,to*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -114,7 +114,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/agent_runners/{agentRunnerId}/sessions{?agent*,file_keys,model*,prompt*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

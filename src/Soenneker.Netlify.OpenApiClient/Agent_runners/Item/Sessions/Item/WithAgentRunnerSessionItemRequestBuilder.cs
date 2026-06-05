@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentRunnerSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}", pathParameters)
+        public WithAgentRunnerSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentRunnerSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}", rawUrl)
+        public WithAgentRunnerSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", rawUrl)
         {
         }
         /// <returns>A <see cref="Stream"/></returns>
@@ -136,7 +136,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder.WithAgentRunnerSessionItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

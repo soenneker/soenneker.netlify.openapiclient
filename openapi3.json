@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.55.0",
+    "version": "2.56.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -6496,6 +6496,203 @@
         }
       }
     },
+    "/sites/{site_id}/agent_runner_hooks": {
+      "get": {
+        "tags": [
+          "agentRunnerHook"
+        ],
+        "operationId": "listSiteAgentRunnerHooks",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/agentRunnerHook"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-internal": true
+      },
+      "post": {
+        "tags": [
+          "agentRunnerHook"
+        ],
+        "operationId": "createSiteAgentRunnerHook",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/agentRunnerHookSetup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/agentRunnerHookCreated"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-internal": true
+      }
+    },
+    "/sites/{site_id}/agent_runner_hooks/{id}": {
+      "get": {
+        "tags": [
+          "agentRunnerHook"
+        ],
+        "operationId": "getSiteAgentRunnerHook",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/agentRunnerHook"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-internal": true
+      },
+      "put": {
+        "tags": [
+          "agentRunnerHook"
+        ],
+        "operationId": "updateSiteAgentRunnerHook",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/agentRunnerHookSetup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-internal": true
+      },
+      "delete": {
+        "tags": [
+          "agentRunnerHook"
+        ],
+        "operationId": "deleteSiteAgentRunnerHook",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-internal": true
+      }
+    },
     "/ai-gateway/providers": {
       "get": {
         "tags": [
@@ -9774,6 +9971,70 @@
             "type": "string"
           }
         }
+      },
+      "agentRunnerHook": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "site_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "agent": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "dateTime"
+          }
+        }
+      },
+      "agentRunnerHookSetup": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "agent": {
+            "type": "string"
+          }
+        }
+      },
+      "agentRunnerHookCreated": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/agentRunnerHook"
+          },
+          {
+            "properties": {
+              "secret": {
+                "type": "string"
+              }
+            }
+          }
+        ]
       },
       "accountUsageCapability": {
         "type": "object",

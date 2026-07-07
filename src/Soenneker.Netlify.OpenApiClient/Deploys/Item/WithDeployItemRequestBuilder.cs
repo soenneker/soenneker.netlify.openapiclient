@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Cancel;
+using Soenneker.Netlify.OpenApiClient.Deploys.Item.Edge_functions;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Files;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Lock;
@@ -28,6 +29,11 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item
         public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The edge_functions property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Edge_functions.Edge_functionsRequestBuilder Edge_functions
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Edge_functions.Edge_functionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The files property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.FilesRequestBuilder Files

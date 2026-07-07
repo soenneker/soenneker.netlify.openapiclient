@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.56.1",
+    "version": "2.57.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -3116,6 +3116,54 @@
                 }
               }
             }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/deploys/{deploy_id}/edge_functions/{code_sha}": {
+      "put": {
+        "tags": [
+          "edgeFunction"
+        ],
+        "operationId": "uploadDeployEdgeFunction",
+        "parameters": [
+          {
+            "name": "deploy_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_sha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/retryCount"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -8826,6 +8874,13 @@
               "type": "string"
             }
           },
+          "required_edge_functions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of code_shas for the edge-function bundles that need to be uploaded to\ncomplete the deploy.\n"
+          },
           "error_message": {
             "type": "string"
           },
@@ -8950,6 +9005,10 @@
           },
           "functions": {
             "type": "object"
+          },
+          "edge_functions": {
+            "type": "object",
+            "description": "A hash mapping edge-function bundle formats to the code_sha of each bundle. The\nresponse's required_edge_functions lists which of these still need to be uploaded.\n"
           },
           "function_schedules": {
             "type": "array",

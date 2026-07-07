@@ -27,6 +27,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #endif
         /// <summary>The draft property</summary>
         public bool? Draft { get; set; }
+        /// <summary>A hash mapping edge-function bundle formats to the code_sha of each bundle. Theresponse&apos;s required_edge_functions lists which of these still need to be uploaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty? EdgeFunctions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty EdgeFunctions { get; set; }
+#endif
         /// <summary>&quot;A list of deploy-specific environment variable data. Data specified this way applies onlyto this specific deploy and is merged into any existing environment variables set on theaccount and site.Deploy-specific environment variable data takes precedence over account and siteenvironment variable data: For example, a deploy-specific variable with the key `NODE_ENV`will take priority over any existing site- and account-level environment variable datawith the key `NODE_ENV`.Environment variable data may be provided at one of two times:- When creating a new Deploy with deploy files (most common)- When finalizing an existing Deploy with deploy filesOnce set, environment variables for a specific deploy cannot be modified. Subsequentattempts to modify environment variable data for a deploy will be ignored.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +127,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "async", n => { Async = n.GetBoolValue(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
                 { "draft", n => { Draft = n.GetBoolValue(); } },
+                { "edge_functions", n => { EdgeFunctions = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>(global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "files", n => { Files = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty.CreateFromDiscriminatorValue); } },
                 { "framework", n => { Framework = n.GetStringValue(); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteBoolValue("async", Async);
             writer.WriteStringValue("branch", Branch);
             writer.WriteBoolValue("draft", Draft);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty>("edge_functions", EdgeFunctions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>("environment", Environment);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty>("files", Files);
             writer.WriteStringValue("framework", Framework);

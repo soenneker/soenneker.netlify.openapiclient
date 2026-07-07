@@ -162,6 +162,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public List<string> Required { get; set; }
 #endif
+        /// <summary>An array of code_shas for the edge-function bundles that need to be uploaded tocomplete the deploy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RequiredEdgeFunctions { get; set; }
+#nullable restore
+#else
+        public List<string> RequiredEdgeFunctions { get; set; }
+#endif
         /// <summary>The required_functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -299,6 +307,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "published_at", n => { PublishedAt = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "required_edge_functions", n => { RequiredEdgeFunctions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_functions", n => { RequiredFunctions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "review_id", n => { ReviewId = n.GetDoubleValue(); } },
                 { "review_url", n => { ReviewUrl = n.GetStringValue(); } },
@@ -341,6 +350,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("published_at", PublishedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
+            writer.WriteCollectionOfPrimitiveValues<string>("required_edge_functions", RequiredEdgeFunctions);
             writer.WriteCollectionOfPrimitiveValues<string>("required_functions", RequiredFunctions);
             writer.WriteDoubleValue("review_id", ReviewId);
             writer.WriteStringValue("review_url", ReviewUrl);

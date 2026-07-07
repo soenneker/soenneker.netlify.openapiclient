@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.56.1
+  version: 2.57.0
   title: Netlify's API documentation
   description: >-
     Netlify is a hosting service for the programmable web. It understands your
@@ -1663,6 +1663,33 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/function'
+        default:
+          $ref: '#/responses/error'
+  /deploys/{deploy_id}/edge_functions/{code_sha}:
+    put:
+      operationId: uploadDeployEdgeFunction
+      tags: [edgeFunction]
+      consumes:
+        - application/octet-stream
+      parameters:
+        - name: deploy_id
+          type: string
+          in: path
+          required: true
+        - name: code_sha
+          type: string
+          in: path
+          required: true
+        - name: file_body
+          in: body
+          schema:
+            type: string
+            format: binary
+          required: true
+        - $ref: '#/parameters/retryCount'
+      responses:
+        '200':
+          description: OK
         default:
           $ref: '#/responses/error'
   /sites/{site_id}/plugins/{package}:
@@ -4743,6 +4770,13 @@ definitions:
         type: array
         items:
           type: string
+      required_edge_functions:
+        type: array
+        items:
+          type: string
+        description: |
+          An array of code_shas for the edge-function bundles that need to be uploaded to
+          complete the deploy.
       error_message:
         type: string
       branch:
@@ -4842,6 +4876,11 @@ definitions:
         type: boolean
       functions:
         type: object
+      edge_functions:
+        type: object
+        description: |
+          A hash mapping edge-function bundle formats to the code_sha of each bundle. The
+          response's required_edge_functions lists which of these still need to be uploaded.
       function_schedules:
         type: array
         items:

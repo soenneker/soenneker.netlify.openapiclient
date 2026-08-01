@@ -52,7 +52,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSites200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSites200ResponseSchema"
                 }
               }
             }
@@ -326,7 +326,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAllCertificates200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetAllCertificates200ResponseSchema"
                 }
               }
             }
@@ -382,7 +382,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEnvVars200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetEnvVars200ResponseSchema"
                 }
               }
             }
@@ -432,7 +432,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateEnvVars201ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateEnvVars201ResponseSchema"
                 }
               }
             }
@@ -483,7 +483,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetSiteEnvVars200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetSiteEnvVars200ResponseSchema"
                 }
               }
             }
@@ -784,7 +784,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchSiteFunctions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchSiteFunctions200ResponseSchema"
                 }
               }
             }
@@ -817,7 +817,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteForms200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteForms200ResponseSchema"
                 }
               }
             }
@@ -887,7 +887,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteSubmissions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteSubmissions200ResponseSchema"
                 }
               }
             }
@@ -920,7 +920,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteFiles200ResponseSchema"
                 }
               }
             }
@@ -953,7 +953,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteAssets200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteAssets200ResponseSchema"
                 }
               }
             }
@@ -1248,7 +1248,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/PurgeCache201Response"
                 }
               }
             }
@@ -1278,7 +1278,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteSnippets200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteSnippets200ResponseSchema"
                 }
               }
             }
@@ -1522,7 +1522,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteBuildHooks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteBuildHooks200ResponseSchema"
                 }
               }
             }
@@ -1744,7 +1744,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteDeploys200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteDeploys200ResponseSchema"
                 }
               }
             }
@@ -2064,7 +2064,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteBuilds200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteBuilds200ResponseSchema"
                 }
               }
             }
@@ -2178,7 +2178,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteDeployedBranches200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteDeployedBranches200ResponseSchema"
                 }
               }
             }
@@ -2418,7 +2418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAccountBuildStatus200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetAccountBuildStatus200ResponseSchema"
                 }
               }
             }
@@ -2451,7 +2451,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetDnsForSite200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetDnsForSite200ResponseSchema"
                 }
               }
             }
@@ -2482,7 +2482,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConfigureDnsForSite200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ConfigureDnsForSite200ResponseSchema"
                 }
               }
             }
@@ -2951,7 +2951,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetLatestPluginRuns200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetLatestPluginRuns200ResponseSchema"
                 }
               }
             }
@@ -3033,7 +3033,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListFormSubmissions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListFormSubmissions200ResponseSchema"
                 }
               }
             }
@@ -3066,7 +3066,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListHooksBySiteId200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListHooksBySiteId200ResponseSchema"
                 }
               }
             }
@@ -3210,7 +3210,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteHook204Response"
                 }
               }
             }
@@ -3263,7 +3263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListHookTypes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListHookTypes200ResponseSchema"
                 }
               }
             }
@@ -3414,7 +3414,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListDeployKeys200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListDeployKeys200ResponseSchema"
                 }
               }
             }
@@ -3536,7 +3536,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSitesForAccount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSitesForAccount200ResponseSchema"
                 }
               }
             }
@@ -3617,7 +3617,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListMembersForAccount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListMembersForAccount200ResponseSchema"
                 }
               }
             }
@@ -3657,7 +3657,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AddMemberToAccount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AddMemberToAccount200ResponseSchema"
                 }
               }
             }
@@ -3798,7 +3798,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPaymentMethodsForUser200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPaymentMethodsForUser200ResponseSchema"
                 }
               }
             }
@@ -3821,7 +3821,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAccountTypesForUser200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAccountTypesForUser200ResponseSchema"
                 }
               }
             }
@@ -3854,7 +3854,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAccountsForUser200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAccountsForUser200ResponseSchema"
                 }
               }
             }
@@ -4031,7 +4031,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAccountAuditEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAccountAuditEvents200ResponseSchema"
                 }
               }
             }
@@ -4120,7 +4120,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAgentRunners200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAgentRunners200ResponseSchema"
                 }
               }
             }
@@ -4479,7 +4479,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAgentRunnerSessions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAgentRunnerSessions200ResponseSchema"
                 }
               }
             }
@@ -4704,7 +4704,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListFormSubmission200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListFormSubmission200ResponseSchema"
                 }
               }
             }
@@ -4758,7 +4758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListServiceInstancesForSite200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListServiceInstancesForSite200ResponseSchema"
                 }
               }
             }
@@ -4972,7 +4972,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetServices200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetServices200ResponseSchema"
                 }
               }
             }
@@ -5038,7 +5038,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ShowServiceManifest201ResponseResponseJson"
+                  "$ref": "#/components/schemas/ShowServiceManifest201ResponseSchema"
                 }
               }
             }
@@ -5643,7 +5643,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteDevServers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteDevServers200ResponseSchema"
                 }
               }
             }
@@ -5681,7 +5681,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateSiteDevServer200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateSiteDevServer200ResponseSchema"
                 }
               }
             }
@@ -5788,7 +5788,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/MarkDevServerActivity201Response"
                 }
               }
             }
@@ -5865,7 +5865,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteDevServerHooks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteDevServerHooks200ResponseSchema"
                 }
               }
             }
@@ -6046,7 +6046,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListSiteAgentRunnerHooks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListSiteAgentRunnerHooks200ResponseSchema"
                 }
               }
             }
@@ -10532,19 +10532,19 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "ListSites200ResponseResponseJson": {
+      "ListSites200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Site"
         }
       },
-      "GetAllCertificates200ResponseResponseJson": {
+      "GetAllCertificates200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SniCertificate"
         }
       },
-      "GetEnvVars200ResponseResponseJson": {
+      "GetEnvVars200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvVar"
@@ -10556,54 +10556,54 @@
           "$ref": "#/components/schemas/CreateEnvVarsRequestRequestBodyItem"
         }
       },
-      "CreateEnvVars201ResponseResponseJson": {
+      "CreateEnvVars201ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvVar"
         }
       },
-      "GetSiteEnvVars200ResponseResponseJson": {
+      "GetSiteEnvVars200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnvVar"
         }
       },
-      "SearchSiteFunctions200ResponseResponseJson": {
+      "SearchSiteFunctions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SiteFunction"
         }
       },
-      "ListSiteForms200ResponseResponseJson": {
+      "ListSiteForms200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Form"
         }
       },
-      "ListSiteSubmissions200ResponseResponseJson": {
+      "ListSiteSubmissions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Submission"
         }
       },
-      "ListSiteFiles200ResponseResponseJson": {
+      "ListSiteFiles200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/File"
         }
       },
-      "ListSiteAssets200ResponseResponseJson": {
+      "ListSiteAssets200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Asset"
         }
       },
-      "DefaultResponse": {
+      "PurgeCache201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListSiteSnippets200ResponseResponseJson": {
+      "ListSiteSnippets200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Snippet"
@@ -10615,144 +10615,144 @@
       "UpdateSiteMetadataRequest": {
         "type": "object"
       },
-      "ListSiteBuildHooks200ResponseResponseJson": {
+      "ListSiteBuildHooks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BuildHook"
         }
       },
-      "ListSiteDeploys200ResponseResponseJson": {
+      "ListSiteDeploys200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Deploy"
         }
       },
-      "ListSiteBuilds200ResponseResponseJson": {
+      "ListSiteBuilds200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Build"
         }
       },
-      "ListSiteDeployedBranches200ResponseResponseJson": {
+      "ListSiteDeployedBranches200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DeployedBranch"
         }
       },
-      "GetAccountBuildStatus200ResponseResponseJson": {
+      "GetAccountBuildStatus200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BuildStatus"
         }
       },
-      "GetDnsForSite200ResponseResponseJson": {
+      "GetDnsForSite200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DnsZone"
         }
       },
-      "ConfigureDnsForSite200ResponseResponseJson": {
+      "ConfigureDnsForSite200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DnsZone"
         }
       },
-      "GetLatestPluginRuns200ResponseResponseJson": {
+      "GetLatestPluginRuns200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PluginRun"
         }
       },
-      "ListFormSubmissions200ResponseResponseJson": {
+      "ListFormSubmissions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Submission"
         }
       },
-      "ListHooksBySiteId200ResponseResponseJson": {
+      "ListHooksBySiteId200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Hook"
         }
       },
-      "DefaultResponseResponseJson": {
+      "DeleteHook204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListHookTypes200ResponseResponseJson": {
+      "ListHookTypes200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/HookType"
         }
       },
-      "ListDeployKeys200ResponseResponseJson": {
+      "ListDeployKeys200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DeployKey"
         }
       },
-      "ListSitesForAccount200ResponseResponseJson": {
+      "ListSitesForAccount200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Site"
         }
       },
-      "ListMembersForAccount200ResponseResponseJson": {
+      "ListMembersForAccount200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Member"
         }
       },
-      "AddMemberToAccount200ResponseResponseJson": {
+      "AddMemberToAccount200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Member"
         }
       },
-      "ListPaymentMethodsForUser200ResponseResponseJson": {
+      "ListPaymentMethodsForUser200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PaymentMethod"
         }
       },
-      "ListAccountTypesForUser200ResponseResponseJson": {
+      "ListAccountTypesForUser200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountType"
         }
       },
-      "ListAccountsForUser200ResponseResponseJson": {
+      "ListAccountsForUser200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountMembership"
         }
       },
-      "ListAccountAuditEvents200ResponseResponseJson": {
+      "ListAccountAuditEvents200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuditLog"
         }
       },
-      "ListAgentRunners200ResponseResponseJson": {
+      "ListAgentRunners200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AgentRunner"
         }
       },
-      "ListAgentRunnerSessions200ResponseResponseJson": {
+      "ListAgentRunnerSessions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AgentRunnerSession"
         }
       },
-      "ListFormSubmission200ResponseResponseJson": {
+      "ListFormSubmission200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Submission"
         }
       },
-      "ListServiceInstancesForSite200ResponseResponseJson": {
+      "ListServiceInstancesForSite200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ServiceInstance"
@@ -10764,13 +10764,13 @@
       "UpdateServiceInstanceRequestRequestBody": {
         "type": "object"
       },
-      "GetServices200ResponseResponseJson": {
+      "GetServices200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Service"
         }
       },
-      "ShowServiceManifest201ResponseResponseJson": {
+      "ShowServiceManifest201ResponseSchema": {
         "type": "object"
       },
       "GetSplitTests200Response": {
@@ -10791,30 +10791,30 @@
           "$ref": "#/components/schemas/DnsRecord"
         }
       },
-      "ListSiteDevServers200ResponseResponseJson": {
+      "ListSiteDevServers200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DevServer"
         }
       },
-      "CreateSiteDevServer200ResponseResponseJson": {
+      "CreateSiteDevServer200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DevServer"
         }
       },
-      "DefaultResponseResponseJson2": {
+      "MarkDevServerActivity201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListSiteDevServerHooks200ResponseResponseJson": {
+      "ListSiteDevServerHooks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DevServerHook"
         }
       },
-      "ListSiteAgentRunnerHooks200ResponseResponseJson": {
+      "ListSiteAgentRunnerHooks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AgentRunnerHook"

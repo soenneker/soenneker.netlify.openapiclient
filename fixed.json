@@ -84,7 +84,8 @@
                 "$ref": "#/components/schemas/SiteSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -160,6 +161,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -188,7 +192,8 @@
                 "$ref": "#/components/schemas/SiteSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -290,6 +295,9 @@
               }
             }
           },
+          "422": {
+            "description": "Unprocessable Entity. Returns errors such as: \u0022certificate parameter is required when updating an existing certificate\u0022 (when updating without params), \u0022No custom domain configured\u0022, or \u0022bad dns for custom domain\u0022"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -330,6 +338,12 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           }
         }
       }
@@ -639,6 +653,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content (success)"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -749,6 +766,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content (success)"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -853,6 +873,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1138,6 +1161,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1240,18 +1266,18 @@
                 "$ref": "#/components/schemas/Purge"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PurgeCache201Response"
-                }
-              }
-            }
+          "202": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Invalid request parameters"
+          },
+          "404": {
+            "description": "Site not found"
           }
         }
       }
@@ -1310,7 +1336,8 @@
                 "$ref": "#/components/schemas/Snippet"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -1399,9 +1426,13 @@
                 "$ref": "#/components/schemas/Snippet"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1431,6 +1462,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1491,9 +1525,13 @@
                 "$ref": "#/components/schemas/UpdateSiteMetadataRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1554,7 +1592,8 @@
                 "$ref": "#/components/schemas/BuildHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -1643,9 +1682,13 @@
                 "$ref": "#/components/schemas/BuildHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1675,6 +1718,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -1818,7 +1864,8 @@
                 "$ref": "#/components/schemas/DeployFiles"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1914,7 +1961,8 @@
                 "$ref": "#/components/schemas/DeployFiles"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1956,6 +2004,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2150,6 +2201,15 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2216,6 +2276,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Site not found"
           }
         }
       }
@@ -2238,6 +2301,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "422": {
             "description": "Cannot enable this site",
             "content": {
@@ -2281,6 +2347,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2343,9 +2412,13 @@
                 "$ref": "#/components/schemas/BuildLogMsg"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2390,6 +2463,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2510,6 +2586,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2564,6 +2643,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -2595,7 +2677,8 @@
                 "$ref": "#/components/schemas/UpdateDeployValidationsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2712,10 +2795,11 @@
           "content": {
             "application/octet-stream": {
               "schema": {
-                "$ref": "#/components/schemas/UploadDeployFileOctetStreamRequest"
+                "$ref": "#/components/schemas/UploadDeployFileOctetStreamRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2793,10 +2877,11 @@
           "content": {
             "application/octet-stream": {
               "schema": {
-                "$ref": "#/components/schemas/UploadDeployFunctionOctetStreamRequest"
+                "$ref": "#/components/schemas/UploadDeployFunctionOctetStreamRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2846,12 +2931,16 @@
           "content": {
             "application/octet-stream": {
               "schema": {
-                "$ref": "#/components/schemas/UploadDeployEdgeFunctionOctetStreamRequest"
+                "$ref": "#/components/schemas/UploadDeployEdgeFunctionOctetStreamRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -3098,7 +3187,8 @@
                 "$ref": "#/components/schemas/Hook"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3171,7 +3261,8 @@
                 "$ref": "#/components/schemas/Hook"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3206,14 +3297,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeleteHook204Response"
-                }
-              }
-            }
+            "description": "No content"
           }
         }
       }
@@ -3494,6 +3578,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Not Content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -3649,7 +3736,8 @@
                 "$ref": "#/components/schemas/AccountAddMemberSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3738,7 +3826,8 @@
                 "$ref": "#/components/schemas/AccountUpdateMemberSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3780,6 +3869,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Not Content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -3876,7 +3968,8 @@
                 "$ref": "#/components/schemas/AccountSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3983,6 +4076,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Not Content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4216,6 +4312,12 @@
               }
             }
           },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4255,6 +4357,15 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4309,6 +4420,9 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4363,6 +4477,15 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4386,6 +4509,18 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4417,6 +4552,18 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4547,6 +4694,12 @@
               }
             }
           },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4617,6 +4770,9 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4730,6 +4886,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4800,7 +4959,8 @@
                 "$ref": "#/components/schemas/CreateServiceInstanceRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4905,9 +5065,13 @@
                 "$ref": "#/components/schemas/UpdateServiceInstanceRequestRequestBody"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -4945,6 +5109,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5126,7 +5293,8 @@
                 "$ref": "#/components/schemas/SplitTestSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5215,7 +5383,8 @@
                 "$ref": "#/components/schemas/SplitTestSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5259,6 +5428,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "enable"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5290,6 +5462,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "disabled"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5339,7 +5514,8 @@
                 "$ref": "#/components/schemas/DnsZoneSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5406,6 +5582,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "delete a single DNS zone"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5526,7 +5705,8 @@
                 "$ref": "#/components/schemas/DnsRecordCreate"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5609,6 +5789,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "record deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5714,6 +5897,9 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "OK"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -5783,15 +5969,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MarkDevServerActivity201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -5827,7 +6006,8 @@
                 "$ref": "#/components/schemas/UpdateDevServerStateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5839,6 +6019,9 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict"
           }
         }
       }
@@ -5897,7 +6080,8 @@
                 "$ref": "#/components/schemas/DevServerHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -5986,9 +6170,13 @@
                 "$ref": "#/components/schemas/DevServerHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6018,6 +6206,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6078,7 +6269,8 @@
                 "$ref": "#/components/schemas/AgentRunnerHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -6167,9 +6359,13 @@
                 "$ref": "#/components/schemas/AgentRunnerHookSetup"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6199,6 +6395,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6258,6 +6457,9 @@
               }
             }
           },
+          "404": {
+            "description": "AI Gateway not available for this site"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6292,6 +6494,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "AI Gateway not available for this account"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -6408,6 +6613,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6438,7 +6646,8 @@
                 "$ref": "#/components/schemas/CreateDatabaseBranchRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -6546,6 +6755,9 @@
               }
             }
           },
+          "404": {
+            "description": "Branch not found"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6577,6 +6789,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6645,6 +6860,12 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid request \u2014 for example, the target is the production branch or the source branch is the same as the target."
+          },
+          "404": {
+            "description": "Database or branch not found"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6684,7 +6905,8 @@
                 "$ref": "#/components/schemas/DatabaseComputeSettingsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -6696,6 +6918,9 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Compute customization requires a Pro or higher plan"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -6731,6 +6956,9 @@
               }
             }
           },
+          "403": {
+            "description": "Compute customization requires a Pro or higher plan"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6759,7 +6987,8 @@
                 "$ref": "#/components/schemas/DatabaseComputeSettingsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -6771,6 +7000,9 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Compute customization requires a Pro or higher plan"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -6794,6 +7026,12 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Cleared"
+          },
+          "403": {
+            "description": "Compute customization requires a Pro or higher plan"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6835,6 +7073,12 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Database or branch not found"
+          },
+          "423": {
+            "description": "Database is disabled"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -6887,6 +7131,12 @@
               }
             }
           },
+          "404": {
+            "description": "Migration, database, or branch not found"
+          },
+          "423": {
+            "description": "Database is disabled"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -6927,6 +7177,15 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Migration conflict - migration modified or removed after being applied"
+          },
+          "422": {
+            "description": "Migration validation failed"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -7037,6 +7296,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Deleted"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -7079,6 +7341,9 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "default": {
             "$ref": "#/components/responses/error"
           }
@@ -8450,7 +8715,7 @@
             "items": {
               "$ref": "#/components/schemas/DeployEnvironmentVariable"
             },
-            "description": "\u0022A list of deploy-specific environment variable data. Data specified this way applies only\nto this specific deploy and is merged into any existing environment variables set on the\naccount and site.\n\nDeploy-specific environment variable data takes precedence over account and site\nenvironment variable data: For example, a deploy-specific variable with the key \u0060NODE_ENV\u0060\nwill take priority over any existing site- and account-level environment variable data\nwith the key \u0060NODE_ENV\u0060.\n\nEnvironment variable data may be provided at one of two times:\n\n- When creating a new Deploy with deploy files (most common)\n- When finalizing an existing Deploy with deploy files\n\nOnce set, environment variables for a specific deploy cannot be modified. Subsequent\nattempts to modify environment variable data for a deploy will be ignored.\n\u0022"
+            "description": "A list of deploy-specific environment variable data. Data specified this way applies only\nto this specific deploy and is merged into any existing environment variables set on the\naccount and site.\n\nDeploy-specific environment variable data takes precedence over account and site\nenvironment variable data: For example, a deploy-specific variable with the key \u0060NODE_ENV\u0060\nwill take priority over any existing site- and account-level environment variable data\nwith the key \u0060NODE_ENV\u0060.\n\nEnvironment variable data may be provided at one of two times:\n\n- When creating a new Deploy with deploy files (most common)\n- When finalizing an existing Deploy with deploy files\n\nOnce set, environment variables for a specific deploy cannot be modified. Subsequent\nattempts to modify environment variable data for a deploy will be ignored.\n"
           }
         },
         "description": "Deploy files can be provided in two ways:\n1. As a JSON object using \u0027files\u0027 (a hash mapping file paths to SHA1 digests), OR\n2. As a zip file using one of these methods:\n   - Set Content-Type to \u0027application/zip\u0027 and send the zip file as the raw request body\n   - Include the zip file content in the \u0027zip\u0027 field of this JSON object with Content-Type \u0027application/json\u0027\n"
@@ -9692,7 +9957,7 @@
         "type": "object",
         "properties": {
           "algorithm": {
-            "$ref": "#/components/schemas/TrafficRulesRateLimitConfigAlgorithm"
+            "$ref": "#/components/schemas/SlidingWindowAlgorithm"
           },
           "window_size": {
             "type": "integer"
@@ -10325,40 +10590,16 @@
         }
       },
       "UploadDeployFileOctetStreamRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "format": "binary"
-          }
-        }
+        "type": "string",
+        "format": "binary"
       },
       "UploadDeployFunctionOctetStreamRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "format": "binary"
-          }
-        }
+        "type": "string",
+        "format": "binary"
       },
       "UploadDeployEdgeFunctionOctetStreamRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "format": "binary"
-          }
-        }
+        "type": "string",
+        "format": "binary"
       },
       "GetLatestPluginRuns200Response": {
         "type": "array",
@@ -10598,11 +10839,6 @@
           "$ref": "#/components/schemas/Asset"
         }
       },
-      "PurgeCache201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "ListSiteSnippets200ResponseSchema": {
         "type": "array",
         "items": {
@@ -10657,6 +10893,18 @@
           "$ref": "#/components/schemas/DnsZone"
         }
       },
+      "UploadDeployFileOctetStreamRequestRequestBody": {
+        "type": "string",
+        "format": "binary"
+      },
+      "UploadDeployFunctionOctetStreamRequestRequestBody": {
+        "type": "string",
+        "format": "binary"
+      },
+      "UploadDeployEdgeFunctionOctetStreamRequestRequestBody": {
+        "type": "string",
+        "format": "binary"
+      },
       "GetLatestPluginRuns200ResponseSchema": {
         "type": "array",
         "items": {
@@ -10674,11 +10922,6 @@
         "items": {
           "$ref": "#/components/schemas/Hook"
         }
-      },
-      "DeleteHook204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "ListHookTypes200ResponseSchema": {
         "type": "array",
@@ -10802,11 +11045,6 @@
         "items": {
           "$ref": "#/components/schemas/DevServer"
         }
-      },
-      "MarkDevServerActivity201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "ListSiteDevServerHooks200ResponseSchema": {
         "type": "array",
@@ -11334,14 +11572,14 @@
           ]
         }
       },
-      "TrafficRulesRateLimitConfigAlgorithm": {
+      "SlidingWindowAlgorithm": {
         "enum": [
           "sliding_window"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "TrafficRulesRateLimitConfigAlgorithm",
+          "name": "SlidingWindowAlgorithm",
           "modelAsString": false,
           "values": [
             {
@@ -12089,12 +12327,6 @@
             "scopes": {}
           }
         }
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

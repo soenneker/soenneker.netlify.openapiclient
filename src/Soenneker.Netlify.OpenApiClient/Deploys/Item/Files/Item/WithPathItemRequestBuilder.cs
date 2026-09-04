@@ -88,8 +88,10 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
         public partial class WithPathItemRequestBuilderPutQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("size")]
             public int? Size { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

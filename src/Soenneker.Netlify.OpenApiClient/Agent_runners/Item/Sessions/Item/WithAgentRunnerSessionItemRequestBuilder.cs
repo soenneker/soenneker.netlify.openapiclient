@@ -154,8 +154,10 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         public partial class WithAgentRunnerSessionItemRequestBuilderPatchQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("is_published")]
             public bool? IsPublished { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

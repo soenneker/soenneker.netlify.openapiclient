@@ -140,25 +140,41 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string? Branch { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string Branch { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("deploy%2Dpreviews")]
             public bool? DeployPreviews { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("latest%2Dpublished")]
             public bool? LatestPublished { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("production")]
             public bool? Production { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Netlify.OpenApiClient.Models.ListSiteDeploysStateParameter? State { get; set; }
+            #pragma warning restore CS1591
         }
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         #pragma warning disable CS1591
@@ -167,29 +183,45 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string? Branch { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string Branch { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("deploy%2Dpreviews")]
             public bool? DeployPreviews { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("latest%2Dpublished")]
             public bool? LatestPublished { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("production")]
             public bool? Production { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Netlify.OpenApiClient.Models.CreateSiteDeployStateParameter? State { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("title")]
             public string? Title { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("title")]
             public string Title { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

@@ -131,10 +131,14 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
         public partial class BuildsRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Runs a build for a site. The build will be scheduled to run at the first opportunity, but it might not start immediately if insufficient account build capacity is available.Files for build can be uploaded as a zipped site using one of these methods:1. Set Content-Type to &apos;application/zip&apos; and send the zip file as the raw request body2. Set Content-Type to &apos;multipart/form-data&apos; and include the zip file in the &apos;zip&apos; field

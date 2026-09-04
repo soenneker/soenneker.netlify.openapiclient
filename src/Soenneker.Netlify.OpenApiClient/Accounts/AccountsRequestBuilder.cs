@@ -144,8 +144,10 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts
         public partial class AccountsRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("minimal")]
             public bool? Minimal { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

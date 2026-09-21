@@ -126,7 +126,8 @@
             "schema": {
               "type": "string",
               "x-internal": true
-            }
+            },
+            "x-internal": true
           }
         ],
         "responses": {
@@ -2691,7 +2692,10 @@
               }
             }
           }
-        }
+        },
+        "x-internal": true,
+        "x-controller": "api/v1/deploys",
+        "x-action": "validations_report"
       }
     },
     "/deploys/{deployId}/lock": {
@@ -2995,7 +2999,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/sites/{siteId}/plugin_runs/latest": {
@@ -3048,7 +3053,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/deploys/{deployId}/plugin_runs": {
@@ -3091,7 +3097,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/forms/{formId}/submissions": {
@@ -3937,7 +3944,8 @@
             "schema": {
               "type": "boolean",
               "x-internal": true
-            }
+            },
+            "x-internal": true
           }
         ],
         "responses": {
@@ -4369,7 +4377,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/agent_runners/{agentRunnerId}": {
@@ -4524,7 +4533,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/agent_runners/{agentRunnerId}/commit": {
@@ -4567,7 +4577,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/agent_runners/{agentRunnerId}/sessions": {
@@ -5972,7 +5983,8 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/sites/{siteId}/dev_servers/{devServerId}/state": {
@@ -6245,7 +6257,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       },
       "post": {
         "tags": [
@@ -6286,7 +6299,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/sites/{siteId}/agent_runner_hooks/{id}": {
@@ -6327,7 +6341,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       },
       "put": {
         "tags": [
@@ -6369,7 +6384,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       },
       "delete": {
         "tags": [
@@ -6401,7 +6417,8 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/ai-gateway/providers": {
@@ -12480,5 +12497,112 @@
   "externalDocs": {
     "description": "Online documentation",
     "url": "https://www.netlify.com/docs/api/"
-  }
+  },
+  "x-tagGroups": [
+    {
+      "name": "OAuth",
+      "tags": [
+        "ticket",
+        "accessToken"
+      ]
+    },
+    {
+      "name": "User accounts",
+      "tags": [
+        "user",
+        "accountMembership",
+        "member",
+        "accountType",
+        "paymentMethod",
+        "auditLog"
+      ]
+    },
+    {
+      "name": "Site",
+      "tags": [
+        "site",
+        "environmentVariables",
+        "file",
+        "metadata",
+        "purge",
+        "snippet"
+      ]
+    },
+    {
+      "name": "Domain names",
+      "tags": [
+        "dnsZone",
+        "sniCertificate"
+      ]
+    },
+    {
+      "name": "Deploys",
+      "tags": [
+        "deploy",
+        "deployedBranch",
+        "deployKey"
+      ]
+    },
+    {
+      "name": "Builds",
+      "tags": [
+        "build",
+        "buildLogMsg"
+      ]
+    },
+    {
+      "name": "Dev servers",
+      "tags": [
+        "devServer"
+      ]
+    },
+    {
+      "name": "Webhooks and notifications",
+      "tags": [
+        "hook",
+        "hookType",
+        "buildHook",
+        "devServerHook"
+      ]
+    },
+    {
+      "name": "Services",
+      "tags": [
+        "service",
+        "serviceInstance"
+      ]
+    },
+    {
+      "name": "Functions",
+      "tags": [
+        "function"
+      ]
+    },
+    {
+      "name": "Database",
+      "tags": [
+        "database"
+      ]
+    },
+    {
+      "name": "Forms",
+      "tags": [
+        "form",
+        "submission"
+      ]
+    },
+    {
+      "name": "Split tests",
+      "tags": [
+        "splitTest"
+      ]
+    },
+    {
+      "name": "Large media",
+      "tags": [
+        "asset",
+        "assetPublicSignature"
+      ]
+    }
+  ]
 }

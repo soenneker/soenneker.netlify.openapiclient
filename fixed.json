@@ -4,7 +4,7 @@
     "title": "Netlify\u0027s API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify\u0027s API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.57.1",
+    "version": "2.59.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -2897,6 +2897,61 @@
                 }
               }
             }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/deploys/{deployId}/server/{codeSha}": {
+      "put": {
+        "tags": [
+          "deploy"
+        ],
+        "description": "Uploads the deploy\u0027s Netlify Server bundle, addressed by the digest the deploy\ndeclared in its \u0060server\u0060 property.\n",
+        "operationId": "UploadDeployServer",
+        "parameters": [
+          {
+            "name": "deployId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codeSha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/retryCount"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadDeployServerOctetStreamRequestRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -8596,6 +8651,13 @@
             },
             "description": "An array of code_shas for the edge-function bundles that need to be uploaded to\ncomplete the deploy.\n"
           },
+          "required_server": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The SHA256 digest of the deploy\u0027s Netlify Server bundle, when it still needs to\nbe uploaded to complete the deploy. A deploy has at most one server, so this\nholds either nothing or a single digest.\n"
+          },
           "error_message": {
             "type": "string"
           },
@@ -8708,6 +8770,9 @@
           },
           "edge_functions": {
             "$ref": "#/components/schemas/DeployFilesEdgeFunctionsProperty"
+          },
+          "server": {
+            "$ref": "#/components/schemas/DeployFilesServer"
           },
           "function_schedules": {
             "type": "array",
@@ -10272,6 +10337,23 @@
         "type": "object",
         "description": "A hash mapping edge-function bundle formats to the code_sha of each bundle. The\nresponse\u0027s required_edge_functions lists which of these still need to be uploaded.\n"
       },
+      "DeployFilesServer": {
+        "required": [
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "sha": {
+            "type": "string",
+            "description": "The SHA256 digest of the server bundle."
+          },
+          "region": {
+            "type": "string",
+            "description": "Where the server runs. Defaults to the region configured at the site level\nwhen absent.\n"
+          }
+        },
+        "description": "The deploy\u0027s Netlify Server. A deploy has at most one. The response\u0027s\nrequired_server says whether it still needs to be uploaded.\n"
+      },
       "DeployFilesFunctionsConfig": {
         "type": "object",
         "additionalProperties": {
@@ -10614,6 +10696,10 @@
         "type": "string",
         "format": "binary"
       },
+      "UploadDeployServerOctetStreamRequest": {
+        "type": "string",
+        "format": "binary"
+      },
       "UploadDeployEdgeFunctionOctetStreamRequest": {
         "type": "string",
         "format": "binary"
@@ -10915,6 +11001,10 @@
         "format": "binary"
       },
       "UploadDeployFunctionOctetStreamRequestRequestBody": {
+        "type": "string",
+        "format": "binary"
+      },
+      "UploadDeployServerOctetStreamRequestRequestBody": {
         "type": "string",
         "format": "binary"
       },

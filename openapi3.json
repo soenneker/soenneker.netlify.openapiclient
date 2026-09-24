@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.57.1",
+    "version": "2.59.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -3116,6 +3116,62 @@
                 }
               }
             }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/deploys/{deploy_id}/server/{code_sha}": {
+      "put": {
+        "tags": [
+          "deploy"
+        ],
+        "description": "Uploads the deploy's Netlify Server bundle, addressed by the digest the deploy\ndeclared in its `server` property.\n",
+        "operationId": "uploadDeployServer",
+        "parameters": [
+          {
+            "name": "deploy_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_sha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/retryCount"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -8881,6 +8937,13 @@
             },
             "description": "An array of code_shas for the edge-function bundles that need to be uploaded to\ncomplete the deploy.\n"
           },
+          "required_server": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The SHA256 digest of the deploy's Netlify Server bundle, when it still needs to\nbe uploaded to complete the deploy. A deploy has at most one server, so this\nholds either nothing or a single digest.\n"
+          },
           "error_message": {
             "type": "string"
           },
@@ -9009,6 +9072,23 @@
           "edge_functions": {
             "type": "object",
             "description": "A hash mapping edge-function bundle formats to the code_sha of each bundle. The\nresponse's required_edge_functions lists which of these still need to be uploaded.\n"
+          },
+          "server": {
+            "required": [
+              "sha"
+            ],
+            "type": "object",
+            "properties": {
+              "sha": {
+                "type": "string",
+                "description": "The SHA256 digest of the server bundle."
+              },
+              "region": {
+                "type": "string",
+                "description": "Where the server runs. Defaults to the region configured at the site level\nwhen absent.\n"
+              }
+            },
+            "description": "The deploy's Netlify Server. A deploy has at most one. The response's\nrequired_server says whether it still needs to be uploaded.\n"
           },
           "function_schedules": {
             "type": "array",

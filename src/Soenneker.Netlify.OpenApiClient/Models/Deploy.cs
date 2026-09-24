@@ -178,6 +178,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public List<string> RequiredFunctions { get; set; }
 #endif
+        /// <summary>The SHA256 digest of the deploy&apos;s Netlify Server bundle, when it still needs tobe uploaded to complete the deploy. A deploy has at most one server, so thisholds either nothing or a single digest.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RequiredServer { get; set; }
+#nullable restore
+#else
+        public List<string> RequiredServer { get; set; }
+#endif
         /// <summary>The review_id property</summary>
         public double? ReviewId { get; set; }
         /// <summary>The review_url property</summary>
@@ -309,6 +317,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_edge_functions", n => { RequiredEdgeFunctions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_functions", n => { RequiredFunctions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "required_server", n => { RequiredServer = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "review_id", n => { ReviewId = n.GetDoubleValue(); } },
                 { "review_url", n => { ReviewUrl = n.GetStringValue(); } },
                 { "screenshot_url", n => { ScreenshotUrl = n.GetStringValue(); } },
@@ -352,6 +361,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
             writer.WriteCollectionOfPrimitiveValues<string>("required_edge_functions", RequiredEdgeFunctions);
             writer.WriteCollectionOfPrimitiveValues<string>("required_functions", RequiredFunctions);
+            writer.WriteCollectionOfPrimitiveValues<string>("required_server", RequiredServer);
             writer.WriteDoubleValue("review_id", ReviewId);
             writer.WriteStringValue("review_url", ReviewUrl);
             writer.WriteStringValue("screenshot_url", ScreenshotUrl);

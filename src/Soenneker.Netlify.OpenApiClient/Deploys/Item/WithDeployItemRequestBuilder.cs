@@ -9,6 +9,7 @@ using Soenneker.Netlify.OpenApiClient.Deploys.Item.Files;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Lock;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Plugin_runs;
+using Soenneker.Netlify.OpenApiClient.Deploys.Item.Server;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Unlock;
 using Soenneker.Netlify.OpenApiClient.Deploys.Item.Validations_report;
 using Soenneker.Netlify.OpenApiClient.Models;
@@ -54,6 +55,11 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item
         public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Plugin_runs.Plugin_runsRequestBuilder Plugin_runs
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Plugin_runs.Plugin_runsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The server property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Server.ServerRequestBuilder Server
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Server.ServerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unlock property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Unlock.UnlockRequestBuilder Unlock

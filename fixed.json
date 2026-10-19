@@ -4206,10 +4206,11 @@
         "tags": [
           "agentRunner"
         ],
+        "description": "Lists a site\u0027s agent runs, most recently active first. Archived runs are left out unless \u0060state\u0060 is \u0060archived\u0060.",
         "operationId": "ListAgentRunners",
         "parameters": [
           {
-            "name": "account_id",
+            "name": "site_id",
             "in": "query",
             "required": true,
             "schema": {
@@ -4217,7 +4218,7 @@
             }
           },
           {
-            "name": "site_id",
+            "name": "account_id",
             "in": "query",
             "required": true,
             "schema": {
@@ -4233,8 +4234,9 @@
           {
             "name": "state",
             "in": "query",
+            "description": "Only runs in this state: \u0060new\u0060, \u0060running\u0060, \u0060await_input\u0060, \u0060interrupted\u0060, \u0060error\u0060, \u0060done\u0060, \u0060cancelled\u0060 or \u0060archived\u0060.",
             "schema": {
-              "$ref": "#/components/schemas/ListAgentRunnersStateParameter"
+              "type": "string"
             }
           },
           {
@@ -4259,8 +4261,17 @@
             }
           },
           {
+            "name": "user_id",
+            "in": "query",
+            "description": "Only runs started by this user.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "from",
             "in": "query",
+            "description": "Unix timestamp. Only runs created at or after this time.",
             "schema": {
               "type": "integer"
             }
@@ -4268,6 +4279,7 @@
           {
             "name": "to",
             "in": "query",
+            "description": "Unix timestamp. Only runs created before this time.",
             "schema": {
               "type": "integer"
             }
@@ -4387,6 +4399,101 @@
         }
       }
     },
+    "/sites/{siteId}/agent_runners": {
+      "post": {
+        "tags": [
+          "agentRunner"
+        ],
+        "description": "Starts an agent run on the site.",
+        "operationId": "CreateSiteAgentRunner",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "The site\u0027s ID or one of its hostnames.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentRunnerSetup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunner"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "\u0060prompt_required\u0060 or \u0060invalid_request\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "\u0060plan_not_eligible\u0060 or \u0060ai_credit_limit_disabled\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The site or deploy wasn\u0027t found (\u0060deploy_not_found\u0060), the deploy\u0027s files are no longer available (\u0060deploy_zip_unavailable\u0060), or agent runners aren\u0027t enabled for the site.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "\u0060deploy_zip_unavailable\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "\u0060concurrency_limit_reached\u0060, \u0060ai_credit_limit_exceeded\u0060 or \u0060ai_credit_limit_reached\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
     "/agent_runners/upload_url": {
       "post": {
         "tags": [
@@ -4470,8 +4577,9 @@
       },
       "delete": {
         "tags": [
-          "agentRunner"
+          "hiddenAgentRunner"
         ],
+        "description": "Same as \u0060POST /agent_runners/{agent_runner_id}/stop\u0060. Doesn\u0027t delete the run.",
         "operationId": "DeleteAgentRunner",
         "parameters": [
           {
@@ -4517,6 +4625,84 @@
                 }
               }
             }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/agent_runners/{agentRunnerId}/stop": {
+      "post": {
+        "tags": [
+          "agentRunner"
+        ],
+        "description": "Stops the run\u0027s active session. Stopping happens in the background.",
+        "operationId": "StopAgentRunner",
+        "parameters": [
+          {
+            "name": "agentRunnerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/agent_runners/{agentRunnerId}/diff": {
+      "get": {
+        "tags": [
+          "agentRunner"
+        ],
+        "description": "Returns the run\u0027s changes as a unified diff. With \u0060page\u0060, returns that page of changed files and sets pagination headers.",
+        "operationId": "GetAgentRunnerDiff",
+        "parameters": [
+          {
+            "name": "agentRunnerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/perPage"
+          },
+          {
+            "name": "strip_binary",
+            "in": "query",
+            "description": "Replace binary file contents with a placeholder, keeping the file headers.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAgentRunnerDiff200PlainResponseSchema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The run has no changes."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -4660,13 +4846,15 @@
           {
             "name": "state",
             "in": "query",
+            "description": "Only sessions in this state: \u0060new\u0060, \u0060running\u0060, \u0060await_input\u0060, \u0060interrupted\u0060, \u0060error\u0060, \u0060done\u0060 or \u0060cancelled\u0060.",
             "schema": {
-              "$ref": "#/components/schemas/ListAgentRunnerSessionsStateParameter"
+              "type": "string"
             }
           },
           {
             "name": "from",
             "in": "query",
+            "description": "Unix timestamp. Only sessions created at or after this time.",
             "schema": {
               "type": "integer"
             }
@@ -4674,6 +4862,7 @@
           {
             "name": "to",
             "in": "query",
+            "description": "Unix timestamp. Only sessions created before this time.",
             "schema": {
               "type": "integer"
             }
@@ -4706,6 +4895,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "description": "Starts a follow-up session on the run.",
         "operationId": "CreateAgentRunnerSession",
         "parameters": [
           {
@@ -4719,6 +4909,7 @@
           {
             "name": "prompt",
             "in": "query",
+            "description": "Use the request body instead.",
             "schema": {
               "type": "string"
             }
@@ -4726,6 +4917,7 @@
           {
             "name": "agent",
             "in": "query",
+            "description": "Use the request body instead.",
             "schema": {
               "type": "string"
             }
@@ -4733,6 +4925,7 @@
           {
             "name": "model",
             "in": "query",
+            "description": "Use the request body instead.",
             "schema": {
               "type": "string"
             }
@@ -4740,6 +4933,7 @@
           {
             "name": "file_keys",
             "in": "query",
+            "description": "Use the request body instead.",
             "explode": false,
             "schema": {
               "type": "array",
@@ -4749,6 +4943,15 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentRunnerSessionSetup"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -4760,11 +4963,65 @@
               }
             }
           },
+          "400": {
+            "description": "\u0060prompt_required\u0060 or \u0060invalid_request\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "\u0060plan_not_eligible\u0060 or \u0060ai_credit_limit_disabled\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "\u0060active_session_exists\u0060 while a session is still running, or \u0060follow_up_unavailable\u0060 once the run is publishing or published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
           },
           "422": {
-            "description": "Unprocessable Entity"
+            "description": "\u0060deploy_zip_unavailable\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "\u0060concurrency_limit_reached\u0060, \u0060ai_credit_limit_exceeded\u0060 or \u0060ai_credit_limit_reached\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -4814,8 +5071,9 @@
       },
       "delete": {
         "tags": [
-          "agentRunnerSession"
+          "hiddenAgentRunner"
         ],
+        "description": "Same as \u0060POST /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}/stop\u0060. Doesn\u0027t delete the session.",
         "operationId": "DeleteAgentRunnerSession",
         "parameters": [
           {
@@ -4881,6 +5139,123 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AgentRunnerSession"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}/stop": {
+      "post": {
+        "tags": [
+          "agentRunnerSession"
+        ],
+        "description": "Stops the session. Stopping happens in the background.",
+        "operationId": "StopAgentRunnerSession",
+        "parameters": [
+          {
+            "name": "agentRunnerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agentRunnerSessionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}/answers": {
+      "post": {
+        "tags": [
+          "agentRunnerSession"
+        ],
+        "description": "Answers or skips a pending interaction and resumes the session. A session waiting on an interaction is in the \u0060await_input\u0060 state.",
+        "operationId": "AnswerAgentRunnerSession",
+        "parameters": [
+          {
+            "name": "agentRunnerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agentRunnerSessionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentRunnerSessionAnswer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerSession"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "\u0060ref_id_required\u0060, \u0060invalid_response\u0060, or \u0060interaction_can_only_be_skipped\u0060 when answering an \u0060authorization\u0060 or \u0060setup_request\u0060 interaction.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "\u0060interaction_not_found\u0060 or \u0060interaction_not_pending\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "\u0060concurrency_limit_reached\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerError"
                 }
               }
             }
@@ -9504,7 +9879,8 @@
             "type": "string"
           },
           "state": {
-            "type": "string"
+            "type": "string",
+            "description": "One of \u0060new\u0060, \u0060running\u0060, \u0060await_input\u0060, \u0060interrupted\u0060, \u0060error\u0060, \u0060done\u0060, \u0060cancelled\u0060 or \u0060archived\u0060."
           },
           "created_at": {
             "type": "string",
@@ -9534,7 +9910,8 @@
             "type": "string"
           },
           "pr_state": {
-            "type": "string"
+            "type": "string",
+            "description": "One of \u0060open\u0060, \u0060draft\u0060, \u0060merged\u0060 or \u0060closed\u0060."
           },
           "pr_number": {
             "type": "integer"
@@ -9546,7 +9923,8 @@
             "type": "string"
           },
           "current_task": {
-            "type": "string"
+            "type": "string",
+            "description": "What the agent is working on in the active session."
           },
           "result_diff": {
             "type": "string"
@@ -9576,14 +9954,55 @@
             "type": "string",
             "format": "dateTime"
           },
+          "has_result_diff": {
+            "type": "boolean",
+            "description": "Whether the run has changes, available from \u0060GET /agent_runners/{agent_runner_id}/diff\u0060."
+          },
           "latest_session_deploy_id": {
             "type": "string"
           },
           "latest_session_deploy_url": {
             "type": "string"
           },
+          "preview_state": {
+            "type": "string",
+            "description": "State of the deploy building the latest preview. Null until that deploy exists; \u0060ready\u0060 once the preview is live."
+          },
           "user": {
             "$ref": "#/components/schemas/AgentRunnerUser"
+          }
+        }
+      },
+      "AgentRunnerSetup": {
+        "required": [
+          "prompt"
+        ],
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string",
+            "description": "Branch to start from. Defaults to the site\u0027s production branch."
+          },
+          "deploy_id": {
+            "type": "string",
+            "description": "Deploy to start from. Takes precedence over \u0060branch\u0060."
+          },
+          "agent": {
+            "type": "string",
+            "description": "Agent to run, for example \u0060claude\u0060 or \u0060codex\u0060."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model for the agent to use. Omit to let Netlify choose."
+          },
+          "effort": {
+            "$ref": "#/components/schemas/AgentRunnerSetupEffort"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/AgentRunnerSetupMode"
           }
         }
       },
@@ -9600,7 +10019,8 @@
             "type": "string"
           },
           "state": {
-            "type": "string"
+            "type": "string",
+            "description": "One of \u0060new\u0060, \u0060running\u0060, \u0060await_input\u0060, \u0060interrupted\u0060, \u0060error\u0060, \u0060done\u0060 or \u0060cancelled\u0060."
           },
           "created_at": {
             "type": "string",
@@ -9614,6 +10034,11 @@
             "type": "string",
             "format": "dateTime"
           },
+          "paused_at": {
+            "type": "string",
+            "description": "When the session paused waiting on an interaction. Null once it resumes.",
+            "format": "dateTime"
+          },
           "title": {
             "type": "string"
           },
@@ -9624,7 +10049,8 @@
             "$ref": "#/components/schemas/AgentRunnerSessionConfig"
           },
           "result": {
-            "type": "string"
+            "type": "string",
+            "description": "The agent\u0027s summary of what it did."
           },
           "result_diff": {
             "type": "string"
@@ -9636,10 +10062,17 @@
             "type": "string"
           },
           "deploy_url": {
-            "type": "string"
+            "type": "string",
+            "description": "URL of the session\u0027s deploy preview."
           },
           "duration": {
             "type": "integer"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/AgentRunnerSessionUsage"
+          },
+          "interactions": {
+            "$ref": "#/components/schemas/AgentRunnerSessionInteractionsProperty"
           },
           "steps": {
             "type": "array",
@@ -9661,6 +10094,119 @@
           },
           "is_published": {
             "type": "boolean"
+          }
+        }
+      },
+      "AgentRunnerSessionSetup": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "What the agent should do. Required."
+          },
+          "agent": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model for the agent to use. Omit to let Netlify choose."
+          },
+          "mode": {
+            "$ref": "#/components/schemas/AgentRunnerSessionSetupMode"
+          }
+        }
+      },
+      "AgentRunnerSessionUsage": {
+        "type": "object",
+        "properties": {
+          "total_input_tokens": {
+            "type": "integer"
+          },
+          "total_output_tokens": {
+            "type": "integer"
+          },
+          "total_cached_input_tokens": {
+            "type": "integer"
+          },
+          "total_cached_output_tokens": {
+            "type": "integer"
+          },
+          "total_tokens": {
+            "type": "integer"
+          },
+          "total_credits_cost": {
+            "type": "number",
+            "description": "Credits the session used."
+          }
+        }
+      },
+      "AgentRunnerSessionInteraction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "One of \u0060question\u0060, \u0060authorization\u0060 or \u0060setup_request\u0060. Only questions can be answered; the others can only be skipped."
+          },
+          "status": {
+            "type": "string",
+            "description": "One of \u0060pending\u0060, \u0060answered\u0060 or \u0060skipped\u0060."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/AgentRunnerSessionInteractionPayload"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentRunnerSessionInteractionResponseItem"
+            },
+            "description": "Answers aligned to \u0060payload\u0060; null entries were skipped."
+          }
+        }
+      },
+      "AgentRunnerSessionAnswer": {
+        "required": [
+          "refId"
+        ],
+        "type": "object",
+        "properties": {
+          "refId": {
+            "type": "string",
+            "description": "Key of the pending interaction in the session\u0027s \u0060interactions\u0060."
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentRunnerSessionAnswerResponseItem"
+            },
+            "description": "One entry per question in the interaction\u0027s \u0060payload\u0060: a string, an array of strings for a multi-select question, or null to skip that question."
+          },
+          "skipped": {
+            "type": "boolean",
+            "description": "Skip the whole interaction instead of answering it."
+          },
+          "instruction": {
+            "type": "string",
+            "description": "Instruction for the agent when skipping."
+          }
+        }
+      },
+      "AgentRunnerError": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "message": {
+            "type": "string",
+            "x-nullable": false
+          },
+          "error_code": {
+            "type": "string",
+            "description": "Machine-readable reason. Each operation lists the codes it can return."
           }
         }
       },
@@ -10226,6 +10772,15 @@
           }
         }
       },
+      "AgentRunnerErrorAllOf2": {
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "description": "Machine-readable reason. Each operation lists the codes it can return."
+          }
+        }
+      },
       "AgentRunnerHookCreatedAllOf2": {
         "type": "object",
         "properties": {
@@ -10452,6 +11007,13 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/AuditLogPayloadAdditionalPropertiesProperty"
         }
+      },
+      "AgentRunnerSessionInteractions": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AgentRunnerSessionInteraction"
+        },
+        "description": "Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in \u0060await_input\u0060 until it\u0027s answered or skipped."
       },
       "UserOnboardingProgress": {
         "type": "object",
@@ -10790,6 +11352,9 @@
           "$ref": "#/components/schemas/AgentRunner"
         }
       },
+      "GetAgentRunnerDiff200PlainResponse": {
+        "type": "string"
+      },
       "ListAgentRunnerSessions200Response": {
         "type": "array",
         "items": {
@@ -11090,6 +11655,9 @@
           "$ref": "#/components/schemas/AgentRunner"
         }
       },
+      "GetAgentRunnerDiff200PlainResponseSchema": {
+        "type": "string"
+      },
       "ListAgentRunnerSessions200ResponseSchema": {
         "type": "array",
         "items": {
@@ -11260,6 +11828,23 @@
         }
       },
       "AccountTypeCapabilitiesProperty": {
+        "type": "object"
+      },
+      "AgentRunnerSessionInteractionsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AgentRunnerSessionInteraction"
+        },
+        "description": "Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in \u0060await_input\u0060 until it\u0027s answered or skipped."
+      },
+      "AgentRunnerSessionInteractionPayload": {
+        "type": "object",
+        "description": "For a question, an array of questions, each with \u0060question\u0060, an optional \u0060header\u0060, \u0060multiSelect\u0060 and \u0060options\u0060 (each with \u0060label\u0060 and an optional \u0060description\u0060). For \u0060authorization\u0060 and \u0060setup_request\u0060, an object describing the request."
+      },
+      "AgentRunnerSessionInteractionResponseItem": {
+        "type": "object"
+      },
+      "AgentRunnerSessionAnswerResponseItem": {
         "type": "object"
       },
       "FunctionConfigBuildDataProperty": {
@@ -11633,6 +12218,80 @@
             {
               "value": "selected",
               "name": "Selected"
+            }
+          ]
+        }
+      },
+      "AgentRunnerSetupEffort": {
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Reasoning effort. Omit to let the agent decide.",
+        "x-ms-enum": {
+          "name": "AgentRunnerSetupEffort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "low",
+              "name": "Low"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "high",
+              "name": "High"
+            }
+          ]
+        }
+      },
+      "AgentRunnerSetupMode": {
+        "enum": [
+          "normal",
+          "ask"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0060normal\u0060 (the default) changes code; \u0060ask\u0060 answers questions without changing code.",
+        "x-ms-enum": {
+          "name": "AgentRunnerSetupMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "normal",
+              "name": "Normal"
+            },
+            {
+              "value": "ask",
+              "name": "Ask"
+            }
+          ]
+        }
+      },
+      "AgentRunnerSessionSetupMode": {
+        "enum": [
+          "normal",
+          "ask"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0060normal\u0060 (the default) changes code; \u0060ask\u0060 answers questions without changing code.",
+        "x-ms-enum": {
+          "name": "AgentRunnerSessionSetupMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "normal",
+              "name": "Normal"
+            },
+            {
+              "value": "ask",
+              "name": "Ask"
             }
           ]
         }
@@ -12255,50 +12914,6 @@
           ]
         }
       },
-      "ListAgentRunnersStateParameter": {
-        "enum": [
-          "live",
-          "error"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ListAgentRunnersStateParameter",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "live",
-              "name": "Live"
-            },
-            {
-              "value": "error",
-              "name": "Error"
-            }
-          ]
-        }
-      },
-      "ListAgentRunnerSessionsStateParameter": {
-        "enum": [
-          "live",
-          "error"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ListAgentRunnerSessionsStateParameter",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "live",
-              "name": "Live"
-            },
-            {
-              "value": "error",
-              "name": "Error"
-            }
-          ]
-        }
-      },
       "ListAgentRunnerSessionsOrderByParameter": {
         "enum": [
           "asc",
@@ -12580,6 +13195,14 @@
       "x-displayName": "Dev server hook"
     },
     {
+      "name": "agentRunner",
+      "x-displayName": "Agent runner"
+    },
+    {
+      "name": "agentRunnerSession",
+      "x-displayName": "Agent runner session"
+    },
+    {
       "name": "database",
       "x-displayName": "Database"
     }
@@ -12644,6 +13267,13 @@
       "name": "Dev servers",
       "tags": [
         "devServer"
+      ]
+    },
+    {
+      "name": "Agent runners",
+      "tags": [
+        "agentRunner",
+        "agentRunnerSession"
       ]
     },
     {

@@ -67,22 +67,39 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Starts a follow-up session on the run.
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession?> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession?> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionSetup body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession> PostAsync(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionSetup body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Netlify.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -103,20 +120,26 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Starts a follow-up session on the run.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionSetup body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionSetup body, Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -133,10 +156,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
         public partial class SessionsRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
-            #pragma warning disable CS1591
+            /// <summary>Unix timestamp. Only sessions created at or after this time.</summary>
             [QueryParameter("from")]
             public int? From { get; set; }
-            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("order_by")]
             public global::Soenneker.Netlify.OpenApiClient.Models.ListAgentRunnerSessionsOrderByParameter? OrderBy { get; set; }
@@ -149,71 +171,65 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             #pragma warning restore CS1591
-            #pragma warning disable CS1591
+            /// <summary>Only sessions in this state: `new`, `running`, `await_input`, `interrupted`, `error`, `done` or `cancelled`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("state")]
-            public global::Soenneker.Netlify.OpenApiClient.Models.ListAgentRunnerSessionsStateParameter? State { get; set; }
-            #pragma warning restore CS1591
-            #pragma warning disable CS1591
+            public string? State { get; set; }
+#nullable restore
+#else
+            [QueryParameter("state")]
+            public string State { get; set; }
+#endif
+            /// <summary>Unix timestamp. Only sessions created before this time.</summary>
             [QueryParameter("to")]
             public int? To { get; set; }
-            #pragma warning restore CS1591
         }
+        /// <summary>
+        /// Starts a follow-up session on the run.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class SessionsRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
+            /// <summary>Use the request body instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("agent")]
             public string? Agent { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("agent")]
             public string Agent { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Use the request body instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("file_keys")]
             public string[]? FileKeys { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("file_keys")]
             public string[] FileKeys { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Use the request body instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("model")]
             public string? Model { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("model")]
             public string Model { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Use the request body instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("prompt")]
             public string? Prompt { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("prompt")]
             public string Prompt { get; set; }
-            #pragma warning restore CS1591
 #endif
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string DeployId { get; set; }
 #endif
-        /// <summary>The deploy_url property</summary>
+        /// <summary>URL of the session&apos;s deploy preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeployUrl { get; set; }
@@ -96,8 +96,24 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in `await_input` until it&apos;s answered or skipped.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionInteractionsProperty? Interactions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionInteractionsProperty Interactions { get; set; }
+#endif
         /// <summary>The is_published property</summary>
         public bool? IsPublished { get; set; }
+        /// <summary>When the session paused waiting on an interaction. Null once it resumes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PausedAt { get; set; }
+#nullable restore
+#else
+        public string PausedAt { get; set; }
+#endif
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +122,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>The agent&apos;s summary of what it did.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Result { get; set; }
@@ -130,7 +146,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string ResultZipFileName { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>One of `new`, `running`, `await_input`, `interrupted`, `error`, `done` or `cancelled`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -161,6 +177,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #nullable restore
 #else
         public string UpdatedAt { get; set; }
+#endif
+        /// <summary>The usage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage? Usage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage Usage { get; set; }
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,7 +230,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "done_at", n => { DoneAt = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "interactions", n => { Interactions = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionInteractionsProperty>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionInteractionsProperty.CreateFromDiscriminatorValue); } },
                 { "is_published", n => { IsPublished = n.GetBoolValue(); } },
+                { "paused_at", n => { PausedAt = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetStringValue(); } },
                 { "result_diff", n => { ResultDiff = n.GetStringValue(); } },
@@ -215,6 +241,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionStep>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionStep.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerUser>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerUser.CreateFromDiscriminatorValue); } },
             };
         }
@@ -236,7 +263,9 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("done_at", DoneAt);
             writer.WriteIntValue("duration", Duration);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionInteractionsProperty>("interactions", Interactions);
             writer.WriteBoolValue("is_published", IsPublished);
+            writer.WriteStringValue("paused_at", PausedAt);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteStringValue("result", Result);
             writer.WriteStringValue("result_diff", ResultDiff);
@@ -245,6 +274,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionStep>("steps", Steps);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage>("usage", Usage);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Netlify.OpenApiClient.Models;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks;
+using Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runners;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.AiGateway;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Assets;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Build_hooks;
@@ -48,6 +49,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Agent_runner_hooksRequestBuilder Agent_runner_hooks
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Agent_runner_hooksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The agent_runners property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runners.Agent_runnersRequestBuilder Agent_runners
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runners.Agent_runnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The aiGateway property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Sites.Item.AiGateway.AiGatewayRequestBuilder AiGateway

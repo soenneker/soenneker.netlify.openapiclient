@@ -41,7 +41,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", pathParameters)
+        public Agent_runnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,9 +49,12 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*}", rawUrl)
+        public Agent_runnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners?site_id={site_id}{&agent*,branch*,deploy_id*,dev_server_image*,file_keys,from*,model*,page*,parent_agent_runner_id*,per_page*,prompt*,result_branch*,state*,title*,to*,user_id*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Lists a site&apos;s agent runs, most recently active first. Archived runs are left out unless `state` is `archived`.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,6 +96,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Lists a site&apos;s agent runs, most recently active first. Archived runs are left out unless `state` is `archived`.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +110,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Agent_runnersRequestBuilder.Agent_runnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&branch*,from*,page*,per_page*,result_branch*,state*,title*,to*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&branch*,from*,page*,per_page*,result_branch*,state*,title*,to*,user_id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -134,10 +140,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         {
             return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Agent_runnersRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Lists a site&apos;s agent runs, most recently active first. Archived runs are left out unless `state` is `archived`.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Agent_runnersRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,10 +172,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
             public string Branch { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Unix timestamp. Only runs created at or after this time.</summary>
             [QueryParameter("from")]
             public int? From { get; set; }
-            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -203,10 +209,16 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
             public string SiteId { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Only runs in this state: `new`, `running`, `await_input`, `interrupted`, `error`, `done`, `cancelled` or `archived`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("state")]
-            public global::Soenneker.Netlify.OpenApiClient.Models.ListAgentRunnersStateParameter? State { get; set; }
-            #pragma warning restore CS1591
+            public string? State { get; set; }
+#nullable restore
+#else
+            [QueryParameter("state")]
+            public string State { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -220,10 +232,19 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
             public string Title { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Unix timestamp. Only runs created before this time.</summary>
             [QueryParameter("to")]
             public int? To { get; set; }
-            #pragma warning restore CS1591
+            /// <summary>Only runs started by this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
         }
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         #pragma warning disable CS1591

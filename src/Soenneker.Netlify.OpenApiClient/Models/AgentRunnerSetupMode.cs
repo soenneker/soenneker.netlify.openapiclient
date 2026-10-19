@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Netlify.OpenApiClient.Models
 {
+    /// <summary>`normal` (the default) changes code; `ask` answers questions without changing code.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum ListAgentRunnersStateParameter
-    #pragma warning restore CS1591
+    public enum AgentRunnerSetupMode
     {
-        [EnumMember(Value = "live")]
+        [EnumMember(Value = "normal")]
         #pragma warning disable CS1591
-        Live,
+        Normal,
         #pragma warning restore CS1591
-        [EnumMember(Value = "error")]
+        [EnumMember(Value = "ask")]
         #pragma warning disable CS1591
-        Error,
+        Ask,
         #pragma warning restore CS1591
     }
 }

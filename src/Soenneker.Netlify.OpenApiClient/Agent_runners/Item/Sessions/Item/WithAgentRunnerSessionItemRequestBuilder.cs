@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Answers;
+using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Stop;
 using Soenneker.Netlify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +19,16 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAgentRunnerSessionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The answers property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Answers.AnswersRequestBuilder Answers
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Answers.AnswersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stop property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Stop.StopRequestBuilder Stop
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -33,6 +45,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         public WithAgentRunnerSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/sessions/{agentRunnerSessionId}{?is_published*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Same as `POST /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}/stop`. Doesn&apos;t delete the session.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -92,6 +107,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Same as `POST /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}/stop`. Doesn&apos;t delete the session.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

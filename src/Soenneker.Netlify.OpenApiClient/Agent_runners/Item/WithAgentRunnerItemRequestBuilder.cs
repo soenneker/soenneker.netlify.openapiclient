@@ -5,8 +5,10 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Archive;
 using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit;
+using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Diff;
 using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Pull_request;
 using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions;
+using Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Stop;
 using Soenneker.Netlify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +33,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The diff property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Diff.DiffRequestBuilder Diff
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Diff.DiffRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The pull_request property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Pull_request.Pull_requestRequestBuilder Pull_request
         {
@@ -40,6 +47,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item
         public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder Sessions
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stop property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Stop.StopRequestBuilder Stop
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.WithAgentRunnerItemRequestBuilder"/> and sets the default values.
@@ -57,6 +69,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item
         public WithAgentRunnerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Same as `POST /agent_runners/{agent_runner_id}/stop`. Doesn&apos;t delete the run.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -116,6 +131,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Same as `POST /agent_runners/{agent_runner_id}/stop`. Doesn&apos;t delete the run.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

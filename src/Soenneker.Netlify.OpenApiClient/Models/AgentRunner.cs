@@ -54,7 +54,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The current_task property</summary>
+        /// <summary>What the agent is working on in the active session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentTask { get; set; }
@@ -70,6 +70,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string DoneAt { get; set; }
 #endif
+        /// <summary>Whether the run has changes, available from `GET /agent_runners/{agent_runner_id}/diff`.</summary>
+        public bool? HasResultDiff { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,11 +138,19 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string PrError { get; set; }
 #endif
+        /// <summary>State of the deploy building the latest preview. Null until that deploy exists; `ready` once the preview is live.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewState { get; set; }
+#nullable restore
+#else
+        public string PreviewState { get; set; }
+#endif
         /// <summary>The pr_is_being_created property</summary>
         public bool? PrIsBeingCreated { get; set; }
         /// <summary>The pr_number property</summary>
         public int? PrNumber { get; set; }
-        /// <summary>The pr_state property</summary>
+        /// <summary>One of `open`, `draft`, `merged` or `closed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrState { get; set; }
@@ -188,7 +198,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string SiteId { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>One of `new`, `running`, `await_input`, `interrupted`, `error`, `done`, `cancelled` or `archived`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -252,6 +262,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "current_task", n => { CurrentTask = n.GetStringValue(); } },
                 { "done_at", n => { DoneAt = n.GetStringValue(); } },
+                { "has_result_diff", n => { HasResultDiff = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latest_session_deploy_id", n => { LatestSessionDeployId = n.GetStringValue(); } },
                 { "latest_session_deploy_url", n => { LatestSessionDeployUrl = n.GetStringValue(); } },
@@ -265,6 +276,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "pr_number", n => { PrNumber = n.GetIntValue(); } },
                 { "pr_state", n => { PrState = n.GetStringValue(); } },
                 { "pr_url", n => { PrUrl = n.GetStringValue(); } },
+                { "preview_state", n => { PreviewState = n.GetStringValue(); } },
                 { "result_branch", n => { ResultBranch = n.GetStringValue(); } },
                 { "result_diff", n => { ResultDiff = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
@@ -289,6 +301,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("current_task", CurrentTask);
             writer.WriteStringValue("done_at", DoneAt);
+            writer.WriteBoolValue("has_result_diff", HasResultDiff);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("latest_session_deploy_id", LatestSessionDeployId);
             writer.WriteStringValue("latest_session_deploy_url", LatestSessionDeployUrl);
@@ -298,6 +311,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("parent_agent_runner_id", ParentAgentRunnerId);
             writer.WriteStringValue("pr_branch", PrBranch);
             writer.WriteStringValue("pr_error", PrError);
+            writer.WriteStringValue("preview_state", PreviewState);
             writer.WriteBoolValue("pr_is_being_created", PrIsBeingCreated);
             writer.WriteIntValue("pr_number", PrNumber);
             writer.WriteStringValue("pr_state", PrState);

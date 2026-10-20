@@ -15,6 +15,16 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Paths within `routes` that the server does not handle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>? ExcludedRoutes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute> ExcludedRoutes { get; set; }
+#endif
+        /// <summary>The size of the instances the server runs on. A default size is used whenabsent.</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize? InstanceSize { get; set; }
         /// <summary>Where the server runs. Defaults to the region configured at the site levelwhen absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +32,22 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #nullable restore
 #else
         public string Region { get; set; }
+#endif
+        /// <summary>The paths the server handles.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>? Routes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute> Routes { get; set; }
+#endif
+        /// <summary>The runtime version the server was built for, such as `nodejs24.x`. Adefault version is used when absent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RuntimeVersion { get; set; }
+#nullable restore
+#else
+        public string RuntimeVersion { get; set; }
 #endif
         /// <summary>The SHA256 digest of the server bundle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +82,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "excluded_routes", n => { ExcludedRoutes = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>(global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "instance_size", n => { InstanceSize = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>(global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "runtime_version", n => { RuntimeVersion = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
             };
         }
@@ -67,7 +97,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>("excluded_routes", ExcludedRoutes);
+            writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize>("instance_size", InstanceSize);
             writer.WriteStringValue("region", Region);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>("routes", Routes);
+            writer.WriteStringValue("runtime_version", RuntimeVersion);
             writer.WriteStringValue("sha", Sha);
             writer.WriteAdditionalData(AdditionalData);
         }

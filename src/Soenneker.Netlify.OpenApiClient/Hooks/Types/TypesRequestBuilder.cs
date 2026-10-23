@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks.Types
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks/types", pathParameters)
+        public TypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks/types{?site_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,20 +30,23 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks.Types
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks/types", rawUrl)
+        public TypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks/types{?site_id*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns the available outgoing hook types. When `site_id` is given, returns only the types available to that site.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.HookType&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.HookType>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.HookType>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder.TypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.HookType>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Netlify.OpenApiClient.Models.HookType>> GetAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder.TypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,15 +57,18 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks.Types
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.HookType>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.HookType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Returns the available outgoing hook types. When `site_id` is given, returns only the types available to that site.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder.TypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder.TypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,6 +84,23 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks.Types
         public global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Netlify.OpenApiClient.Hooks.Types.TypesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Returns the available outgoing hook types. When `site_id` is given, returns only the types available to that site.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TypesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Only return the hook types available to this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("site_id")]
+            public string? SiteId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("site_id")]
+            public string SiteId { get; set; }
+#endif
         }
     }
 }

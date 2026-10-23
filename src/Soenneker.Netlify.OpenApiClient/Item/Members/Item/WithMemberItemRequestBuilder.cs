@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
         public WithMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account%2Did}/members/{memberId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Remove a team member
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -52,6 +55,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get a team member
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Member"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,6 +78,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Member>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Member.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Update a team member
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Member"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,6 +103,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Member>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Member.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Remove a team member
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,6 +122,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Get a team member
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,6 +141,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Members.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Update a team member
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

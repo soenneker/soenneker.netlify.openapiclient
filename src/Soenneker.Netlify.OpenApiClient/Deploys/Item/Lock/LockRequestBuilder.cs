@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Lock
         public LockRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/lock", rawUrl)
         {
         }
+        /// <summary>
+        /// Locks a deploy so that subsequent deploys are built but not published. If the deploy is not the site&apos;s published deploy, locking publishes it first. When publishing is gated, the publish and lock are queued and the API responds with 202 Accepted and the deploy; poll `getDeploy` to follow it.
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Deploy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,6 +56,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Lock
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Deploy>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Deploy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Locks a deploy so that subsequent deploys are built but not published. If the deploy is not the site&apos;s published deploy, locking publishes it first. When publishing is gated, the publish and lock are queued and the API responds with 202 Accepted and the deploy; poll `getDeploy` to follow it.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
         public Agent_runner_hooksItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/agent_runner_hooks/{id}", rawUrl)
         {
         }
+        /// <summary>
+        /// Delete an agent runner hook
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -52,6 +55,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get an agent runner hook
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerHook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,6 +78,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerHook>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerHook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Update an agent runner hook
+        /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,6 +102,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Delete an agent runner hook
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,6 +121,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Get an agent runner hook
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,6 +140,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Agent_runner_hooks.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Update an agent runner hook
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

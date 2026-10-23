@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.User
         public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", rawUrl)
         {
         }
+        /// <summary>
+        /// Get the current user
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,6 +56,9 @@ namespace Soenneker.Netlify.OpenApiClient.User
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.User>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get the current user
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

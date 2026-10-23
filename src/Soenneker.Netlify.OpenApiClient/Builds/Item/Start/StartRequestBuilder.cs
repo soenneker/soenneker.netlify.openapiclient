@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
         public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{buildId}/start{?build_version*,buildbot_version*,task_id*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Mark a build as started
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -52,6 +55,9 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Mark a build as started
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,10 +83,11 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Start
         {
             return new global::Soenneker.Netlify.OpenApiClient.Builds.Item.Start.StartRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Mark a build as started
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class StartRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

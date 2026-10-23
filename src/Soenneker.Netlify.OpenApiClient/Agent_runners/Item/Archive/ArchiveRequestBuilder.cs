@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Archive
         public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/archive", rawUrl)
         {
         }
+        /// <summary>
+        /// Archive an agent run
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -52,6 +55,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Archive
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Archive an agent run
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

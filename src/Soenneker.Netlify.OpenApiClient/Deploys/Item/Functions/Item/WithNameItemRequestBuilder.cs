@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions.Item
         public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/functions/{name}{?invocation_mode*,runtime*,size*,timeout*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Upload a deploy function
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Function"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,6 +58,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Function>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Function.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Upload a deploy function
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,10 +89,11 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions.Item
         {
             return new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Functions.Item.WithNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Upload a deploy function
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WithNameItemRequestBuilderPutQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

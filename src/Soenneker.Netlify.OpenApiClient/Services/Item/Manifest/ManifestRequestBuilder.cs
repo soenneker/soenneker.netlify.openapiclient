@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Services.Item.Manifest
         public ManifestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/{addonName}/manifest", rawUrl)
         {
         }
+        /// <summary>
+        /// Get an add-on service&apos;s manifest
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.ShowServiceManifest201ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,6 +56,9 @@ namespace Soenneker.Netlify.OpenApiClient.Services.Item.Manifest
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.ShowServiceManifest201ResponseSchema>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.ShowServiceManifest201ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get an add-on service&apos;s manifest
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

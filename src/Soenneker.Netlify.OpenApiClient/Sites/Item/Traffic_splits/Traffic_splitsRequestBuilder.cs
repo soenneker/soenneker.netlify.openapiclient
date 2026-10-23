@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits
         public Traffic_splitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/traffic_splits", rawUrl)
         {
         }
+        /// <summary>
+        /// List a site&apos;s split tests
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.SplitTest&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,6 +70,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.SplitTest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Create a split test
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SplitTest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,6 +95,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.SplitTest>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.SplitTest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// List a site&apos;s split tests
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,6 +114,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Traffic_splits
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a split test
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

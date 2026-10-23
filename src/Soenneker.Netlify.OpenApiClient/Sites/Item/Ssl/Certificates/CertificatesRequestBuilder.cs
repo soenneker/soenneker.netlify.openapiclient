@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl.Certificates
         public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl/certificates?domain={domain}", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns details about the certificates associated with a domain. The site must be using the domain.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,6 +52,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl.Certificates
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Returns details about the certificates associated with a domain. The site must be using the domain.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,10 +80,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl.Certificates
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl.Certificates.CertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Returns details about the certificates associated with a domain. The site must be using the domain.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class CertificatesRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

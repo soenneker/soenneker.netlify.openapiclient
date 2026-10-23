@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Types
         public TypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/types", rawUrl)
         {
         }
+        /// <summary>
+        /// List plans available for new teams
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AccountType&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Types
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.AccountType>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AccountType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// List plans available for new teams
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

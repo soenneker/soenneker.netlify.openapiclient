@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Builds.Status
         public StatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account%2Did}/builds/status", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns the team&apos;s counts of active, concurrency-pending, and enqueued builds, and its build minutes usage.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Item.Builds.Status
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Returns the team&apos;s counts of active, concurrency-pending, and enqueued builds, and its build minutes usage.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -33,17 +33,20 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url
         public Upload_urlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/upload_url?account_id={account_id}&content_type={content_type}&filename={filename}", rawUrl)
         {
         }
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <summary>
+        /// Returns a presigned URL for uploading a file that agent run sessions can use, and the file&apos;s storage key.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.CreateAgentRunnerUploadUrl200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder.Upload_urlRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.CreateAgentRunnerUploadUrl200Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder.Upload_urlRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder.Upload_urlRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.CreateAgentRunnerUploadUrl200Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder.Upload_urlRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -51,8 +54,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url
             {
                 { "XXX", global::Soenneker.Netlify.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.CreateAgentRunnerUploadUrl200Response>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.CreateAgentRunnerUploadUrl200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Returns a presigned URL for uploading a file that agent run sessions can use, and the file&apos;s storage key.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +84,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url
         {
             return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Returns a presigned URL for uploading a file that agent run sessions can use, and the file&apos;s storage key.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Upload_urlRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

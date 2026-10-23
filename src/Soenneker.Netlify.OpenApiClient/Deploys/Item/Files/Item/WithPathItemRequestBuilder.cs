@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
         public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/files/{path}{?size*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Upload a deploy file
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.FileObject"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,6 +58,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.FileObject>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.FileObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Upload a deploy file
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,10 +89,11 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item
         {
             return new global::Soenneker.Netlify.OpenApiClient.Deploys.Item.Files.Item.WithPathItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Upload a deploy file
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WithPathItemRequestBuilderPutQueryParameters 
-        #pragma warning restore CS1591
         {
             #pragma warning disable CS1591
             [QueryParameter("size")]

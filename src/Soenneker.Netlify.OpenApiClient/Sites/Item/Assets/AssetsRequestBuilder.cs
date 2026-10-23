@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
         public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets{?visibility*}", rawUrl)
         {
         }
+        /// <summary>
+        /// _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Asset&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,6 +70,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.Asset>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Asset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AssetSignature"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,6 +93,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AssetSignature>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AssetSignature.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,6 +112,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,10 +140,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.AssetsRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// _This endpoint is only available to certain sites._
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class AssetsRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

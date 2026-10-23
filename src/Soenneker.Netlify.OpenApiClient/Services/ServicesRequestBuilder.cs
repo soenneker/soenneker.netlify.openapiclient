@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Services
         public ServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services{?search*}", rawUrl)
         {
         }
+        /// <summary>
+        /// List add-on services
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Service&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,6 +70,9 @@ namespace Soenneker.Netlify.OpenApiClient.Services
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.Service>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Service.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// List add-on services
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,10 +98,11 @@ namespace Soenneker.Netlify.OpenApiClient.Services
         {
             return new global::Soenneker.Netlify.OpenApiClient.Services.ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// List add-on services
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class ServicesRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

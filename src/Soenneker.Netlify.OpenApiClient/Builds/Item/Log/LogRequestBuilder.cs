@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Log
         public LogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/builds/{buildId}/log", rawUrl)
         {
         }
+        /// <summary>
+        /// Add a message to a build log
+        /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Builds.Item.Log
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Add a message to a build log
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

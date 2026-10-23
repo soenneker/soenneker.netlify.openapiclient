@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Audit
         public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/audit{?log_type*,page*,per_page*,query*}", rawUrl)
         {
         }
+        /// <summary>
+        /// List a team&apos;s audit log events
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.AuditLog&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Audit
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.AuditLog>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AuditLog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// List a team&apos;s audit log events
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +85,11 @@ namespace Soenneker.Netlify.OpenApiClient.Accounts.Item.Audit
         {
             return new global::Soenneker.Netlify.OpenApiClient.Accounts.Item.Audit.AuditRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// List a team&apos;s audit log events
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class AuditRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

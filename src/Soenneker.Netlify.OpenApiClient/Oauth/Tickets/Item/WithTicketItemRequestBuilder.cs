@@ -39,6 +39,9 @@ namespace Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item
         public WithTicketItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/oauth/tickets/{ticketId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Get an OAuth ticket
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Ticket"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,6 +62,9 @@ namespace Soenneker.Netlify.OpenApiClient.Oauth.Tickets.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Ticket>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Ticket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get an OAuth ticket
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

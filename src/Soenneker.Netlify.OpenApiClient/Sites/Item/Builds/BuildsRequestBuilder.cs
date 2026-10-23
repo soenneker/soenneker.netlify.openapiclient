@@ -22,7 +22,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BuildsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/builds{?branch*,clear_cache*,image*,page*,per_page*,template_id*,title*}", pathParameters)
+        public BuildsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/builds{?branch*,clear_cache*,commit_sha*,draft*,image*,page*,per_page*,review_id*,template_id*,title*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,9 +30,12 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BuildsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/builds{?branch*,clear_cache*,image*,page*,per_page*,template_id*,title*}", rawUrl)
+        public BuildsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/builds{?branch*,clear_cache*,commit_sha*,draft*,image*,page*,per_page*,review_id*,template_id*,title*}", rawUrl)
         {
         }
+        /// <summary>
+        /// List a site&apos;s builds
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Build&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,6 +82,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Build>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Build.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// List a site&apos;s builds
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,10 +132,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Builds.BuildsRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// List a site&apos;s builds
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class BuildsRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             #pragma warning disable CS1591
             [QueryParameter("page")]
@@ -159,6 +166,19 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
             /// <summary>Whether to clear the build cache before building</summary>
             [QueryParameter("clear_cache")]
             public bool? ClearCache { get; set; }
+            /// <summary>The commit SHA to build; when omitted, the head of the branch or pull request is fetched from the git host. Ignored for zip uploads</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("commit_sha")]
+            public string? CommitSha { get; set; }
+#nullable restore
+#else
+            [QueryParameter("commit_sha")]
+            public string CommitSha { get; set; }
+#endif
+            /// <summary>Whether to create a draft deploy, which uses the deploy-preview context and is never published; review_id builds are always drafts</summary>
+            [QueryParameter("draft")]
+            public bool? Draft { get; set; }
             /// <summary>The build image tag to use for the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +189,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Builds
             [QueryParameter("image")]
             public string Image { get; set; }
 #endif
+            /// <summary>The merge/pull request ID to build; triggers a deploy preview. Ignored for zip uploads</summary>
+            [QueryParameter("review_id")]
+            public int? ReviewId { get; set; }
             /// <summary>The build template to use for the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

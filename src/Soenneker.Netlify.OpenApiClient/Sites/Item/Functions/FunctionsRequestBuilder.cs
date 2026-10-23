@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Functions
         public FunctionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/functions{?filter*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Search a site&apos;s functions
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Functions
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.SiteFunction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Search a site&apos;s functions
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +85,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Functions
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Functions.FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Search a site&apos;s functions
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class FunctionsRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

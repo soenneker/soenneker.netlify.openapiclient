@@ -67,6 +67,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get an agent run session
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,6 +90,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Update an agent run session
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,6 +132,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Get an agent run session
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,6 +151,9 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Update an agent run session
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,10 +179,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item
         {
             return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Sessions.Item.WithAgentRunnerSessionItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Update an agent run session
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WithAgentRunnerSessionItemRequestBuilderPatchQueryParameters 
-        #pragma warning restore CS1591
         {
             #pragma warning disable CS1591
             [QueryParameter("is_published")]

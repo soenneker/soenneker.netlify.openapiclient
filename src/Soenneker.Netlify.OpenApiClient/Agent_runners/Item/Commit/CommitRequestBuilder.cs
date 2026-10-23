@@ -33,17 +33,20 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit
         public CommitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent_runners/{agentRunnerId}/commit?target_branch={target_branch}", rawUrl)
         {
         }
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <summary>
+        /// Queues a commit of the run&apos;s diff to `target_branch`. The commit is made in the background: `merge_commit_is_being_created` is `true` until it finishes. Poll `getAgentRunner` until `merge_commit_sha` or `merge_commit_error` is set.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder.CommitRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner?> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder.CommitRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder.CommitRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner> PostAsync(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder.CommitRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -51,8 +54,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit
             {
                 { "XXX", global::Soenneker.Netlify.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AgentRunner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Queues a commit of the run&apos;s diff to `target_branch`. The commit is made in the background: `merge_commit_is_being_created` is `true` until it finishes. Poll `getAgentRunner` until `merge_commit_sha` or `merge_commit_error` is set.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +84,11 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit
         {
             return new global::Soenneker.Netlify.OpenApiClient.Agent_runners.Item.Commit.CommitRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Queues a commit of the run&apos;s diff to `target_branch`. The commit is made in the background: `merge_commit_is_being_created` is `true` until it finishes. Poll `getAgentRunner` until `merge_commit_sha` or `merge_commit_error` is set.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class CommitRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

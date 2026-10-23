@@ -39,6 +39,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
         public WithDeployItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/deploys/{deployId}{?commit_ref*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Marks a deploy for deletion.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -58,6 +61,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get a site&apos;s deploy
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Deploy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,6 +84,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Deploy>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Deploy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Update a deploy
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Deploy"/></returns>
         /// <param name="body">Deploy files can be provided in two ways:1. As a JSON object using &apos;files&apos; (a hash mapping file paths to SHA1 digests), OR2. As a zip file using one of these methods:   - Set Content-Type to &apos;application/zip&apos; and send the zip file as the raw request body   - Include the zip file content in the &apos;zip&apos; field of this JSON object with Content-Type &apos;application/json&apos;</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,6 +109,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Deploy>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Deploy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Marks a deploy for deletion.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,6 +128,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Get a site&apos;s deploy
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,6 +147,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Update a deploy
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Deploy files can be provided in two ways:1. As a JSON object using &apos;files&apos; (a hash mapping file paths to SHA1 digests), OR2. As a zip file using one of these methods:   - Set Content-Type to &apos;application/zip&apos; and send the zip file as the raw request body   - Include the zip file content in the &apos;zip&apos; field of this JSON object with Content-Type &apos;application/json&apos;</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,10 +178,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Deploys.Item.WithDeployItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Update a deploy
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WithDeployItemRequestBuilderPutQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

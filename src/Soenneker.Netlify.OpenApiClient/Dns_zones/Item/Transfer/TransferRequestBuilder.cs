@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
         public TransferRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones/{zoneId}/transfer?account_id={account_id}&transfer_account_id={transfer_account_id}&transfer_user_id={transfer_user_id}", rawUrl)
         {
         }
+        /// <summary>
+        /// Transfer a DNS zone to another team
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DnsZone"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,6 +56,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.DnsZone>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DnsZone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Transfer a DNS zone to another team
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +84,11 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
         {
             return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer.TransferRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Transfer a DNS zone to another team
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TransferRequestBuilderPutQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>the account of the dns zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

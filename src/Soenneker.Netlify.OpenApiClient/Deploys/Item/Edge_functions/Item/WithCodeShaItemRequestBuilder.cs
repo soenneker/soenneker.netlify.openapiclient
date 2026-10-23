@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Edge_functions.Item
         public WithCodeShaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deploys/{deployId}/edge_functions/{codeSha}", rawUrl)
         {
         }
+        /// <summary>
+        /// Upload a deploy&apos;s edge functions bundle
+        /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,6 +58,9 @@ namespace Soenneker.Netlify.OpenApiClient.Deploys.Item.Edge_functions.Item
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Upload a deploy&apos;s edge functions bundle
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

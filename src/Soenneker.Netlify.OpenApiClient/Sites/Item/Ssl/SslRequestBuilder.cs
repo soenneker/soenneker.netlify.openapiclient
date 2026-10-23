@@ -39,6 +39,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
         public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/ssl{?ca_certificates*,certificate*,key*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Get a site&apos;s TLS certificate
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,6 +85,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Ssl
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.SniCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get a site&apos;s TLS certificate
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

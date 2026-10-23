@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
         public Dns_zonesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dns_zones{?account_slug*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns the DNS zones for the team given by `account_slug`, or all DNS zones the current user can access.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.DnsZone&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,6 +70,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.DnsZone>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DnsZone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Create a DNS zone
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DnsZone"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,6 +95,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.DnsZone>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DnsZone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Returns the DNS zones for the team given by `account_slug`, or all DNS zones the current user can access.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,6 +114,9 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a DNS zone
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,10 +145,11 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones
         {
             return new global::Soenneker.Netlify.OpenApiClient.Dns_zones.Dns_zonesRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Returns the DNS zones for the team given by `account_slug`, or all DNS zones the current user can access.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Dns_zonesRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -41,7 +41,7 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks?site_id={site_id}", pathParameters)
+        public HooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks?site_id={site_id}{&event*,form_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,9 +49,12 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks?site_id={site_id}", rawUrl)
+        public HooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hooks?site_id={site_id}{&event*,form_id*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns the outgoing hooks for a site. Pass `form_id` or `event` to filter the results.
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.Hook&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,6 +76,9 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.Hook>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Hook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Create an outgoing hook
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.Hook"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,6 +101,9 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Hook>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Hook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Returns the outgoing hooks for a site. Pass `form_id` or `event` to filter the results.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,6 +120,9 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create an outgoing hook
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,11 +151,32 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
         {
             return new global::Soenneker.Netlify.OpenApiClient.Hooks.HooksRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Returns the outgoing hooks for a site. Pass `form_id` or `event` to filter the results.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class HooksRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
+            /// <summary>Only return hooks for this event name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("event")]
+            public string? Event { get; set; }
+#nullable restore
+#else
+            [QueryParameter("event")]
+            public string Event { get; set; }
+#endif
+            /// <summary>Only return hooks attached to this form.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("form_id")]
+            public string? FormId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("form_id")]
+            public string FormId { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -158,10 +191,11 @@ namespace Soenneker.Netlify.OpenApiClient.Hooks
             #pragma warning restore CS1591
 #endif
         }
+        /// <summary>
+        /// Create an outgoing hook
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class HooksRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

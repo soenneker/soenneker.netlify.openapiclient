@@ -4,7 +4,7 @@
     "title": "Netlify's API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify's API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.61.0",
+    "version": "2.62.0",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -22,6 +22,7 @@
         "tags": [
           "site"
         ],
+        "summary": "List sites",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
         "operationId": "listSites",
         "parameters": [
@@ -74,6 +75,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Create a site",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
         "operationId": "createSite",
         "parameters": [
@@ -117,6 +119,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Get a site",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
         "operationId": "getSite",
         "parameters": [
@@ -158,6 +161,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Delete a site",
         "operationId": "deleteSite",
         "parameters": [
           {
@@ -182,6 +186,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Update a site",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [updateEnvVar](#tag/environmentVariables/operation/updateEnvVar) to update a site's environment variables.",
         "operationId": "updateSite",
         "parameters": [
@@ -226,6 +231,7 @@
         "tags": [
           "sniCertificate"
         ],
+        "summary": "Get a site's TLS certificate",
         "operationId": "showSiteTLSCertificate",
         "parameters": [
           {
@@ -257,6 +263,7 @@
         "tags": [
           "sniCertificate"
         ],
+        "summary": "Provision or update a site's TLS certificate",
         "description": "Provisions or updates a TLS certificate for the site.\n\n**Creating a certificate (site has no certificate):**\n- Omit certificate params to initiate Let's Encrypt provisioning\n- Provide certificate, key, and ca_certificates to upload a custom certificate\n\n**Updating a certificate (site already has a certificate):**\n- REQUIRES certificate, key, and ca_certificates to replace with a new custom certificate\n- Use POST /api/v1/sites/{site_id}/ssl/renew to renew an existing Let's Encrypt certificate",
         "operationId": "provisionSiteTLSCertificate",
         "parameters": [
@@ -318,6 +325,8 @@
         "tags": [
           "sniCertificate"
         ],
+        "summary": "List TLS certificates for a site's domain",
+        "description": "Returns details about the certificates associated with a domain. The site must be using the domain.",
         "operationId": "getAllCertificates",
         "parameters": [
           {
@@ -365,6 +374,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "List environment variables for a team or site",
         "description": "Returns all environment variables for an account or site. An account corresponds to a team in the Netlify UI.",
         "operationId": "getEnvVars",
         "parameters": [
@@ -439,6 +449,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Create environment variables",
         "description": "Creates new environment variables. Granular scopes are available on Pro plans and above.",
         "operationId": "createEnvVars",
         "parameters": [
@@ -526,6 +537,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "List environment variables for a site",
         "description": "Returns all environment variables for a site. This convenience method behaves the same as `getEnvVars` but doesn't require an `account_id` as input.",
         "operationId": "getSiteEnvVars",
         "parameters": [
@@ -594,6 +606,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Get an environment variable",
         "description": "Returns an individual environment variable.",
         "operationId": "getEnvVar",
         "parameters": [
@@ -644,6 +657,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Update an environment variable",
         "description": "Updates an existing environment variable and all of its values. Existing values will be replaced by values provided.",
         "operationId": "updateEnvVar",
         "parameters": [
@@ -732,6 +746,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Delete an environment variable",
         "description": "Deletes an environment variable",
         "operationId": "deleteEnvVar",
         "parameters": [
@@ -775,6 +790,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Set a value on an environment variable",
         "description": "Updates or creates a new value for an existing environment variable.",
         "operationId": "setEnvVarValue",
         "parameters": [
@@ -859,6 +875,7 @@
         "tags": [
           "environmentVariables"
         ],
+        "summary": "Delete an environment variable value",
         "description": "Deletes a specific environment variable value.",
         "operationId": "deleteEnvVarValue",
         "parameters": [
@@ -913,6 +930,7 @@
         "tags": [
           "function"
         ],
+        "summary": "Search a site's functions",
         "operationId": "searchSiteFunctions",
         "parameters": [
           {
@@ -956,6 +974,7 @@
         "tags": [
           "form"
         ],
+        "summary": "List a site's forms",
         "operationId": "listSiteForms",
         "parameters": [
           {
@@ -992,6 +1011,8 @@
         "tags": [
           "form"
         ],
+        "summary": "Delete a form",
+        "description": "Deletes a form and all of its submissions.",
         "operationId": "deleteSiteForm",
         "parameters": [
           {
@@ -1026,6 +1047,7 @@
         "tags": [
           "submission"
         ],
+        "summary": "List a site's form submissions",
         "operationId": "listSiteSubmissions",
         "parameters": [
           {
@@ -1068,6 +1090,7 @@
         "tags": [
           "file"
         ],
+        "summary": "List a site's files",
         "operationId": "listSiteFiles",
         "parameters": [
           {
@@ -1104,6 +1127,8 @@
         "tags": [
           "asset"
         ],
+        "summary": "List a site's assets",
+        "description": "_This endpoint is only available to certain sites._",
         "operationId": "listSiteAssets",
         "parameters": [
           {
@@ -1138,6 +1163,8 @@
         "tags": [
           "asset"
         ],
+        "summary": "Create a site asset",
+        "description": "_This endpoint is only available to certain sites._",
         "operationId": "createSiteAsset",
         "parameters": [
           {
@@ -1203,6 +1230,8 @@
         "tags": [
           "asset"
         ],
+        "summary": "Get a site asset",
+        "description": "_This endpoint is only available to certain sites._",
         "operationId": "getSiteAssetInfo",
         "parameters": [
           {
@@ -1242,6 +1271,8 @@
         "tags": [
           "asset"
         ],
+        "summary": "Update a site asset's state",
+        "description": "_This endpoint is only available to certain sites._",
         "operationId": "updateSiteAsset",
         "parameters": [
           {
@@ -1289,6 +1320,8 @@
         "tags": [
           "asset"
         ],
+        "summary": "Delete a site asset",
+        "description": "_This endpoint is only available to certain sites._",
         "operationId": "deleteSiteAsset",
         "parameters": [
           {
@@ -1323,6 +1356,8 @@
         "tags": [
           "assetPublicSignature"
         ],
+        "summary": "Get a site asset's URL",
+        "description": "Returns the URL of the asset. If the asset isn't publicly visible, returns a signed URL. _This endpoint is only available to certain sites._",
         "operationId": "getSiteAssetPublicSignature",
         "parameters": [
           {
@@ -1364,6 +1399,7 @@
         "tags": [
           "file"
         ],
+        "summary": "Get a site file by path",
         "operationId": "getSiteFileByPathName",
         "parameters": [
           {
@@ -1405,6 +1441,7 @@
         "tags": [
           "purge"
         ],
+        "summary": "Purge cached content",
         "description": "Purges cached content from Netlify's CDN. Supports purging by Cache-Tag.",
         "operationId": "purgeCache",
         "requestBody": {
@@ -1419,7 +1456,7 @@
         },
         "responses": {
           "202": {
-            "description": "OK"
+            "description": "Accepted. The purge is queued and propagates across the CDN asynchronously. The response has no body and there is no status resource to poll for completion."
           },
           "400": {
             "description": "Invalid request parameters"
@@ -1435,6 +1472,7 @@
         "tags": [
           "snippet"
         ],
+        "summary": "List a site's snippets",
         "operationId": "listSiteSnippets",
         "parameters": [
           {
@@ -1469,6 +1507,7 @@
         "tags": [
           "snippet"
         ],
+        "summary": "Create a snippet",
         "operationId": "createSiteSnippet",
         "parameters": [
           {
@@ -1512,6 +1551,7 @@
         "tags": [
           "snippet"
         ],
+        "summary": "Get a snippet",
         "operationId": "getSiteSnippet",
         "parameters": [
           {
@@ -1551,6 +1591,7 @@
         "tags": [
           "snippet"
         ],
+        "summary": "Update a snippet",
         "operationId": "updateSiteSnippet",
         "parameters": [
           {
@@ -1593,6 +1634,7 @@
         "tags": [
           "snippet"
         ],
+        "summary": "Delete a snippet",
         "operationId": "deleteSiteSnippet",
         "parameters": [
           {
@@ -1627,6 +1669,7 @@
         "tags": [
           "metadata"
         ],
+        "summary": "Get a site's metadata",
         "operationId": "getSiteMetadata",
         "parameters": [
           {
@@ -1658,6 +1701,7 @@
         "tags": [
           "metadata"
         ],
+        "summary": "Update a site's metadata",
         "operationId": "updateSiteMetadata",
         "parameters": [
           {
@@ -1694,6 +1738,7 @@
         "tags": [
           "buildHook"
         ],
+        "summary": "List a site's build hooks",
         "operationId": "listSiteBuildHooks",
         "parameters": [
           {
@@ -1728,6 +1773,7 @@
         "tags": [
           "buildHook"
         ],
+        "summary": "Create a build hook",
         "operationId": "createSiteBuildHook",
         "parameters": [
           {
@@ -1771,6 +1817,7 @@
         "tags": [
           "buildHook"
         ],
+        "summary": "Get a build hook",
         "operationId": "getSiteBuildHook",
         "parameters": [
           {
@@ -1810,6 +1857,7 @@
         "tags": [
           "buildHook"
         ],
+        "summary": "Update a build hook",
         "operationId": "updateSiteBuildHook",
         "parameters": [
           {
@@ -1852,6 +1900,7 @@
         "tags": [
           "buildHook"
         ],
+        "summary": "Delete a build hook",
         "operationId": "deleteSiteBuildHook",
         "parameters": [
           {
@@ -1886,6 +1935,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "List a site's deploys",
         "operationId": "listSiteDeploys",
         "parameters": [
           {
@@ -1978,6 +2028,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Create a deploy",
         "operationId": "createSiteDeploy",
         "parameters": [
           {
@@ -2080,6 +2131,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Get a site's deploy",
         "operationId": "getSiteDeploy",
         "parameters": [
           {
@@ -2119,6 +2171,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Update a deploy",
         "operationId": "updateSiteDeploy",
         "parameters": [
           {
@@ -2175,6 +2228,8 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Delete a site's deploy",
+        "description": "Marks a deploy for deletion.",
         "operationId": "deleteSiteDeploy",
         "parameters": [
           {
@@ -2209,6 +2264,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Cancel a deploy",
         "operationId": "cancelSiteDeploy",
         "parameters": [
           {
@@ -2242,6 +2298,8 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Restore a previous deploy",
+        "description": "Publishes a previous deploy of the site.",
         "operationId": "restoreSiteDeploy",
         "parameters": [
           {
@@ -2283,6 +2341,7 @@
         "tags": [
           "build"
         ],
+        "summary": "List a site's builds",
         "operationId": "listSiteBuilds",
         "parameters": [
           {
@@ -2323,6 +2382,7 @@
         "tags": [
           "build"
         ],
+        "summary": "Start a build",
         "description": "Runs a build for a site. The build will be scheduled to run at the first opportunity, but it might not start immediately if insufficient account build capacity is available.\n\nFiles for build can be uploaded as a zipped site using one of these methods:\n1. Set Content-Type to 'application/zip' and send the zip file as the raw request body\n2. Set Content-Type to 'multipart/form-data' and include the zip file in the 'zip' field\n",
         "operationId": "createSiteBuild",
         "parameters": [
@@ -2351,11 +2411,35 @@
             }
           },
           {
+            "name": "commit_sha",
+            "in": "query",
+            "description": "The commit SHA to build; when omitted, the head of the branch or pull request is fetched from the git host. Ignored for zip uploads",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "draft",
+            "in": "query",
+            "description": "Whether to create a draft deploy, which uses the deploy-preview context and is never published; review_id builds are always drafts",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "image",
             "in": "query",
             "description": "The build image tag to use for the build",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "review_id",
+            "in": "query",
+            "description": "The merge/pull request ID to build; triggers a deploy preview. Ignored for zip uploads",
+            "schema": {
+              "type": "integer"
             }
           },
           {
@@ -2422,6 +2506,7 @@
         "tags": [
           "deployedBranch"
         ],
+        "summary": "List a site's deployed branches",
         "operationId": "listSiteDeployedBranches",
         "parameters": [
           {
@@ -2458,6 +2543,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Unlink a site's repository",
         "description": "[Beta] Unlinks the repo from the site.\n\nThis action will also:\n- Delete associated deploy keys\n- Delete outgoing webhooks for the repo\n- Delete the site's build hooks",
         "operationId": "unlinkSiteRepo",
         "parameters": [
@@ -2492,6 +2578,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Enable a site",
         "description": "Re-enables a site that was previously disabled by the user. Sites that were disabled for usage exceeded or marked as spam cannot be re-enabled via this endpoint.",
         "operationId": "enableSite",
         "parameters": [
@@ -2529,6 +2616,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Disable a site",
         "description": "Disables a site, preventing it from serving content. The site can be re-enabled later using the enable endpoint.",
         "operationId": "disableSite",
         "parameters": [
@@ -2565,6 +2653,7 @@
         "tags": [
           "build"
         ],
+        "summary": "Get a build",
         "operationId": "getSiteBuild",
         "parameters": [
           {
@@ -2598,6 +2687,7 @@
         "tags": [
           "buildLogMsg"
         ],
+        "summary": "Add a message to a build log",
         "operationId": "updateSiteBuildLog",
         "parameters": [
           {
@@ -2634,6 +2724,7 @@
         "tags": [
           "build"
         ],
+        "summary": "Mark a build as started",
         "operationId": "notifyBuildStart",
         "parameters": [
           {
@@ -2681,6 +2772,8 @@
         "tags": [
           "build"
         ],
+        "summary": "Get a team's build status",
+        "description": "Returns the team's counts of active, concurrency-pending, and enqueued builds, and its build minutes usage.",
         "operationId": "getAccountBuildStatus",
         "parameters": [
           {
@@ -2717,6 +2810,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Get a site's DNS configuration",
         "operationId": "getDNSForSite",
         "parameters": [
           {
@@ -2751,6 +2845,8 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Configure a site's DNS",
+        "description": "Creates any missing DNS zones and records for the site's custom domain and domain aliases. This usually runs automatically when the custom domain is set.",
         "operationId": "configureDNSForSite",
         "parameters": [
           {
@@ -2787,6 +2883,8 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Roll back a site's production deploy",
+        "description": "Rolls back the production deploy to the deploy referenced by its `rollback_id`. Does nothing if the current production deploy has no `rollback_id`.",
         "operationId": "rollbackSiteDeploy",
         "parameters": [
           {
@@ -2813,6 +2911,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Get a deploy",
         "operationId": "getDeploy",
         "parameters": [
           {
@@ -2844,6 +2943,8 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Delete a deploy",
+        "description": "Marks a deploy for deletion.",
         "operationId": "deleteDeploy",
         "parameters": [
           {
@@ -2870,6 +2971,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Update a deploy's validations report",
         "description": "Updates the deploy validations report for a deploy.",
         "operationId": "updateDeployValidations",
         "parameters": [
@@ -2920,6 +3022,8 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Lock a deploy",
+        "description": "Locks a deploy so that subsequent deploys are built but not published. If the deploy is not the site's published deploy, locking publishes it first. When publishing is gated, the publish and lock are queued and the API responds with 202 Accepted and the deploy; poll `getDeploy` to follow it.",
         "operationId": "lockDeploy",
         "parameters": [
           {
@@ -2953,6 +3057,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Unlock a deploy",
         "operationId": "unlockDeploy",
         "parameters": [
           {
@@ -2986,6 +3091,7 @@
         "tags": [
           "file"
         ],
+        "summary": "Upload a deploy file",
         "operationId": "uploadDeployFile",
         "parameters": [
           {
@@ -3045,6 +3151,7 @@
         "tags": [
           "function"
         ],
+        "summary": "Upload a deploy function",
         "operationId": "uploadDeployFunction",
         "parameters": [
           {
@@ -3128,6 +3235,7 @@
         "tags": [
           "deploy"
         ],
+        "summary": "Upload a deploy's Netlify Server bundle",
         "description": "Uploads the deploy's Netlify Server bundle, addressed by the digest the deploy\ndeclared in its `server` property.\n",
         "operationId": "uploadDeployServer",
         "parameters": [
@@ -3184,6 +3292,7 @@
         "tags": [
           "edgeFunction"
         ],
+        "summary": "Upload a deploy's edge functions bundle",
         "operationId": "uploadDeployEdgeFunction",
         "parameters": [
           {
@@ -3232,6 +3341,7 @@
         "tags": [
           "x-internal"
         ],
+        "summary": "Update a site's build plugin",
         "description": "This is an internal-only endpoint.",
         "operationId": "updatePlugin",
         "parameters": [
@@ -3284,6 +3394,7 @@
         "tags": [
           "x-internal"
         ],
+        "summary": "List a site's latest build plugin runs",
         "description": "This is an internal-only endpoint.",
         "operationId": "getLatestPluginRuns",
         "parameters": [
@@ -3341,6 +3452,7 @@
         "tags": [
           "x-internal"
         ],
+        "summary": "Create a build plugin run",
         "description": "This is an internal-only endpoint.",
         "operationId": "createPluginRun",
         "parameters": [
@@ -3385,6 +3497,7 @@
         "tags": [
           "submission"
         ],
+        "summary": "List a form's submissions",
         "operationId": "listFormSubmissions",
         "parameters": [
           {
@@ -3427,12 +3540,30 @@
         "tags": [
           "hook"
         ],
+        "summary": "List a site's outgoing hooks",
+        "description": "Returns the outgoing hooks for a site. Pass `form_id` or `event` to filter the results.",
         "operationId": "listHooksBySiteId",
         "parameters": [
           {
             "name": "site_id",
             "in": "query",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "form_id",
+            "in": "query",
+            "description": "Only return hooks attached to this form.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "event",
+            "in": "query",
+            "description": "Only return hooks for this event name.",
             "schema": {
               "type": "string"
             }
@@ -3461,6 +3592,7 @@
         "tags": [
           "hook"
         ],
+        "summary": "Create an outgoing hook",
         "operationId": "createHookBySiteId",
         "parameters": [
           {
@@ -3504,6 +3636,7 @@
         "tags": [
           "hook"
         ],
+        "summary": "Get an outgoing hook",
         "operationId": "getHook",
         "parameters": [
           {
@@ -3535,6 +3668,7 @@
         "tags": [
           "hook"
         ],
+        "summary": "Update an outgoing hook",
         "operationId": "updateHook",
         "parameters": [
           {
@@ -3576,6 +3710,7 @@
         "tags": [
           "hook"
         ],
+        "summary": "Delete an outgoing hook",
         "operationId": "deleteHook",
         "parameters": [
           {
@@ -3599,6 +3734,8 @@
         "tags": [
           "hook"
         ],
+        "summary": "Re-enable an outgoing hook",
+        "description": "Re-enables an outgoing hook that was disabled after repeated delivery errors.",
         "operationId": "enableHook",
         "parameters": [
           {
@@ -3632,7 +3769,19 @@
         "tags": [
           "hookType"
         ],
+        "summary": "List outgoing hook types",
+        "description": "Returns the available outgoing hook types. When `site_id` is given, returns only the types available to that site.",
         "operationId": "listHookTypes",
+        "parameters": [
+          {
+            "name": "site_id",
+            "in": "query",
+            "description": "Only return the hook types available to this site.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -3658,6 +3807,7 @@
         "tags": [
           "ticket"
         ],
+        "summary": "Create an OAuth ticket",
         "operationId": "createTicket",
         "parameters": [
           {
@@ -3725,6 +3875,7 @@
         "tags": [
           "ticket"
         ],
+        "summary": "Get an OAuth ticket",
         "operationId": "showTicket",
         "parameters": [
           {
@@ -3758,6 +3909,7 @@
         "tags": [
           "accessToken"
         ],
+        "summary": "Exchange an OAuth ticket for an access token",
         "operationId": "exchangeTicket",
         "parameters": [
           {
@@ -3791,6 +3943,7 @@
         "tags": [
           "deployKey"
         ],
+        "summary": "List deploy keys",
         "operationId": "listDeployKeys",
         "responses": {
           "200": {
@@ -3815,6 +3968,7 @@
         "tags": [
           "deployKey"
         ],
+        "summary": "Create a deploy key",
         "operationId": "createDeployKey",
         "responses": {
           "201": {
@@ -3838,6 +3992,7 @@
         "tags": [
           "deployKey"
         ],
+        "summary": "Get a deploy key",
         "operationId": "getDeployKey",
         "parameters": [
           {
@@ -3869,6 +4024,7 @@
         "tags": [
           "deployKey"
         ],
+        "summary": "Delete a deploy key",
         "operationId": "deleteDeployKey",
         "parameters": [
           {
@@ -3895,6 +4051,7 @@
         "tags": [
           "site"
         ],
+        "summary": "List a team's sites",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
         "operationId": "listSitesForAccount",
         "parameters": [
@@ -3943,6 +4100,7 @@
         "tags": [
           "site"
         ],
+        "summary": "Create a site in a team",
         "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
         "operationId": "createSiteInTeam",
         "parameters": [
@@ -3993,6 +4151,7 @@
         "tags": [
           "member"
         ],
+        "summary": "List a team's members",
         "operationId": "listMembersForAccount",
         "parameters": [
           {
@@ -4027,6 +4186,7 @@
         "tags": [
           "member"
         ],
+        "summary": "Add a member to a team",
         "operationId": "addMemberToAccount",
         "parameters": [
           {
@@ -4073,6 +4233,7 @@
         "tags": [
           "member"
         ],
+        "summary": "Get a team member",
         "operationId": "getAccountMember",
         "parameters": [
           {
@@ -4112,6 +4273,7 @@
         "tags": [
           "member"
         ],
+        "summary": "Update a team member",
         "operationId": "updateAccountMember",
         "parameters": [
           {
@@ -4161,6 +4323,7 @@
         "tags": [
           "member"
         ],
+        "summary": "Remove a team member",
         "operationId": "removeAccountMember",
         "parameters": [
           {
@@ -4195,6 +4358,7 @@
         "tags": [
           "paymentMethod"
         ],
+        "summary": "List payment methods",
         "operationId": "listPaymentMethodsForUser",
         "responses": {
           "200": {
@@ -4221,6 +4385,7 @@
         "tags": [
           "accountType"
         ],
+        "summary": "List plans available for new teams",
         "operationId": "listAccountTypesForUser",
         "responses": {
           "200": {
@@ -4247,6 +4412,7 @@
         "tags": [
           "accountMembership"
         ],
+        "summary": "List the current user's teams",
         "operationId": "listAccountsForUser",
         "parameters": [
           {
@@ -4282,6 +4448,7 @@
         "tags": [
           "accountMembership"
         ],
+        "summary": "Create a team",
         "operationId": "createAccount",
         "requestBody": {
           "content": {
@@ -4315,6 +4482,7 @@
         "tags": [
           "accountMembership"
         ],
+        "summary": "Get a team",
         "operationId": "getAccount",
         "parameters": [
           {
@@ -4346,6 +4514,7 @@
         "tags": [
           "accountMembership"
         ],
+        "summary": "Update a team",
         "operationId": "updateAccount",
         "parameters": [
           {
@@ -4386,6 +4555,7 @@
         "tags": [
           "accountMembership"
         ],
+        "summary": "Cancel a team",
         "operationId": "cancelAccount",
         "parameters": [
           {
@@ -4412,6 +4582,7 @@
         "tags": [
           "auditLog"
         ],
+        "summary": "List a team's audit log events",
         "operationId": "listAccountAuditEvents",
         "parameters": [
           {
@@ -4468,6 +4639,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "List a site's agent runs",
         "description": "Lists a site's agent runs, most recently active first. Archived runs are left out unless `state` is `archived`.",
         "operationId": "listAgentRunners",
         "parameters": [
@@ -4570,6 +4742,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Start an agent run",
         "operationId": "createAgentRunner",
         "parameters": [
           {
@@ -4669,6 +4842,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Start an agent run on a site",
         "description": "Starts an agent run on the site.",
         "operationId": "createSiteAgentRunner",
         "parameters": [
@@ -4764,6 +4938,8 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Create an upload URL for agent run files",
+        "description": "Returns a presigned URL for uploading a file that agent run sessions can use, and the file's storage key.",
         "operationId": "createAgentRunnerUploadUrl",
         "parameters": [
           {
@@ -4793,7 +4969,28 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "upload_url",
+                    "file_key"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "upload_url": {
+                      "type": "string",
+                      "description": "Presigned URL to upload the file to with a PUT request. Expires after one hour."
+                    },
+                    "file_key": {
+                      "type": "string",
+                      "description": "Storage key of the uploaded file."
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -4813,6 +5010,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Get an agent run",
         "operationId": "getAgentRunner",
         "parameters": [
           {
@@ -4844,6 +5042,7 @@
         "tags": [
           "hiddenAgentRunner"
         ],
+        "summary": "Stop an agent run (alias)",
         "description": "Same as `POST /agent_runners/{agent_runner_id}/stop`. Doesn't delete the run.",
         "operationId": "deleteAgentRunner",
         "parameters": [
@@ -4858,7 +5057,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted. Same behavior as `stopAgentRunner`: the response has no body, the run's active sessions are set to `cancelled` before it returns, and the sandbox shuts down in the background. To confirm, poll `getAgentRunnerSession` (`GET /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}`) and check that `state` is `cancelled`."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -4869,6 +5068,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Update an agent run",
         "operationId": "updateAgentRunner",
         "parameters": [
           {
@@ -4902,6 +5102,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Stop an agent run",
         "description": "Stops the run's active session. Stopping happens in the background.",
         "operationId": "stopAgentRunner",
         "parameters": [
@@ -4916,7 +5117,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted. The response has no body. The run's active sessions are set to `cancelled` before this returns, and the sandbox shuts down in the background. To confirm, poll `getAgentRunnerSession` (`GET /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}`) and check that `state` is `cancelled`."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -4929,6 +5130,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Get an agent run's diff",
         "description": "Returns the run's changes as a unified diff. With `page`, returns that page of changed files and sets pagination headers.",
         "operationId": "getAgentRunnerDiff",
         "parameters": [
@@ -4980,6 +5182,7 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Archive an agent run",
         "operationId": "archiveAgentRunner",
         "parameters": [
           {
@@ -4993,7 +5196,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted. The response has no body. The archive is applied before this returns: `getAgentRunner` (`GET /agent_runners/{agent_runner_id}`) reports `state` as `archived`."
           },
           "404": {
             "description": "Not Found"
@@ -5012,6 +5215,8 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Open a pull request from an agent run",
+        "description": "Queues a pull request for the run's diff (`result_diff`). The pull request is created in the background, so `pr_url` is usually not set yet in the response: `pr_is_being_created` is `true` until it finishes. Poll `getAgentRunner` until `pr_url` or `pr_error` is set. Returns 409 if a pull request already exists or is being created, and 422 if the run has no diff, no branch, no GitHub repository or installation, or needs a git sync.",
         "operationId": "agentRunnerPullRequest",
         "parameters": [
           {
@@ -5025,7 +5230,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/agentRunner"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -5048,6 +5260,8 @@
         "tags": [
           "agentRunner"
         ],
+        "summary": "Commit an agent run's changes to a branch",
+        "description": "Queues a commit of the run's diff to `target_branch`. The commit is made in the background: `merge_commit_is_being_created` is `true` until it finishes. Poll `getAgentRunner` until `merge_commit_sha` or `merge_commit_error` is set.",
         "operationId": "agentRunnerCommitToBranch",
         "parameters": [
           {
@@ -5069,7 +5283,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/agentRunner"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -5092,6 +5313,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "List an agent run's sessions",
         "operationId": "listAgentRunnerSessions",
         "parameters": [
           {
@@ -5167,6 +5389,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "Start a follow-up agent run session",
         "description": "Starts a follow-up session on the run.",
         "operationId": "createAgentRunnerSession",
         "parameters": [
@@ -5306,6 +5529,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "Get an agent run session",
         "operationId": "getAgentRunnerSession",
         "parameters": [
           {
@@ -5345,6 +5569,7 @@
         "tags": [
           "hiddenAgentRunner"
         ],
+        "summary": "Stop an agent run session (alias)",
         "description": "Same as `POST /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}/stop`. Doesn't delete the session.",
         "operationId": "deleteAgentRunnerSession",
         "parameters": [
@@ -5367,7 +5592,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted. Same behavior as `stopAgentRunnerSession`: the response has no body, the session is set to `cancelled` before it returns, and the sandbox shuts down in the background. To confirm, poll `getAgentRunnerSession` (`GET /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}`) and check that `state` is `cancelled`."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -5378,6 +5603,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "Update an agent run session",
         "operationId": "updateAgentRunnerSession",
         "parameters": [
           {
@@ -5426,6 +5652,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "Stop an agent run session",
         "description": "Stops the session. Stopping happens in the background.",
         "operationId": "stopAgentRunnerSession",
         "parameters": [
@@ -5448,7 +5675,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted"
+            "description": "Accepted. The response has no body. The session is set to `cancelled` before this returns, and the sandbox shuts down in the background. To confirm, poll `getAgentRunnerSession` (`GET /agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}`) and check that `state` is `cancelled`."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -5461,6 +5688,7 @@
         "tags": [
           "agentRunnerSession"
         ],
+        "summary": "Answer an agent run session's pending interaction",
         "description": "Answers or skips a pending interaction and resumes the session. A session waiting on an interaction is in the `await_input` state.",
         "operationId": "answerAgentRunnerSession",
         "parameters": [
@@ -5543,6 +5771,7 @@
         "tags": [
           "submission"
         ],
+        "summary": "Get a form submission",
         "operationId": "listFormSubmission",
         "parameters": [
           {
@@ -5590,6 +5819,7 @@
         "tags": [
           "submission"
         ],
+        "summary": "Delete a form submission",
         "operationId": "deleteSubmission",
         "parameters": [
           {
@@ -5616,6 +5846,7 @@
         "tags": [
           "serviceInstance"
         ],
+        "summary": "List a site's add-on instances",
         "operationId": "listServiceInstancesForSite",
         "parameters": [
           {
@@ -5652,6 +5883,7 @@
         "tags": [
           "serviceInstance"
         ],
+        "summary": "Create an add-on instance",
         "operationId": "createServiceInstance",
         "parameters": [
           {
@@ -5703,6 +5935,7 @@
         "tags": [
           "serviceInstance"
         ],
+        "summary": "Get an add-on instance",
         "operationId": "showServiceInstance",
         "parameters": [
           {
@@ -5750,6 +5983,7 @@
         "tags": [
           "serviceInstance"
         ],
+        "summary": "Update an add-on instance",
         "operationId": "updateServiceInstance",
         "parameters": [
           {
@@ -5800,6 +6034,7 @@
         "tags": [
           "serviceInstance"
         ],
+        "summary": "Delete an add-on instance",
         "operationId": "deleteServiceInstance",
         "parameters": [
           {
@@ -5842,6 +6077,7 @@
         "tags": [
           "service"
         ],
+        "summary": "List add-on services",
         "operationId": "getServices",
         "parameters": [
           {
@@ -5877,6 +6113,7 @@
         "tags": [
           "service"
         ],
+        "summary": "Get an add-on service",
         "operationId": "showService",
         "parameters": [
           {
@@ -5910,6 +6147,7 @@
         "tags": [
           "service"
         ],
+        "summary": "Get an add-on service's manifest",
         "operationId": "showServiceManifest",
         "parameters": [
           {
@@ -5943,6 +6181,7 @@
         "tags": [
           "user"
         ],
+        "summary": "Get the current user",
         "operationId": "getCurrentUser",
         "responses": {
           "200": {
@@ -5966,6 +6205,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "List a site's split tests",
         "operationId": "getSplitTests",
         "parameters": [
           {
@@ -5997,6 +6237,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "Create a split test",
         "operationId": "createSplitTest",
         "parameters": [
           {
@@ -6040,6 +6281,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "Get a split test",
         "operationId": "getSplitTest",
         "parameters": [
           {
@@ -6079,6 +6321,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "Update a split test",
         "operationId": "updateSplitTest",
         "parameters": [
           {
@@ -6130,6 +6373,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "Publish a split test",
         "operationId": "enableSplitTest",
         "parameters": [
           {
@@ -6164,6 +6408,7 @@
         "tags": [
           "splitTest"
         ],
+        "summary": "Unpublish a split test",
         "operationId": "disableSplitTest",
         "parameters": [
           {
@@ -6198,6 +6443,8 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "List DNS zones",
+        "description": "Returns the DNS zones for the team given by `account_slug`, or all DNS zones the current user can access.",
         "operationId": "getDnsZones",
         "parameters": [
           {
@@ -6228,6 +6475,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Create a DNS zone",
         "operationId": "createDnsZone",
         "requestBody": {
           "content": {
@@ -6261,6 +6509,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Get a DNS zone",
         "operationId": "getDnsZone",
         "parameters": [
           {
@@ -6292,6 +6541,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Delete a DNS zone",
         "operationId": "deleteDnsZone",
         "parameters": [
           {
@@ -6318,6 +6568,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Transfer a DNS zone to another team",
         "operationId": "transferDnsZone",
         "parameters": [
           {
@@ -6378,6 +6629,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "List a DNS zone's records",
         "operationId": "getDnsRecords",
         "parameters": [
           {
@@ -6409,6 +6661,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Create a DNS record",
         "operationId": "createDnsRecord",
         "parameters": [
           {
@@ -6452,6 +6705,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Get a DNS record",
         "operationId": "getIndividualDnsRecord",
         "parameters": [
           {
@@ -6491,6 +6745,7 @@
         "tags": [
           "dnsZone"
         ],
+        "summary": "Delete a DNS record",
         "operationId": "deleteDnsRecord",
         "parameters": [
           {
@@ -6525,6 +6780,7 @@
         "tags": [
           "devServer"
         ],
+        "summary": "List a site's dev servers",
         "operationId": "listSiteDevServers",
         "parameters": [
           {
@@ -6565,6 +6821,7 @@
         "tags": [
           "devServer"
         ],
+        "summary": "Start a dev server",
         "operationId": "createSiteDevServer",
         "parameters": [
           {
@@ -6606,6 +6863,8 @@
         "tags": [
           "devServer"
         ],
+        "summary": "Stop a branch's dev servers",
+        "description": "Stops all dev servers for a branch. Stopping happens in the background.",
         "operationId": "deleteSiteDevServers",
         "parameters": [
           {
@@ -6626,7 +6885,7 @@
         ],
         "responses": {
           "202": {
-            "description": "OK"
+            "description": "Accepted. The response has no body. The branch's active dev servers are set to `stopping` before this returns and shut down in the background. Poll `getSiteDevServer` (`GET /sites/{site_id}/dev_servers/{dev_server_id}`) or `listSiteDevServers` (`GET /sites/{site_id}/dev_servers`) until `state` is `done` (or `error`)."
           },
           "default": {
             "$ref": "#/components/responses/error"
@@ -6639,6 +6898,7 @@
         "tags": [
           "devServer"
         ],
+        "summary": "Get a dev server",
         "operationId": "getSiteDevServer",
         "parameters": [
           {
@@ -6677,6 +6937,7 @@
         "tags": [
           "devServer"
         ],
+        "summary": "Record dev server activity",
         "operationId": "markDevServerActivity",
         "parameters": [
           {
@@ -6698,7 +6959,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/devServer"
+                }
+              }
+            }
           }
         },
         "x-internal": true
@@ -6709,6 +6977,7 @@
         "tags": [
           "devServer"
         ],
+        "summary": "Update a dev server's state",
         "operationId": "updateDevServerState",
         "parameters": [
           {
@@ -6780,6 +7049,7 @@
         "tags": [
           "devServerHook"
         ],
+        "summary": "List a site's dev server hooks",
         "operationId": "listSiteDevServerHooks",
         "parameters": [
           {
@@ -6814,6 +7084,7 @@
         "tags": [
           "devServerHook"
         ],
+        "summary": "Create a dev server hook",
         "operationId": "createSiteDevServerHook",
         "parameters": [
           {
@@ -6857,6 +7128,7 @@
         "tags": [
           "devServerHook"
         ],
+        "summary": "Get a dev server hook",
         "operationId": "getSiteDevServerHook",
         "parameters": [
           {
@@ -6896,6 +7168,7 @@
         "tags": [
           "devServerHook"
         ],
+        "summary": "Update a dev server hook",
         "operationId": "updateSiteDevServerHook",
         "parameters": [
           {
@@ -6938,6 +7211,7 @@
         "tags": [
           "devServerHook"
         ],
+        "summary": "Delete a dev server hook",
         "operationId": "deleteSiteDevServerHook",
         "parameters": [
           {
@@ -6972,6 +7246,7 @@
         "tags": [
           "agentRunnerHook"
         ],
+        "summary": "List a site's agent runner hooks",
         "operationId": "listSiteAgentRunnerHooks",
         "parameters": [
           {
@@ -7007,6 +7282,7 @@
         "tags": [
           "agentRunnerHook"
         ],
+        "summary": "Create an agent runner hook",
         "operationId": "createSiteAgentRunnerHook",
         "parameters": [
           {
@@ -7051,6 +7327,7 @@
         "tags": [
           "agentRunnerHook"
         ],
+        "summary": "Get an agent runner hook",
         "operationId": "getSiteAgentRunnerHook",
         "parameters": [
           {
@@ -7091,6 +7368,7 @@
         "tags": [
           "agentRunnerHook"
         ],
+        "summary": "Update an agent runner hook",
         "operationId": "updateSiteAgentRunnerHook",
         "parameters": [
           {
@@ -7134,6 +7412,7 @@
         "tags": [
           "agentRunnerHook"
         ],
+        "summary": "Delete an agent runner hook",
         "operationId": "deleteSiteAgentRunnerHook",
         "parameters": [
           {
@@ -7169,6 +7448,7 @@
         "tags": [
           "aiGateway"
         ],
+        "summary": "List AI Gateway providers and models",
         "operationId": "getAIGatewayProviders",
         "responses": {
           "200": {
@@ -7200,6 +7480,7 @@
         "tags": [
           "aiGateway"
         ],
+        "summary": "Get a site's AI Gateway token",
         "description": "Returns an AI Gateway token for a specific site",
         "operationId": "getAIGatewayToken",
         "parameters": [
@@ -7238,6 +7519,7 @@
         "tags": [
           "aiGateway"
         ],
+        "summary": "Get a team's AI Gateway token",
         "description": "Returns an AI Gateway token scoped to an account",
         "operationId": "getAccountAIGatewayToken",
         "parameters": [
@@ -7276,6 +7558,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Get a site database",
         "description": "Returns the database connection string for the specified site.",
         "operationId": "getSiteDatabase",
         "parameters": [
@@ -7320,6 +7603,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Create a site database",
         "description": "Creates a new database for the specified site. If a database already exists, returns the existing connection string. The database region defaults to the site's functions region if not specified.",
         "operationId": "createSiteDatabase",
         "parameters": [
@@ -7371,6 +7655,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Delete a site database",
         "description": "Deletes the database and all associated branches and snapshots for the specified site.",
         "operationId": "deleteSiteDatabase",
         "parameters": [
@@ -7398,6 +7683,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Create a database branch",
         "description": "Creates a new database branch. If a branch already exists for the specified branch ID, returns the existing connection string.",
         "operationId": "createSiteDatabaseBranch",
         "parameters": [
@@ -7452,6 +7738,7 @@
         "tags": [
           "database"
         ],
+        "summary": "List database branches",
         "description": "Returns all branches for the site's database with compute status and metadata.",
         "operationId": "listSiteDatabaseBranches",
         "parameters": [
@@ -7486,6 +7773,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Get a database branch",
         "description": "Returns the database branch connection string for a specific branch.",
         "operationId": "getSiteDatabaseBranch",
         "parameters": [
@@ -7542,6 +7830,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Delete a database branch",
         "description": "Deletes a database branch.",
         "operationId": "deleteSiteDatabaseBranch",
         "parameters": [
@@ -7578,6 +7867,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Reset a database branch",
         "description": "Resets a non-production database branch by re-forking it from a source branch (defaults to the production branch). If the target branch is already in sync with the source, returns the existing connection string without performing a reset, unless `force=true` is passed. The production branch cannot be reset.",
         "operationId": "resetSiteDatabaseBranch",
         "parameters": [
@@ -7656,6 +7946,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Set a database branch's compute settings",
         "description": "Sets compute settings for a specific database branch, overriding project-level settings. Requires a Pro or higher plan.",
         "operationId": "setSiteDatabaseBranchComputeSettings",
         "parameters": [
@@ -7712,6 +8003,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Get database compute settings",
         "description": "Returns the project-level compute settings for the database. Returns effective settings (custom or tier defaults). Requires a Pro or higher plan.",
         "operationId": "getSiteDatabaseComputeSettings",
         "parameters": [
@@ -7747,6 +8039,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Set database compute settings",
         "description": "Sets project-level compute settings for the database. Applied to new branches. Can be overridden per-branch. Requires a Pro or higher plan.",
         "operationId": "setSiteDatabaseComputeSettings",
         "parameters": [
@@ -7792,6 +8085,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Reset database compute settings to defaults",
         "description": "Resets project-level compute settings to tier defaults. Requires a Pro or higher plan.",
         "operationId": "clearSiteDatabaseComputeSettings",
         "parameters": [
@@ -7822,6 +8116,7 @@
         "tags": [
           "database"
         ],
+        "summary": "List database migrations",
         "description": "Returns the list of migrations available for the specified branch, indicating which ones have been applied to the database.",
         "operationId": "listSiteDatabaseMigrations",
         "parameters": [
@@ -7870,6 +8165,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Get a database migration",
         "description": "Returns the contents of a named migration for the specified branch.",
         "operationId": "getSiteDatabaseMigration",
         "parameters": [
@@ -7927,6 +8223,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Run database migrations for a deploy",
         "description": "Runs database migrations for the specified deploy. Finds the deploy and determines the appropriate branch.",
         "operationId": "runSiteDatabaseMigrations",
         "parameters": [
@@ -7978,6 +8275,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Create a database snapshot",
         "description": "Creates a point-in-time snapshot of a database branch. Defaults to the production branch if no branch name is specified.",
         "operationId": "createSiteDatabaseSnapshot",
         "parameters": [
@@ -8021,6 +8319,7 @@
         "tags": [
           "database"
         ],
+        "summary": "List database snapshots",
         "description": "Returns all snapshots for the site's database.",
         "operationId": "listSiteDatabaseSnapshots",
         "parameters": [
@@ -8055,6 +8354,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Delete a database snapshot",
         "description": "Deletes a database snapshot.",
         "operationId": "deleteSiteDatabaseSnapshot",
         "parameters": [
@@ -8091,6 +8391,7 @@
         "tags": [
           "database"
         ],
+        "summary": "Restore a database snapshot",
         "description": "Restores a snapshot to a database branch. Defaults to the production branch if no branch_name is specified.",
         "operationId": "restoreSiteDatabaseSnapshot",
         "parameters": [

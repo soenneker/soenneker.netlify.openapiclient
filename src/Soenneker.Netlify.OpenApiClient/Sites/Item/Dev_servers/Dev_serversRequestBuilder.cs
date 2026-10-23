@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         public Dev_serversRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers{?branch*,page*,per_page*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Stops all dev servers for a branch. Stopping happens in the background.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Netlify.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -65,6 +68,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// List a site&apos;s dev servers
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.DevServer&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,6 +92,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.DevServer>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DevServer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Start a dev server
+        /// </summary>
         /// <returns>A List&lt;global::Soenneker.Netlify.OpenApiClient.Models.DevServer&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,6 +116,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Netlify.OpenApiClient.Models.DevServer>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DevServer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
+        /// <summary>
+        /// Stops all dev servers for a branch. Stopping happens in the background.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,6 +135,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// List a site&apos;s dev servers
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,6 +154,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Start a dev server
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,10 +182,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
         {
             return new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Dev_serversRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Stops all dev servers for a branch. Stopping happens in the background.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Dev_serversRequestBuilderDeleteQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,10 +202,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             #pragma warning restore CS1591
 #endif
         }
+        /// <summary>
+        /// List a site&apos;s dev servers
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Dev_serversRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             #pragma warning disable CS1591
             [QueryParameter("page")]
@@ -197,10 +217,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers
             public int? PerPage { get; set; }
             #pragma warning restore CS1591
         }
+        /// <summary>
+        /// Start a dev server
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class Dev_serversRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

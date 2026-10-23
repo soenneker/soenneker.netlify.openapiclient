@@ -46,6 +46,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Services.Item.Instances
         public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/services/{addon}/instances", rawUrl)
         {
         }
+        /// <summary>
+        /// Create an add-on instance
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,6 +71,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Services.Item.Instances
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.ServiceInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create an add-on instance
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

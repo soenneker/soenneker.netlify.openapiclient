@@ -33,6 +33,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.Public_signatur
         public Public_signatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/assets/{assetId}/public_signature", rawUrl)
         {
         }
+        /// <summary>
+        /// Returns the URL of the asset. If the asset isn&apos;t publicly visible, returns a signed URL. _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AssetPublicSignature"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,6 +56,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Assets.Item.Public_signatur
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.AssetPublicSignature>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.AssetPublicSignature.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Returns the URL of the asset. If the asset isn&apos;t publicly visible, returns a signed URL. _This endpoint is only available to certain sites._
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

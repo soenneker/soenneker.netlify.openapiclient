@@ -45,6 +45,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item
         public WithDevServerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{siteId}/dev_servers/{devServerId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Get a dev server
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DevServer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,6 +63,9 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Dev_servers.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.DevServer>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.DevServer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get a dev server
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

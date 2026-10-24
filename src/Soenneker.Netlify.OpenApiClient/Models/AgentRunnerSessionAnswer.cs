@@ -33,10 +33,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>One entry per question in the interaction&apos;s `payload`: a string, an array of strings for a multi-select question, or null to skip that question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswerResponseItem>? Response { get; set; }
+        public UntypedNode? Response { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswerResponseItem> Response { get; set; }
+        public UntypedNode Response { get; set; }
 #endif
         /// <summary>Skip the whole interaction instead of answering it.</summary>
         public bool? Skipped { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "instruction", n => { Instruction = n.GetStringValue(); } },
                 { "refId", n => { RefId = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswerResponseItem>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswerResponseItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "response", n => { Response = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "skipped", n => { Skipped = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("instruction", Instruction);
             writer.WriteStringValue("refId", RefId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswerResponseItem>("response", Response);
+            writer.WriteObjectValue<UntypedNode>("response", Response);
             writer.WriteBoolValue("skipped", Skipped);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -3805,7 +3805,7 @@
         }
       }
     },
-    "/{accountSlug}/sites": {
+    "/{accountId}/sites": {
       "get": {
         "tags": [
           "site"
@@ -3822,7 +3822,7 @@
             }
           },
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3868,7 +3868,7 @@
             }
           },
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3902,7 +3902,7 @@
         }
       }
     },
-    "/{accountSlug}/members": {
+    "/{accountId}/members": {
       "get": {
         "tags": [
           "member"
@@ -3911,7 +3911,7 @@
         "operationId": "ListMembersForAccount",
         "parameters": [
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3943,7 +3943,7 @@
         "operationId": "AddMemberToAccount",
         "parameters": [
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3978,7 +3978,7 @@
         }
       }
     },
-    "/{accountSlug}/members/{memberId}": {
+    "/{accountId}/members/{memberId}": {
       "get": {
         "tags": [
           "member"
@@ -3987,7 +3987,7 @@
         "operationId": "GetAccountMember",
         "parameters": [
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4027,7 +4027,7 @@
         "operationId": "UpdateAccountMember",
         "parameters": [
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4077,7 +4077,7 @@
         "operationId": "RemoveAccountMember",
         "parameters": [
           {
-            "name": "accountSlug",
+            "name": "accountId",
             "in": "path",
             "required": true,
             "schema": {
@@ -5780,7 +5780,7 @@
         }
       }
     },
-    "/services": {
+    "/services/": {
       "get": {
         "tags": [
           "service"
@@ -7869,7 +7869,12 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://api.netlify.com/api/v1"
+          }
+        ]
       },
       "post": {
         "tags": [
@@ -7919,7 +7924,12 @@
           "default": {
             "$ref": "#/components/responses/error"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://api.netlify.com/api/v1"
+          }
+        ]
       }
     },
     "/sites/{siteId}/database/snapshot": {
@@ -10439,13 +10449,11 @@
             "description": "One of \u0060pending\u0060, \u0060answered\u0060 or \u0060skipped\u0060."
           },
           "payload": {
-            "$ref": "#/components/schemas/AgentRunnerSessionInteractionPayload"
+            "description": "For a question, an array of questions, each with \u0060question\u0060, an optional \u0060header\u0060, \u0060multiSelect\u0060 and \u0060options\u0060 (each with \u0060label\u0060 and an optional \u0060description\u0060). For \u0060authorization\u0060 and \u0060setup_request\u0060, an object describing the request."
           },
           "response": {
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AgentRunnerSessionInteractionResponseItem"
-            },
+            "items": {},
             "description": "Answers aligned to \u0060payload\u0060; null entries were skipped."
           }
         }
@@ -10462,9 +10470,7 @@
           },
           "response": {
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AgentRunnerSessionAnswerResponseItem"
-            },
+            "items": {},
             "description": "One entry per question in the interaction\u0027s \u0060payload\u0060: a string, an array of strings for a multi-select question, or null to skip that question."
           },
           "skipped": {
@@ -12164,16 +12170,6 @@
         },
         "description": "Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in \u0060await_input\u0060 until it\u0027s answered or skipped."
       },
-      "AgentRunnerSessionInteractionPayload": {
-        "type": "object",
-        "description": "For a question, an array of questions, each with \u0060question\u0060, an optional \u0060header\u0060, \u0060multiSelect\u0060 and \u0060options\u0060 (each with \u0060label\u0060 and an optional \u0060description\u0060). For \u0060authorization\u0060 and \u0060setup_request\u0060, an object describing the request."
-      },
-      "AgentRunnerSessionInteractionResponseItem": {
-        "type": "object"
-      },
-      "AgentRunnerSessionAnswerResponseItem": {
-        "type": "object"
-      },
       "FunctionConfigBuildDataProperty": {
         "type": "object"
       },
@@ -12259,7 +12255,6 @@
           "archived"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The current state of the branch",
         "x-ms-enum": {
           "name": "DatabaseBranchDetailState",
@@ -12294,7 +12289,6 @@
           "idle"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The current state of the compute endpoint",
         "x-ms-enum": {
           "name": "DatabaseBranchComputeCurrentState",
@@ -12319,7 +12313,6 @@
           "post-processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "EnvVarScopesItem",
           "modelAsString": false,
@@ -12354,7 +12347,6 @@
           "branch"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The deploy context in which this value will be used. \u0060dev\u0060 refers to local development when running \u0060netlify dev\u0060.",
         "x-ms-enum": {
           "name": "EnvVarValueContext",
@@ -12399,7 +12391,6 @@
           "post-processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DeployEnvironmentVariableScopesItem",
           "modelAsString": false,
@@ -12432,7 +12423,6 @@
           "postprocessing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BuildLogMsgSection",
           "modelAsString": false,
@@ -12466,7 +12456,6 @@
           "yearly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AccountSetupPeriod",
           "modelAsString": false,
@@ -12490,7 +12479,6 @@
           "Reviewer"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AccountAddMemberSetupRole",
           "modelAsString": false,
@@ -12510,7 +12498,6 @@
           "Reviewer"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AccountUpdateMemberSetupRole",
           "modelAsString": false,
@@ -12529,7 +12516,6 @@
           "selected"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AccountUpdateMemberSetupSiteAccess",
           "modelAsString": false,
@@ -12556,7 +12542,6 @@
           "high"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Reasoning effort. Omit to let the agent decide.",
         "x-ms-enum": {
           "name": "AgentRunnerSetupEffort",
@@ -12583,7 +12568,6 @@
           "ask"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "\u0060normal\u0060 (the default) changes code; \u0060ask\u0060 answers questions without changing code.",
         "x-ms-enum": {
           "name": "AgentRunnerSetupMode",
@@ -12606,7 +12590,6 @@
           "ask"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "\u0060normal\u0060 (the default) changes code; \u0060ask\u0060 answers questions without changing code.",
         "x-ms-enum": {
           "name": "AgentRunnerSessionSetupMode",
@@ -12633,7 +12616,6 @@
           "OPTIONS"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FunctionRouteMethodsItem",
           "modelAsString": false,
@@ -12670,7 +12652,6 @@
           "sliding_window"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SlidingWindowAlgorithm",
           "modelAsString": false,
@@ -12688,7 +12669,6 @@
           "content_refresh"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DevServerHookType",
           "modelAsString": false,
@@ -12710,7 +12690,6 @@
           "content_refresh"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DevServerHookSetupType",
           "modelAsString": false,
@@ -12733,7 +12712,6 @@
           "large"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The size of the instances the server runs on. A default size is used when\nabsent.\n",
         "x-ms-enum": {
           "name": "DeployFilesServerInstanceSize",
@@ -12760,7 +12738,6 @@
           "domain"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TrafficRulesAggregateConfigKeysItemType",
           "modelAsString": false,
@@ -12784,7 +12761,6 @@
           "post-processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "UpdateEnvVarRequestScopesItem",
           "modelAsString": false,
@@ -12819,7 +12795,6 @@
           "branch"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The deploy context in which this value will be used. \u0060dev\u0060 refers to local development when running \u0060netlify dev\u0060. \u0060branch\u0060 must be provided with a value in \u0060context_parameter\u0060.",
         "x-ms-enum": {
           "name": "SetEnvVarValueRequestContext",
@@ -12864,7 +12839,6 @@
           "done"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "UpdateDevServerStateRequestState",
           "modelAsString": false,
@@ -12896,7 +12870,6 @@
           "post-processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CreateEnvVarsRequestItemScopesItem",
           "modelAsString": false,
@@ -12927,7 +12900,6 @@
           "guest"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListSitesFilterParameter",
           "modelAsString": false,
@@ -12957,7 +12929,6 @@
           "production"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetEnvVarsContextNameParameter",
           "modelAsString": false,
@@ -12997,7 +12968,6 @@
           "post-processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetEnvVarsScopeParameter",
           "modelAsString": false,
@@ -13031,7 +13001,6 @@
           "production"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetSiteEnvVarsContextNameParameter",
           "modelAsString": false,
@@ -13071,7 +13040,6 @@
           "post_processing"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetSiteEnvVarsScopeParameter",
           "modelAsString": false,
@@ -13114,7 +13082,6 @@
           "retrying"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListSiteDeploysStateParameter",
           "modelAsString": false,
@@ -13201,7 +13168,6 @@
           "retrying"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CreateSiteDeployStateParameter",
           "modelAsString": false,
@@ -13275,7 +13241,6 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListAgentRunnerSessionsOrderByParameter",
           "modelAsString": false,
@@ -13297,7 +13262,6 @@
           "netlifydb_readonly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetSiteDatabaseRoleParameter",
           "modelAsString": false,
@@ -13319,7 +13283,6 @@
           "netlifydb_readonly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetSiteDatabaseBranchRoleParameter",
           "modelAsString": false,
@@ -13341,7 +13304,6 @@
           "netlifydb_readonly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ResetSiteDatabaseBranchRoleParameter",
           "modelAsString": false,

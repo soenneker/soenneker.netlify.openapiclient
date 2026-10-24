@@ -12,10 +12,10 @@ using System;
 namespace Soenneker.Netlify.OpenApiClient.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{account-id}
+    /// Builds and executes requests for operations under \{accountId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AccountItemRequestBuilder : BaseRequestBuilder
+    public partial class WithAccountItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The builds property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Item.Builds.BuildsRequestBuilder Builds
@@ -33,19 +33,19 @@ namespace Soenneker.Netlify.OpenApiClient.Item
             get => new global::Soenneker.Netlify.OpenApiClient.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Item.AccountItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Item.WithAccountItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account%2Did}", pathParameters)
+        public WithAccountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{accountId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Item.AccountItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Item.WithAccountItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account%2Did}", rawUrl)
+        public WithAccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{accountId}", rawUrl)
         {
         }
     }

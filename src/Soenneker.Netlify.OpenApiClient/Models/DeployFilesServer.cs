@@ -49,6 +49,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 #else
         public string RuntimeVersion { get; set; }
 #endif
+        /// <summary>How many instances of the server run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale? Scale { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale Scale { get; set; }
+#endif
         /// <summary>The SHA256 digest of the server bundle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>(global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "runtime_version", n => { RuntimeVersion = n.GetStringValue(); } },
+                { "scale", n => { Scale = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale>(global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale.CreateFromDiscriminatorValue); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
             };
         }
@@ -102,6 +111,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>("routes", Routes);
             writer.WriteStringValue("runtime_version", RuntimeVersion);
+            writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale>("scale", Scale);
             writer.WriteStringValue("sha", Sha);
             writer.WriteAdditionalData(AdditionalData);
         }

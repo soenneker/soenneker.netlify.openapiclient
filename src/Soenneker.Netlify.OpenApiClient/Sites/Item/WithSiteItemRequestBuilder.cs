@@ -21,6 +21,7 @@ using Soenneker.Netlify.OpenApiClient.Sites.Item.Enable;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Files;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Forms;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Functions;
+using Soenneker.Netlify.OpenApiClient.Sites.Item.Identity;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Metadata;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs;
 using Soenneker.Netlify.OpenApiClient.Sites.Item.Plugins;
@@ -129,6 +130,11 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item
         public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Functions.FunctionsRequestBuilder Functions
         {
             get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Functions.FunctionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The identity property</summary>
+        public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Identity.IdentityRequestBuilder Identity
+        {
+            get => new global::Soenneker.Netlify.OpenApiClient.Sites.Item.Identity.IdentityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metadata property</summary>
         public global::Soenneker.Netlify.OpenApiClient.Sites.Item.Metadata.MetadataRequestBuilder Metadata

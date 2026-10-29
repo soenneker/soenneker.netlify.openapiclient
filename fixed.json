@@ -4,7 +4,7 @@
     "title": "Netlify\u0027s API documentation",
     "description": "Netlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\n\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the [online documentation](https://www.netlify.com/docs/api/). Visit our Community forum to join the conversation about [understanding and using Netlify\u0027s API](https://community.netlify.com/t/common-issue-understanding-and-using-netlifys-api/160).\n\nAdditionally, we have two API clients for your convenience:\n- [Go Client](https://github.com/netlify/open-api#go-client)\n- [JS Client](https://github.com/netlify/build/tree/main/packages/js-client)",
     "termsOfService": "https://www.netlify.com/legal/terms-of-use/",
-    "version": "2.63.0",
+    "version": "2.63.1",
     "x-logo": {
       "url": "netlify-logo.png",
       "href": "https://www.netlify.com/docs/",
@@ -5780,6 +5780,113 @@
         }
       }
     },
+    "/sites/{siteId}/identity/{identityId}/users/{userId}": {
+      "get": {
+        "tags": [
+          "identityUser"
+        ],
+        "summary": "Get an Identity user",
+        "description": "Returns one Identity user by ID. Agent runner tokens receive only the user\u0027s ID, email, confirmation, invitation, sign-in, password-reset and email-change timestamps, and the \u0060provider\u0060 and \u0060roles\u0060 fields of \u0060app_metadata\u0060.",
+        "operationId": "GetIdentityUser",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identityId",
+            "in": "path",
+            "description": "The site\u0027s Identity instance ID, returned as \u0060identity_instance_id\u0060 by \u0060getSite\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "The Identity user\u0027s UUID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityUser"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/identity/{identityId}/users/lookup": {
+      "post": {
+        "tags": [
+          "identityUser"
+        ],
+        "summary": "Look up an Identity user by email",
+        "description": "Returns the one Identity user with this exact email. Matching ignores case and trailing spaces. Partial matches and pagination are not supported, and an unknown email returns 404. Agent runner tokens receive the same restricted fields as \u0060getIdentityUser\u0060.",
+        "operationId": "LookupIdentityUser",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identityId",
+            "in": "path",
+            "description": "The site\u0027s Identity instance ID, returned as \u0060identity_instance_id\u0060 by \u0060getSite\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LookupIdentityUserRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityUser"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
     "/services/": {
       "get": {
         "tags": [
@@ -9126,6 +9233,61 @@
           }
         }
       },
+      "IdentityUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "aud": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "confirmed_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "invited_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "confirmation_sent_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "recovery_sent_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "email_change_sent_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "last_sign_in_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "app_metadata": {
+            "$ref": "#/components/schemas/IdentityUserAppMetadata"
+          },
+          "user_metadata": {
+            "$ref": "#/components/schemas/IdentityUserUserMetadataProperty"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "dateTime"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "dateTime"
+          }
+        }
+      },
       "HookType": {
         "type": "object",
         "properties": {
@@ -11157,6 +11319,23 @@
       "FormFieldsItem": {
         "type": "object"
       },
+      "IdentityUserAppMetadata": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "IdentityUserUserMetadata": {
+        "type": "object"
+      },
       "HookTypeFieldsItem": {
         "type": "object"
       },
@@ -11735,6 +11914,17 @@
       "UpdateServiceInstanceRequest": {
         "type": "object"
       },
+      "LookupIdentityUserRequest": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      },
       "GetServices200Response": {
         "type": "array",
         "items": {
@@ -12152,6 +12342,9 @@
         "type": "object"
       },
       "FormFieldsItemProperty": {
+        "type": "object"
+      },
+      "IdentityUserUserMetadataProperty": {
         "type": "object"
       },
       "HookTypeFieldsItemProperty": {
@@ -13503,6 +13696,10 @@
       "x-displayName": "Service instance"
     },
     {
+      "name": "identityUser",
+      "x-displayName": "Identity user"
+    },
+    {
       "name": "function",
       "x-displayName": "Function"
     },
@@ -13630,6 +13827,12 @@
       "tags": [
         "service",
         "serviceInstance"
+      ]
+    },
+    {
+      "name": "Identity",
+      "tags": [
+        "identityUser"
       ]
     },
     {

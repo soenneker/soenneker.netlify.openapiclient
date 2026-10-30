@@ -11,20 +11,34 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AccountUpdateMemberSetup : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("site_access") is { } nullNodeSiteAccess && nullNodeSiteAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteAccess = null;
+            if (parseNode.GetChildNode("site_ids") is { } nullNodeSiteIds && nullNodeSiteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? Role { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? _explicitNullValueRole = default!;
         /// <summary>The site_access property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? SiteAccess { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? SiteAccess { get => _explicitNullValueSiteAccess; set { _explicitNullValueSiteAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_access"); else _explicitNullProperties?.Remove("site_access"); } }
+        private global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? _explicitNullValueSiteAccess = default!;
         /// <summary>The site_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SiteIds { get; set; }
+        public List<string>? SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
+        private List<string>? _explicitNullValueSiteIds = default!;
 #nullable restore
 #else
-        public List<string> SiteIds { get; set; }
+        public List<string> SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
+        private List<string> _explicitNullValueSiteIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup"/> and sets the default values.
@@ -41,7 +55,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public static global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetup(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess>("site_access", SiteAccess);
             writer.WriteCollectionOfPrimitiveValues<string>("site_ids", SiteIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

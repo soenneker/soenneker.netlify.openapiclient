@@ -12,58 +12,85 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeployFilesServer : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excluded_routes") is { } nullNodeExcludedRoutes && nullNodeExcludedRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedRoutes = null;
+            if (parseNode.GetChildNode("instance_size") is { } nullNodeInstanceSize && nullNodeInstanceSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstanceSize = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("routes") is { } nullNodeRoutes && nullNodeRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routes = null;
+            if (parseNode.GetChildNode("runtime_version") is { } nullNodeRuntimeVersion && nullNodeRuntimeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeVersion = null;
+            if (parseNode.GetChildNode("scale") is { } nullNodeScale && nullNodeScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scale = null;
+            if (parseNode.GetChildNode("sha") is { } nullNodeSha && nullNodeSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Paths within `routes` that the server does not handle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>? ExcludedRoutes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>? ExcludedRoutes { get => _explicitNullValueExcludedRoutes; set { _explicitNullValueExcludedRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_routes"); else _explicitNullProperties?.Remove("excluded_routes"); } }
+        private List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>? _explicitNullValueExcludedRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute> ExcludedRoutes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute> ExcludedRoutes { get => _explicitNullValueExcludedRoutes; set { _explicitNullValueExcludedRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_routes"); else _explicitNullProperties?.Remove("excluded_routes"); } }
+        private List<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute> _explicitNullValueExcludedRoutes = default!;
 #endif
         /// <summary>The size of the instances the server runs on. A default size is used whenabsent.</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize? InstanceSize { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize? InstanceSize { get => _explicitNullValueInstanceSize; set { _explicitNullValueInstanceSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_size"); else _explicitNullProperties?.Remove("instance_size"); } }
+        private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize? _explicitNullValueInstanceSize = default!;
         /// <summary>Where the server runs. Defaults to the region configured at the site levelwhen absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The paths the server handles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>? Routes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>? Routes { get => _explicitNullValueRoutes; set { _explicitNullValueRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes"); else _explicitNullProperties?.Remove("routes"); } }
+        private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute>? _explicitNullValueRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute> Routes { get; set; }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute> Routes { get => _explicitNullValueRoutes; set { _explicitNullValueRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routes"); else _explicitNullProperties?.Remove("routes"); } }
+        private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute> _explicitNullValueRoutes = default!;
 #endif
         /// <summary>The runtime version the server was built for, such as `nodejs24.x`. Adefault version is used when absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuntimeVersion { get; set; }
+        public string? RuntimeVersion { get => _explicitNullValueRuntimeVersion; set { _explicitNullValueRuntimeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_version"); else _explicitNullProperties?.Remove("runtime_version"); } }
+        private string? _explicitNullValueRuntimeVersion = default!;
 #nullable restore
 #else
-        public string RuntimeVersion { get; set; }
+        public string RuntimeVersion { get => _explicitNullValueRuntimeVersion; set { _explicitNullValueRuntimeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_version"); else _explicitNullProperties?.Remove("runtime_version"); } }
+        private string _explicitNullValueRuntimeVersion = default!;
 #endif
         /// <summary>How many instances of the server run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale? Scale { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale? Scale { get => _explicitNullValueScale; set { _explicitNullValueScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale"); else _explicitNullProperties?.Remove("scale"); } }
+        private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale? _explicitNullValueScale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale Scale { get; set; }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale Scale { get => _explicitNullValueScale; set { _explicitNullValueScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale"); else _explicitNullProperties?.Remove("scale"); } }
+        private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale _explicitNullValueScale = default!;
 #endif
         /// <summary>The SHA256 digest of the server bundle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public string? Sha { get => _explicitNullValueSha; set { _explicitNullValueSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha"); else _explicitNullProperties?.Remove("sha"); } }
+        private string? _explicitNullValueSha = default!;
 #nullable restore
 #else
-        public string Sha { get; set; }
+        public string Sha { get => _explicitNullValueSha; set { _explicitNullValueSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha"); else _explicitNullProperties?.Remove("sha"); } }
+        private string _explicitNullValueSha = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public static global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("runtime_version", RuntimeVersion);
             writer.WriteObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerScale>("scale", Scale);
             writer.WriteStringValue("sha", Sha);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

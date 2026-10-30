@@ -11,21 +11,40 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentRunnerSessionUsage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("total_cached_input_tokens") is { } nullNodeTotalCachedInputTokens && nullNodeTotalCachedInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCachedInputTokens = null;
+            if (parseNode.GetChildNode("total_cached_output_tokens") is { } nullNodeTotalCachedOutputTokens && nullNodeTotalCachedOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCachedOutputTokens = null;
+            if (parseNode.GetChildNode("total_credits_cost") is { } nullNodeTotalCreditsCost && nullNodeTotalCreditsCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCreditsCost = null;
+            if (parseNode.GetChildNode("total_input_tokens") is { } nullNodeTotalInputTokens && nullNodeTotalInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInputTokens = null;
+            if (parseNode.GetChildNode("total_output_tokens") is { } nullNodeTotalOutputTokens && nullNodeTotalOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutputTokens = null;
+            if (parseNode.GetChildNode("total_tokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total_cached_input_tokens property</summary>
-        public int? TotalCachedInputTokens { get; set; }
+        public int? TotalCachedInputTokens { get => _explicitNullValueTotalCachedInputTokens; set { _explicitNullValueTotalCachedInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_cached_input_tokens"); else _explicitNullProperties?.Remove("total_cached_input_tokens"); } }
+        private int? _explicitNullValueTotalCachedInputTokens = default!;
         /// <summary>The total_cached_output_tokens property</summary>
-        public int? TotalCachedOutputTokens { get; set; }
+        public int? TotalCachedOutputTokens { get => _explicitNullValueTotalCachedOutputTokens; set { _explicitNullValueTotalCachedOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_cached_output_tokens"); else _explicitNullProperties?.Remove("total_cached_output_tokens"); } }
+        private int? _explicitNullValueTotalCachedOutputTokens = default!;
         /// <summary>Credits the session used.</summary>
-        public double? TotalCreditsCost { get; set; }
+        public double? TotalCreditsCost { get => _explicitNullValueTotalCreditsCost; set { _explicitNullValueTotalCreditsCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_credits_cost"); else _explicitNullProperties?.Remove("total_credits_cost"); } }
+        private double? _explicitNullValueTotalCreditsCost = default!;
         /// <summary>The total_input_tokens property</summary>
-        public int? TotalInputTokens { get; set; }
+        public int? TotalInputTokens { get => _explicitNullValueTotalInputTokens; set { _explicitNullValueTotalInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_input_tokens"); else _explicitNullProperties?.Remove("total_input_tokens"); } }
+        private int? _explicitNullValueTotalInputTokens = default!;
         /// <summary>The total_output_tokens property</summary>
-        public int? TotalOutputTokens { get; set; }
+        public int? TotalOutputTokens { get => _explicitNullValueTotalOutputTokens; set { _explicitNullValueTotalOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_output_tokens"); else _explicitNullProperties?.Remove("total_output_tokens"); } }
+        private int? _explicitNullValueTotalOutputTokens = default!;
         /// <summary>The total_tokens property</summary>
-        public int? TotalTokens { get; set; }
+        public int? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_tokens"); else _explicitNullProperties?.Remove("total_tokens"); } }
+        private int? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public static global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionUsage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteIntValue("total_input_tokens", TotalInputTokens);
             writer.WriteIntValue("total_output_tokens", TotalOutputTokens);
             writer.WriteIntValue("total_tokens", TotalTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Unlink_repo
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Site>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Site.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Netlify.OpenApiClient.Models.Site>(requestInfo, global::Soenneker.Netlify.OpenApiClient.Models.Site.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// [Beta] Unlinks the repo from the site.This action will also:- Delete associated deploy keys- Delete outgoing webhooks for the repo- Delete the site&apos;s build hooks

@@ -12,15 +12,28 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DatabaseComputeSettingsRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_cu") is { } nullNodeMaxCu && nullNodeMaxCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCu = null;
+            if (parseNode.GetChildNode("min_cu") is { } nullNodeMinCu && nullNodeMinCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinCu = null;
+            if (parseNode.GetChildNode("sleep_timeout_seconds") is { } nullNodeSleepTimeoutSeconds && nullNodeSleepTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SleepTimeoutSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum compute units (0.25 to 16.0). Must be greater than or equal to min_cu. max_cu - min_cu must not exceed 8.0.</summary>
-        public double? MaxCu { get; set; }
+        public double? MaxCu { get => _explicitNullValueMaxCu; set { _explicitNullValueMaxCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_cu"); else _explicitNullProperties?.Remove("max_cu"); } }
+        private double? _explicitNullValueMaxCu = default!;
         /// <summary>Minimum compute units (0.25 to 16.0). Must be less than or equal to max_cu.</summary>
-        public double? MinCu { get; set; }
+        public double? MinCu { get => _explicitNullValueMinCu; set { _explicitNullValueMinCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_cu"); else _explicitNullProperties?.Remove("min_cu"); } }
+        private double? _explicitNullValueMinCu = default!;
         /// <summary>Seconds of inactivity before the compute endpoint is suspended. Use -1 for always on, or a non-negative value.</summary>
-        public long? SleepTimeoutSeconds { get; set; }
+        public long? SleepTimeoutSeconds { get => _explicitNullValueSleepTimeoutSeconds; set { _explicitNullValueSleepTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sleep_timeout_seconds"); else _explicitNullProperties?.Remove("sleep_timeout_seconds"); } }
+        private long? _explicitNullValueSleepTimeoutSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DatabaseComputeSettingsRequest"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public static global::Soenneker.Netlify.OpenApiClient.Models.DatabaseComputeSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.DatabaseComputeSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Netlify.OpenApiClient.Models.DatabaseComputeSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteDoubleValue("max_cu", MaxCu);
             writer.WriteDoubleValue("min_cu", MinCu);
             writer.WriteLongValue("sleep_timeout_seconds", SleepTimeoutSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

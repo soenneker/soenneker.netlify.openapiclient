@@ -11,55 +11,83 @@ namespace Soenneker.Netlify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BuildStatusMinutes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current") is { } nullNodeCurrent && nullNodeCurrent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Current = null;
+            if (parseNode.GetChildNode("current_average_sec") is { } nullNodeCurrentAverageSec && nullNodeCurrentAverageSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentAverageSec = null;
+            if (parseNode.GetChildNode("included_minutes") is { } nullNodeIncludedMinutes && nullNodeIncludedMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedMinutes = null;
+            if (parseNode.GetChildNode("included_minutes_with_packs") is { } nullNodeIncludedMinutesWithPacks && nullNodeIncludedMinutesWithPacks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedMinutesWithPacks = null;
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("period_end_date") is { } nullNodePeriodEndDate && nullNodePeriodEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodEndDate = null;
+            if (parseNode.GetChildNode("period_start_date") is { } nullNodePeriodStartDate && nullNodePeriodStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodStartDate = null;
+            if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The current property</summary>
-        public int? Current { get; set; }
+        public int? Current { get => _explicitNullValueCurrent; set { _explicitNullValueCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current"); else _explicitNullProperties?.Remove("current"); } }
+        private int? _explicitNullValueCurrent = default!;
         /// <summary>The current_average_sec property</summary>
-        public int? CurrentAverageSec { get; set; }
+        public int? CurrentAverageSec { get => _explicitNullValueCurrentAverageSec; set { _explicitNullValueCurrentAverageSec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_average_sec"); else _explicitNullProperties?.Remove("current_average_sec"); } }
+        private int? _explicitNullValueCurrentAverageSec = default!;
         /// <summary>The included_minutes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncludedMinutes { get; set; }
+        public string? IncludedMinutes { get => _explicitNullValueIncludedMinutes; set { _explicitNullValueIncludedMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_minutes"); else _explicitNullProperties?.Remove("included_minutes"); } }
+        private string? _explicitNullValueIncludedMinutes = default!;
 #nullable restore
 #else
-        public string IncludedMinutes { get; set; }
+        public string IncludedMinutes { get => _explicitNullValueIncludedMinutes; set { _explicitNullValueIncludedMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_minutes"); else _explicitNullProperties?.Remove("included_minutes"); } }
+        private string _explicitNullValueIncludedMinutes = default!;
 #endif
         /// <summary>The included_minutes_with_packs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncludedMinutesWithPacks { get; set; }
+        public string? IncludedMinutesWithPacks { get => _explicitNullValueIncludedMinutesWithPacks; set { _explicitNullValueIncludedMinutesWithPacks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_minutes_with_packs"); else _explicitNullProperties?.Remove("included_minutes_with_packs"); } }
+        private string? _explicitNullValueIncludedMinutesWithPacks = default!;
 #nullable restore
 #else
-        public string IncludedMinutesWithPacks { get; set; }
+        public string IncludedMinutesWithPacks { get => _explicitNullValueIncludedMinutesWithPacks; set { _explicitNullValueIncludedMinutesWithPacks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_minutes_with_packs"); else _explicitNullProperties?.Remove("included_minutes_with_packs"); } }
+        private string _explicitNullValueIncludedMinutesWithPacks = default!;
 #endif
         /// <summary>The last_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get; set; }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get; set; }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>The period_end_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeriodEndDate { get; set; }
+        public string? PeriodEndDate { get => _explicitNullValuePeriodEndDate; set { _explicitNullValuePeriodEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_end_date"); else _explicitNullProperties?.Remove("period_end_date"); } }
+        private string? _explicitNullValuePeriodEndDate = default!;
 #nullable restore
 #else
-        public string PeriodEndDate { get; set; }
+        public string PeriodEndDate { get => _explicitNullValuePeriodEndDate; set { _explicitNullValuePeriodEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_end_date"); else _explicitNullProperties?.Remove("period_end_date"); } }
+        private string _explicitNullValuePeriodEndDate = default!;
 #endif
         /// <summary>The period_start_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeriodStartDate { get; set; }
+        public string? PeriodStartDate { get => _explicitNullValuePeriodStartDate; set { _explicitNullValuePeriodStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_start_date"); else _explicitNullProperties?.Remove("period_start_date"); } }
+        private string? _explicitNullValuePeriodStartDate = default!;
 #nullable restore
 #else
-        public string PeriodStartDate { get; set; }
+        public string PeriodStartDate { get => _explicitNullValuePeriodStartDate; set { _explicitNullValuePeriodStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_start_date"); else _explicitNullProperties?.Remove("period_start_date"); } }
+        private string _explicitNullValuePeriodStartDate = default!;
 #endif
         /// <summary>The previous property</summary>
-        public int? Previous { get; set; }
+        public int? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        private int? _explicitNullValuePrevious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes"/> and sets the default values.
         /// </summary>
@@ -75,7 +103,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         public static global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             writer.WriteStringValue("period_end_date", PeriodEndDate);
             writer.WriteStringValue("period_start_date", PeriodStartDate);
             writer.WriteIntValue("previous", Previous);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

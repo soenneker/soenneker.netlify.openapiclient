@@ -18,137 +18,150 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("async") is { } nullNodeAsync && nullNodeAsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Async = null;
-            if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
-            if (parseNode.GetChildNode("draft") is { } nullNodeDraft && nullNodeDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Draft = null;
-            if (parseNode.GetChildNode("edge_functions") is { } nullNodeEdgeFunctions && nullNodeEdgeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeFunctions = null;
-            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
-            if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
-            if (parseNode.GetChildNode("framework") is { } nullNodeFramework && nullNodeFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Framework = null;
-            if (parseNode.GetChildNode("framework_version") is { } nullNodeFrameworkVersion && nullNodeFrameworkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrameworkVersion = null;
-            if (parseNode.GetChildNode("functions") is { } nullNodeFunctions && nullNodeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Functions = null;
-            if (parseNode.GetChildNode("function_schedules") is { } nullNodeFunctionSchedules && nullNodeFunctionSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionSchedules = null;
-            if (parseNode.GetChildNode("functions_config") is { } nullNodeFunctionsConfig && nullNodeFunctionsConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionsConfig = null;
-            if (parseNode.GetChildNode("server") is { } nullNodeServer && nullNodeServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Server = null;
-            if (parseNode.GetChildNode("zip") is { } nullNodeZip && nullNodeZip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zip = null;
+            if (parseNode.GetChildNode("async") is null) { _explicitNullValueAsync = default!; _explicitNullProperties?.Remove("async"); }
+            else if (parseNode.GetChildNode("async") is { } nullNodeAsync && nullNodeAsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Async = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("draft") is null) { _explicitNullValueDraft = default!; _explicitNullProperties?.Remove("draft"); }
+            else if (parseNode.GetChildNode("draft") is { } nullNodeDraft && nullNodeDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Draft = null;
+            if (parseNode.GetChildNode("edge_functions") is null) { _explicitNullValueEdgeFunctions = default!; _explicitNullProperties?.Remove("edge_functions"); }
+            else if (parseNode.GetChildNode("edge_functions") is { } nullNodeEdgeFunctions && nullNodeEdgeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeFunctions = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("files") is null) { _explicitNullValueFiles = default!; _explicitNullProperties?.Remove("files"); }
+            else if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
+            if (parseNode.GetChildNode("framework") is null) { _explicitNullValueFramework = default!; _explicitNullProperties?.Remove("framework"); }
+            else if (parseNode.GetChildNode("framework") is { } nullNodeFramework && nullNodeFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Framework = null;
+            if (parseNode.GetChildNode("framework_version") is null) { _explicitNullValueFrameworkVersion = default!; _explicitNullProperties?.Remove("framework_version"); }
+            else if (parseNode.GetChildNode("framework_version") is { } nullNodeFrameworkVersion && nullNodeFrameworkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrameworkVersion = null;
+            if (parseNode.GetChildNode("functions") is null) { _explicitNullValueFunctions = default!; _explicitNullProperties?.Remove("functions"); }
+            else if (parseNode.GetChildNode("functions") is { } nullNodeFunctions && nullNodeFunctions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Functions = null;
+            if (parseNode.GetChildNode("function_schedules") is null) { _explicitNullValueFunctionSchedules = default!; _explicitNullProperties?.Remove("function_schedules"); }
+            else if (parseNode.GetChildNode("function_schedules") is { } nullNodeFunctionSchedules && nullNodeFunctionSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionSchedules = null;
+            if (parseNode.GetChildNode("functions_config") is null) { _explicitNullValueFunctionsConfig = default!; _explicitNullProperties?.Remove("functions_config"); }
+            else if (parseNode.GetChildNode("functions_config") is { } nullNodeFunctionsConfig && nullNodeFunctionsConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionsConfig = null;
+            if (parseNode.GetChildNode("server") is null) { _explicitNullValueServer = default!; _explicitNullProperties?.Remove("server"); }
+            else if (parseNode.GetChildNode("server") is { } nullNodeServer && nullNodeServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Server = null;
+            if (parseNode.GetChildNode("zip") is null) { _explicitNullValueZip = default!; _explicitNullProperties?.Remove("zip"); }
+            else if (parseNode.GetChildNode("zip") is { } nullNodeZip && nullNodeZip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zip = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The async property</summary>
-        public bool? Async { get => _explicitNullValueAsync; set { _explicitNullValueAsync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("async"); else _explicitNullProperties?.Remove("async"); } }
+        public bool? Async { get => _explicitNullValueAsync; set { _explicitNullValueAsync = value; AdditionalData?.Remove("async"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("async"); else _explicitNullProperties?.Remove("async"); } }
         private bool? _explicitNullValueAsync = default!;
         /// <summary>The branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>The draft property</summary>
-        public bool? Draft { get => _explicitNullValueDraft; set { _explicitNullValueDraft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft"); else _explicitNullProperties?.Remove("draft"); } }
+        public bool? Draft { get => _explicitNullValueDraft; set { _explicitNullValueDraft = value; AdditionalData?.Remove("draft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft"); else _explicitNullProperties?.Remove("draft"); } }
         private bool? _explicitNullValueDraft = default!;
         /// <summary>A hash mapping edge-function bundle formats to the code_sha of each bundle. Theresponse&apos;s required_edge_functions lists which of these still need to be uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty? EdgeFunctions { get => _explicitNullValueEdgeFunctions; set { _explicitNullValueEdgeFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_functions"); else _explicitNullProperties?.Remove("edge_functions"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty? EdgeFunctions { get => _explicitNullValueEdgeFunctions; set { _explicitNullValueEdgeFunctions = value; AdditionalData?.Remove("edge_functions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_functions"); else _explicitNullProperties?.Remove("edge_functions"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty? _explicitNullValueEdgeFunctions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty EdgeFunctions { get => _explicitNullValueEdgeFunctions; set { _explicitNullValueEdgeFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_functions"); else _explicitNullProperties?.Remove("edge_functions"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty EdgeFunctions { get => _explicitNullValueEdgeFunctions; set { _explicitNullValueEdgeFunctions = value; AdditionalData?.Remove("edge_functions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_functions"); else _explicitNullProperties?.Remove("edge_functions"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesEdgeFunctionsProperty _explicitNullValueEdgeFunctions = default!;
 #endif
         /// <summary>A list of deploy-specific environment variable data. Data specified this way applies onlyto this specific deploy and is merged into any existing environment variables set on theaccount and site.Deploy-specific environment variable data takes precedence over account and siteenvironment variable data: For example, a deploy-specific variable with the key `NODE_ENV`will take priority over any existing site- and account-level environment variable datawith the key `NODE_ENV`.Environment variable data may be provided at one of two times:- When creating a new Deploy with deploy files (most common)- When finalizing an existing Deploy with deploy filesOnce set, environment variables for a specific deploy cannot be modified. Subsequentattempts to modify environment variable data for a deploy will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable>? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable> Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable> Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DeployEnvironmentVariable> _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>A hash mapping file paths to SHA1 digests of the file contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; AdditionalData?.Remove("files"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty? _explicitNullValueFiles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; AdditionalData?.Remove("files"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFilesProperty _explicitNullValueFiles = default!;
 #endif
         /// <summary>The framework property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        public string? Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private string? _explicitNullValueFramework = default!;
 #nullable restore
 #else
-        public string Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
+        public string Framework { get => _explicitNullValueFramework; set { _explicitNullValueFramework = value; AdditionalData?.Remove("framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework"); else _explicitNullProperties?.Remove("framework"); } }
         private string _explicitNullValueFramework = default!;
 #endif
         /// <summary>The framework_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FrameworkVersion { get => _explicitNullValueFrameworkVersion; set { _explicitNullValueFrameworkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework_version"); else _explicitNullProperties?.Remove("framework_version"); } }
+        public string? FrameworkVersion { get => _explicitNullValueFrameworkVersion; set { _explicitNullValueFrameworkVersion = value; AdditionalData?.Remove("framework_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework_version"); else _explicitNullProperties?.Remove("framework_version"); } }
         private string? _explicitNullValueFrameworkVersion = default!;
 #nullable restore
 #else
-        public string FrameworkVersion { get => _explicitNullValueFrameworkVersion; set { _explicitNullValueFrameworkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework_version"); else _explicitNullProperties?.Remove("framework_version"); } }
+        public string FrameworkVersion { get => _explicitNullValueFrameworkVersion; set { _explicitNullValueFrameworkVersion = value; AdditionalData?.Remove("framework_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("framework_version"); else _explicitNullProperties?.Remove("framework_version"); } }
         private string _explicitNullValueFrameworkVersion = default!;
 #endif
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty? Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty? Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; AdditionalData?.Remove("functions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty? _explicitNullValueFunctions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty Functions { get => _explicitNullValueFunctions; set { _explicitNullValueFunctions = value; AdditionalData?.Remove("functions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions"); else _explicitNullProperties?.Remove("functions"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsProperty _explicitNullValueFunctions = default!;
 #endif
         /// <summary>The function_schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>? FunctionSchedules { get => _explicitNullValueFunctionSchedules; set { _explicitNullValueFunctionSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_schedules"); else _explicitNullProperties?.Remove("function_schedules"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>? FunctionSchedules { get => _explicitNullValueFunctionSchedules; set { _explicitNullValueFunctionSchedules = value; AdditionalData?.Remove("function_schedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_schedules"); else _explicitNullProperties?.Remove("function_schedules"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule>? _explicitNullValueFunctionSchedules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule> FunctionSchedules { get => _explicitNullValueFunctionSchedules; set { _explicitNullValueFunctionSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_schedules"); else _explicitNullProperties?.Remove("function_schedules"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule> FunctionSchedules { get => _explicitNullValueFunctionSchedules; set { _explicitNullValueFunctionSchedules = value; AdditionalData?.Remove("function_schedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_schedules"); else _explicitNullProperties?.Remove("function_schedules"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionSchedule> _explicitNullValueFunctionSchedules = default!;
 #endif
         /// <summary>The functions_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty? FunctionsConfig { get => _explicitNullValueFunctionsConfig; set { _explicitNullValueFunctionsConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_config"); else _explicitNullProperties?.Remove("functions_config"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty? FunctionsConfig { get => _explicitNullValueFunctionsConfig; set { _explicitNullValueFunctionsConfig = value; AdditionalData?.Remove("functions_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_config"); else _explicitNullProperties?.Remove("functions_config"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty? _explicitNullValueFunctionsConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty FunctionsConfig { get => _explicitNullValueFunctionsConfig; set { _explicitNullValueFunctionsConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_config"); else _explicitNullProperties?.Remove("functions_config"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty FunctionsConfig { get => _explicitNullValueFunctionsConfig; set { _explicitNullValueFunctionsConfig = value; AdditionalData?.Remove("functions_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_config"); else _explicitNullProperties?.Remove("functions_config"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesFunctionsConfigProperty _explicitNullValueFunctionsConfig = default!;
 #endif
         /// <summary>The deploy&apos;s Netlify Server. A deploy has at most one. The response&apos;srequired_server says whether it still needs to be uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer? Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer? Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer? _explicitNullValueServer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServer _explicitNullValueServer = default!;
 #endif
         /// <summary>A zip file containing the site files to deploy. Alternative to &apos;files&apos;.To use this field, set Content-Type to &apos;application/json&apos; and include the zip content here.Alternatively, you can set Content-Type to &apos;application/zip&apos; and send the zip as the raw request body (not as JSON).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        public byte[]? Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; AdditionalData?.Remove("zip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
         private byte[]? _explicitNullValueZip = default!;
 #nullable restore
 #else
-        public byte[] Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        public byte[] Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; AdditionalData?.Remove("zip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
         private byte[] _explicitNullValueZip = default!;
 #endif
         /// <summary>

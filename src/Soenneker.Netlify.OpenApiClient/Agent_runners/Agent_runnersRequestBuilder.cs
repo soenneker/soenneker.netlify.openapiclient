@@ -113,7 +113,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Agent_runnersRequestBuilder.Agent_runnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&branch*,from*,page*,per_page*,result_branch*,state*,title*,to*,user_id*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/agent_runners?account_id={account_id}&site_id={site_id}{&branch*,from*,page*,per_page*,result_branch*,state*,title*,to*,user_id*}", RequestAdapter.BaseUrl, "https://api.netlify.com/api/v1", "/agent_runners", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -132,7 +132,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Agent_runnersRequestBuilder.Agent_runnersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.netlify.com/api/v1", "/agent_runners", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

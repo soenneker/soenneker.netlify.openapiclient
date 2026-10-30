@@ -18,7 +18,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branches") is { } nullNodeBranches && nullNodeBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branches = null;
+            if (parseNode.GetChildNode("branches") is null) { _explicitNullValueBranches = default!; _explicitNullProperties?.Remove("branches"); }
+            else if (parseNode.GetChildNode("branches") is { } nullNodeBranches && nullNodeBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branches = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>List of database branches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail>? Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail>? Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; AdditionalData?.Remove("branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail>? _explicitNullValueBranches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail> Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail> Branches { get => _explicitNullValueBranches; set { _explicitNullValueBranches = value; AdditionalData?.Remove("branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branches"); else _explicitNullProperties?.Remove("branches"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchDetail> _explicitNullValueBranches = default!;
 #endif
         /// <summary>

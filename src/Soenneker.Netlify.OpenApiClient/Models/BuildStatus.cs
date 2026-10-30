@@ -17,36 +17,41 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("build_count") is { } nullNodeBuildCount && nullNodeBuildCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCount = null;
-            if (parseNode.GetChildNode("enqueued") is { } nullNodeEnqueued && nullNodeEnqueued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enqueued = null;
-            if (parseNode.GetChildNode("minutes") is { } nullNodeMinutes && nullNodeMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minutes = null;
-            if (parseNode.GetChildNode("pending_concurrency") is { } nullNodePendingConcurrency && nullNodePendingConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingConcurrency = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("build_count") is null) { _explicitNullValueBuildCount = default!; _explicitNullProperties?.Remove("build_count"); }
+            else if (parseNode.GetChildNode("build_count") is { } nullNodeBuildCount && nullNodeBuildCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCount = null;
+            if (parseNode.GetChildNode("enqueued") is null) { _explicitNullValueEnqueued = default!; _explicitNullProperties?.Remove("enqueued"); }
+            else if (parseNode.GetChildNode("enqueued") is { } nullNodeEnqueued && nullNodeEnqueued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enqueued = null;
+            if (parseNode.GetChildNode("minutes") is null) { _explicitNullValueMinutes = default!; _explicitNullProperties?.Remove("minutes"); }
+            else if (parseNode.GetChildNode("minutes") is { } nullNodeMinutes && nullNodeMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minutes = null;
+            if (parseNode.GetChildNode("pending_concurrency") is null) { _explicitNullValuePendingConcurrency = default!; _explicitNullProperties?.Remove("pending_concurrency"); }
+            else if (parseNode.GetChildNode("pending_concurrency") is { } nullNodePendingConcurrency && nullNodePendingConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingConcurrency = null;
         }
 
         /// <summary>The active property</summary>
-        public int? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public int? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private int? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The build_count property</summary>
-        public int? BuildCount { get => _explicitNullValueBuildCount; set { _explicitNullValueBuildCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_count"); else _explicitNullProperties?.Remove("build_count"); } }
+        public int? BuildCount { get => _explicitNullValueBuildCount; set { _explicitNullValueBuildCount = value; AdditionalData?.Remove("build_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_count"); else _explicitNullProperties?.Remove("build_count"); } }
         private int? _explicitNullValueBuildCount = default!;
         /// <summary>The enqueued property</summary>
-        public int? Enqueued { get => _explicitNullValueEnqueued; set { _explicitNullValueEnqueued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enqueued"); else _explicitNullProperties?.Remove("enqueued"); } }
+        public int? Enqueued { get => _explicitNullValueEnqueued; set { _explicitNullValueEnqueued = value; AdditionalData?.Remove("enqueued"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enqueued"); else _explicitNullProperties?.Remove("enqueued"); } }
         private int? _explicitNullValueEnqueued = default!;
         /// <summary>The minutes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes? Minutes { get => _explicitNullValueMinutes; set { _explicitNullValueMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes"); else _explicitNullProperties?.Remove("minutes"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes? Minutes { get => _explicitNullValueMinutes; set { _explicitNullValueMinutes = value; AdditionalData?.Remove("minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes"); else _explicitNullProperties?.Remove("minutes"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes? _explicitNullValueMinutes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes Minutes { get => _explicitNullValueMinutes; set { _explicitNullValueMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes"); else _explicitNullProperties?.Remove("minutes"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes Minutes { get => _explicitNullValueMinutes; set { _explicitNullValueMinutes = value; AdditionalData?.Remove("minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes"); else _explicitNullProperties?.Remove("minutes"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.BuildStatusMinutes _explicitNullValueMinutes = default!;
 #endif
         /// <summary>The pending_concurrency property</summary>
-        public int? PendingConcurrency { get => _explicitNullValuePendingConcurrency; set { _explicitNullValuePendingConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_concurrency"); else _explicitNullProperties?.Remove("pending_concurrency"); } }
+        public int? PendingConcurrency { get => _explicitNullValuePendingConcurrency; set { _explicitNullValuePendingConcurrency = value; AdditionalData?.Remove("pending_concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_concurrency"); else _explicitNullProperties?.Remove("pending_concurrency"); } }
         private int? _explicitNullValuePendingConcurrency = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.BuildStatus"/> and sets the default values.

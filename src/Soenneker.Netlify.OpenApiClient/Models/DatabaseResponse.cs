@@ -18,7 +18,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connection_string") is { } nullNodeConnectionString && nullNodeConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionString = null;
+            if (parseNode.GetChildNode("connection_string") is null) { _explicitNullValueConnectionString = default!; _explicitNullProperties?.Remove("connection_string"); }
+            else if (parseNode.GetChildNode("connection_string") is { } nullNodeConnectionString && nullNodeConnectionString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionString = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The connection string for the database</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionString { get => _explicitNullValueConnectionString; set { _explicitNullValueConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_string"); else _explicitNullProperties?.Remove("connection_string"); } }
+        public string? ConnectionString { get => _explicitNullValueConnectionString; set { _explicitNullValueConnectionString = value; AdditionalData?.Remove("connection_string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_string"); else _explicitNullProperties?.Remove("connection_string"); } }
         private string? _explicitNullValueConnectionString = default!;
 #nullable restore
 #else
-        public string ConnectionString { get => _explicitNullValueConnectionString; set { _explicitNullValueConnectionString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_string"); else _explicitNullProperties?.Remove("connection_string"); } }
+        public string ConnectionString { get => _explicitNullValueConnectionString; set { _explicitNullValueConnectionString = value; AdditionalData?.Remove("connection_string"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_string"); else _explicitNullProperties?.Remove("connection_string"); } }
         private string _explicitNullValueConnectionString = default!;
 #endif
         /// <summary>

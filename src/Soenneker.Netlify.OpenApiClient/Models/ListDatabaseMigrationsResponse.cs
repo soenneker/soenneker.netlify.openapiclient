@@ -18,7 +18,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("migrations") is { } nullNodeMigrations && nullNodeMigrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrations = null;
+            if (parseNode.GetChildNode("migrations") is null) { _explicitNullValueMigrations = default!; _explicitNullProperties?.Remove("migrations"); }
+            else if (parseNode.GetChildNode("migrations") is { } nullNodeMigrations && nullNodeMigrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>List of migrations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration>? Migrations { get => _explicitNullValueMigrations; set { _explicitNullValueMigrations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrations"); else _explicitNullProperties?.Remove("migrations"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration>? Migrations { get => _explicitNullValueMigrations; set { _explicitNullValueMigrations = value; AdditionalData?.Remove("migrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrations"); else _explicitNullProperties?.Remove("migrations"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration>? _explicitNullValueMigrations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration> Migrations { get => _explicitNullValueMigrations; set { _explicitNullValueMigrations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrations"); else _explicitNullProperties?.Remove("migrations"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration> Migrations { get => _explicitNullValueMigrations; set { _explicitNullValueMigrations = value; AdditionalData?.Remove("migrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrations"); else _explicitNullProperties?.Remove("migrations"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseMigration> _explicitNullValueMigrations = default!;
 #endif
         /// <summary>

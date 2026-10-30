@@ -70,7 +70,7 @@ namespace Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Agent_runners.Upload_url.Upload_urlRequestBuilder.Upload_urlRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.netlify.com/api/v1", "/agent_runners/upload_url", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

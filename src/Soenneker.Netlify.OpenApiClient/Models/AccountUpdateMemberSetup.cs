@@ -17,27 +17,30 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
-            if (parseNode.GetChildNode("site_access") is { } nullNodeSiteAccess && nullNodeSiteAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteAccess = null;
-            if (parseNode.GetChildNode("site_ids") is { } nullNodeSiteIds && nullNodeSiteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteIds = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("site_access") is null) { _explicitNullValueSiteAccess = default!; _explicitNullProperties?.Remove("site_access"); }
+            else if (parseNode.GetChildNode("site_access") is { } nullNodeSiteAccess && nullNodeSiteAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteAccess = null;
+            if (parseNode.GetChildNode("site_ids") is null) { _explicitNullValueSiteIds = default!; _explicitNullProperties?.Remove("site_ids"); }
+            else if (parseNode.GetChildNode("site_ids") is { } nullNodeSiteIds && nullNodeSiteIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole? _explicitNullValueRole = default!;
         /// <summary>The site_access property</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? SiteAccess { get => _explicitNullValueSiteAccess; set { _explicitNullValueSiteAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_access"); else _explicitNullProperties?.Remove("site_access"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? SiteAccess { get => _explicitNullValueSiteAccess; set { _explicitNullValueSiteAccess = value; AdditionalData?.Remove("site_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_access"); else _explicitNullProperties?.Remove("site_access"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess? _explicitNullValueSiteAccess = default!;
         /// <summary>The site_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
+        public List<string>? SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; AdditionalData?.Remove("site_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
         private List<string>? _explicitNullValueSiteIds = default!;
 #nullable restore
 #else
-        public List<string> SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
+        public List<string> SiteIds { get => _explicitNullValueSiteIds; set { _explicitNullValueSiteIds = value; AdditionalData?.Remove("site_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_ids"); else _explicitNullProperties?.Remove("site_ids"); } }
         private List<string> _explicitNullValueSiteIds = default!;
 #endif
         /// <summary>
@@ -65,8 +68,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole>(); } },
-                { "site_access", n => { SiteAccess = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
+                { "site_access", n => { var parsed = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.AccountUpdateMemberSetupSiteAccess>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSiteAccess = default; _explicitNullProperties?.Remove("site_access"); AdditionalData["site_access"] = unknown; } else { SiteAccess = parsed; AdditionalData.Remove("site_access"); } } },
                 { "site_ids", n => { SiteIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

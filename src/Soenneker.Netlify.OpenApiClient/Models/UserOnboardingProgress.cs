@@ -17,7 +17,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("slides") is { } nullNodeSlides && nullNodeSlides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slides = null;
+            if (parseNode.GetChildNode("slides") is null) { _explicitNullValueSlides = default!; _explicitNullProperties?.Remove("slides"); }
+            else if (parseNode.GetChildNode("slides") is { } nullNodeSlides && nullNodeSlides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slides = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The slides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slides { get => _explicitNullValueSlides; set { _explicitNullValueSlides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slides"); else _explicitNullProperties?.Remove("slides"); } }
+        public string? Slides { get => _explicitNullValueSlides; set { _explicitNullValueSlides = value; AdditionalData?.Remove("slides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slides"); else _explicitNullProperties?.Remove("slides"); } }
         private string? _explicitNullValueSlides = default!;
 #nullable restore
 #else
-        public string Slides { get => _explicitNullValueSlides; set { _explicitNullValueSlides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slides"); else _explicitNullProperties?.Remove("slides"); } }
+        public string Slides { get => _explicitNullValueSlides; set { _explicitNullValueSlides = value; AdditionalData?.Remove("slides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slides"); else _explicitNullProperties?.Remove("slides"); } }
         private string _explicitNullValueSlides = default!;
 #endif
         /// <summary>

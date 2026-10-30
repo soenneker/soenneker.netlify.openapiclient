@@ -17,13 +17,20 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("billing_details") is { } nullNodeBillingDetails && nullNodeBillingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDetails = null;
-            if (parseNode.GetChildNode("billing_email") is { } nullNodeBillingEmail && nullNodeBillingEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingEmail = null;
-            if (parseNode.GetChildNode("billing_name") is { } nullNodeBillingName && nullNodeBillingName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingName = null;
-            if (parseNode.GetChildNode("extra_seats_block") is { } nullNodeExtraSeatsBlock && nullNodeExtraSeatsBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraSeatsBlock = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
-            if (parseNode.GetChildNode("type_id") is { } nullNodeTypeId && nullNodeTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeId = null;
+            if (parseNode.GetChildNode("billing_details") is null) { _explicitNullValueBillingDetails = default!; _explicitNullProperties?.Remove("billing_details"); }
+            else if (parseNode.GetChildNode("billing_details") is { } nullNodeBillingDetails && nullNodeBillingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDetails = null;
+            if (parseNode.GetChildNode("billing_email") is null) { _explicitNullValueBillingEmail = default!; _explicitNullProperties?.Remove("billing_email"); }
+            else if (parseNode.GetChildNode("billing_email") is { } nullNodeBillingEmail && nullNodeBillingEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingEmail = null;
+            if (parseNode.GetChildNode("billing_name") is null) { _explicitNullValueBillingName = default!; _explicitNullProperties?.Remove("billing_name"); }
+            else if (parseNode.GetChildNode("billing_name") is { } nullNodeBillingName && nullNodeBillingName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingName = null;
+            if (parseNode.GetChildNode("extra_seats_block") is null) { _explicitNullValueExtraSeatsBlock = default!; _explicitNullProperties?.Remove("extra_seats_block"); }
+            else if (parseNode.GetChildNode("extra_seats_block") is { } nullNodeExtraSeatsBlock && nullNodeExtraSeatsBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraSeatsBlock = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
+            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("type_id") is null) { _explicitNullValueTypeId = default!; _explicitNullProperties?.Remove("type_id"); }
+            else if (parseNode.GetChildNode("type_id") is { } nullNodeTypeId && nullNodeTypeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,64 +38,64 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The billing_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        public string? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
         private string? _explicitNullValueBillingDetails = default!;
 #nullable restore
 #else
-        public string BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        public string BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
         private string _explicitNullValueBillingDetails = default!;
 #endif
         /// <summary>The billing_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
+        public string? BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; AdditionalData?.Remove("billing_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
         private string? _explicitNullValueBillingEmail = default!;
 #nullable restore
 #else
-        public string BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
+        public string BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; AdditionalData?.Remove("billing_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
         private string _explicitNullValueBillingEmail = default!;
 #endif
         /// <summary>The billing_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingName { get => _explicitNullValueBillingName; set { _explicitNullValueBillingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_name"); else _explicitNullProperties?.Remove("billing_name"); } }
+        public string? BillingName { get => _explicitNullValueBillingName; set { _explicitNullValueBillingName = value; AdditionalData?.Remove("billing_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_name"); else _explicitNullProperties?.Remove("billing_name"); } }
         private string? _explicitNullValueBillingName = default!;
 #nullable restore
 #else
-        public string BillingName { get => _explicitNullValueBillingName; set { _explicitNullValueBillingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_name"); else _explicitNullProperties?.Remove("billing_name"); } }
+        public string BillingName { get => _explicitNullValueBillingName; set { _explicitNullValueBillingName = value; AdditionalData?.Remove("billing_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_name"); else _explicitNullProperties?.Remove("billing_name"); } }
         private string _explicitNullValueBillingName = default!;
 #endif
         /// <summary>The extra_seats_block property</summary>
-        public int? ExtraSeatsBlock { get => _explicitNullValueExtraSeatsBlock; set { _explicitNullValueExtraSeatsBlock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_seats_block"); else _explicitNullProperties?.Remove("extra_seats_block"); } }
+        public int? ExtraSeatsBlock { get => _explicitNullValueExtraSeatsBlock; set { _explicitNullValueExtraSeatsBlock = value; AdditionalData?.Remove("extra_seats_block"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_seats_block"); else _explicitNullProperties?.Remove("extra_seats_block"); } }
         private int? _explicitNullValueExtraSeatsBlock = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>The type_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeId { get => _explicitNullValueTypeId; set { _explicitNullValueTypeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_id"); else _explicitNullProperties?.Remove("type_id"); } }
+        public string? TypeId { get => _explicitNullValueTypeId; set { _explicitNullValueTypeId = value; AdditionalData?.Remove("type_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_id"); else _explicitNullProperties?.Remove("type_id"); } }
         private string? _explicitNullValueTypeId = default!;
 #nullable restore
 #else
-        public string TypeId { get => _explicitNullValueTypeId; set { _explicitNullValueTypeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_id"); else _explicitNullProperties?.Remove("type_id"); } }
+        public string TypeId { get => _explicitNullValueTypeId; set { _explicitNullValueTypeId = value; AdditionalData?.Remove("type_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_id"); else _explicitNullProperties?.Remove("type_id"); } }
         private string _explicitNullValueTypeId = default!;
 #endif
         /// <summary>

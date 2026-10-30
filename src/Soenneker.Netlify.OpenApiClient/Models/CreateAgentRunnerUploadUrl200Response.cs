@@ -17,8 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_key") is { } nullNodeFileKey && nullNodeFileKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileKey = null;
-            if (parseNode.GetChildNode("upload_url") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
+            if (parseNode.GetChildNode("file_key") is null) { _explicitNullValueFileKey = default!; _explicitNullProperties?.Remove("file_key"); }
+            else if (parseNode.GetChildNode("file_key") is { } nullNodeFileKey && nullNodeFileKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileKey = null;
+            if (parseNode.GetChildNode("upload_url") is null) { _explicitNullValueUploadUrl = default!; _explicitNullProperties?.Remove("upload_url"); }
+            else if (parseNode.GetChildNode("upload_url") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Storage key of the uploaded file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileKey { get => _explicitNullValueFileKey; set { _explicitNullValueFileKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_key"); else _explicitNullProperties?.Remove("file_key"); } }
+        public string? FileKey { get => _explicitNullValueFileKey; set { _explicitNullValueFileKey = value; AdditionalData?.Remove("file_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_key"); else _explicitNullProperties?.Remove("file_key"); } }
         private string? _explicitNullValueFileKey = default!;
 #nullable restore
 #else
-        public string FileKey { get => _explicitNullValueFileKey; set { _explicitNullValueFileKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_key"); else _explicitNullProperties?.Remove("file_key"); } }
+        public string FileKey { get => _explicitNullValueFileKey; set { _explicitNullValueFileKey = value; AdditionalData?.Remove("file_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_key"); else _explicitNullProperties?.Remove("file_key"); } }
         private string _explicitNullValueFileKey = default!;
 #endif
         /// <summary>Presigned URL to upload the file to with a PUT request. Expires after one hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("upload_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
         private string? _explicitNullValueUploadUrl = default!;
 #nullable restore
 #else
-        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("upload_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
         private string _explicitNullValueUploadUrl = default!;
 #endif
         /// <summary>

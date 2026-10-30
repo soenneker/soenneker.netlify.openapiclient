@@ -17,21 +17,36 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_branches") is { } nullNodeAllowedBranches && nullNodeAllowedBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedBranches = null;
-            if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
-            if (parseNode.GetChildNode("deploy_key_id") is { } nullNodeDeployKeyId && nullNodeDeployKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployKeyId = null;
-            if (parseNode.GetChildNode("dir") is { } nullNodeDir && nullNodeDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dir = null;
-            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
-            if (parseNode.GetChildNode("functions_dir") is { } nullNodeFunctionsDir && nullNodeFunctionsDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionsDir = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("installation_id") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
-            if (parseNode.GetChildNode("private_logs") is { } nullNodePrivateLogs && nullNodePrivateLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLogs = null;
-            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("public_repo") is { } nullNodePublicRepo && nullNodePublicRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicRepo = null;
-            if (parseNode.GetChildNode("repo_branch") is { } nullNodeRepoBranch && nullNodeRepoBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoBranch = null;
-            if (parseNode.GetChildNode("repo_path") is { } nullNodeRepoPath && nullNodeRepoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoPath = null;
-            if (parseNode.GetChildNode("repo_url") is { } nullNodeRepoUrl && nullNodeRepoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoUrl = null;
-            if (parseNode.GetChildNode("stop_builds") is { } nullNodeStopBuilds && nullNodeStopBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopBuilds = null;
+            if (parseNode.GetChildNode("allowed_branches") is null) { _explicitNullValueAllowedBranches = default!; _explicitNullProperties?.Remove("allowed_branches"); }
+            else if (parseNode.GetChildNode("allowed_branches") is { } nullNodeAllowedBranches && nullNodeAllowedBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedBranches = null;
+            if (parseNode.GetChildNode("cmd") is null) { _explicitNullValueCmd = default!; _explicitNullProperties?.Remove("cmd"); }
+            else if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
+            if (parseNode.GetChildNode("deploy_key_id") is null) { _explicitNullValueDeployKeyId = default!; _explicitNullProperties?.Remove("deploy_key_id"); }
+            else if (parseNode.GetChildNode("deploy_key_id") is { } nullNodeDeployKeyId && nullNodeDeployKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployKeyId = null;
+            if (parseNode.GetChildNode("dir") is null) { _explicitNullValueDir = default!; _explicitNullProperties?.Remove("dir"); }
+            else if (parseNode.GetChildNode("dir") is { } nullNodeDir && nullNodeDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dir = null;
+            if (parseNode.GetChildNode("env") is null) { _explicitNullValueEnv = default!; _explicitNullProperties?.Remove("env"); }
+            else if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
+            if (parseNode.GetChildNode("functions_dir") is null) { _explicitNullValueFunctionsDir = default!; _explicitNullProperties?.Remove("functions_dir"); }
+            else if (parseNode.GetChildNode("functions_dir") is { } nullNodeFunctionsDir && nullNodeFunctionsDir.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionsDir = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("installation_id") is null) { _explicitNullValueInstallationId = default!; _explicitNullProperties?.Remove("installation_id"); }
+            else if (parseNode.GetChildNode("installation_id") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
+            if (parseNode.GetChildNode("private_logs") is null) { _explicitNullValuePrivateLogs = default!; _explicitNullProperties?.Remove("private_logs"); }
+            else if (parseNode.GetChildNode("private_logs") is { } nullNodePrivateLogs && nullNodePrivateLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateLogs = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("public_repo") is null) { _explicitNullValuePublicRepo = default!; _explicitNullProperties?.Remove("public_repo"); }
+            else if (parseNode.GetChildNode("public_repo") is { } nullNodePublicRepo && nullNodePublicRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicRepo = null;
+            if (parseNode.GetChildNode("repo_branch") is null) { _explicitNullValueRepoBranch = default!; _explicitNullProperties?.Remove("repo_branch"); }
+            else if (parseNode.GetChildNode("repo_branch") is { } nullNodeRepoBranch && nullNodeRepoBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoBranch = null;
+            if (parseNode.GetChildNode("repo_path") is null) { _explicitNullValueRepoPath = default!; _explicitNullProperties?.Remove("repo_path"); }
+            else if (parseNode.GetChildNode("repo_path") is { } nullNodeRepoPath && nullNodeRepoPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoPath = null;
+            if (parseNode.GetChildNode("repo_url") is null) { _explicitNullValueRepoUrl = default!; _explicitNullProperties?.Remove("repo_url"); }
+            else if (parseNode.GetChildNode("repo_url") is { } nullNodeRepoUrl && nullNodeRepoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoUrl = null;
+            if (parseNode.GetChildNode("stop_builds") is null) { _explicitNullValueStopBuilds = default!; _explicitNullProperties?.Remove("stop_builds"); }
+            else if (parseNode.GetChildNode("stop_builds") is { } nullNodeStopBuilds && nullNodeStopBuilds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopBuilds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,117 +54,117 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The allowed_branches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedBranches { get => _explicitNullValueAllowedBranches; set { _explicitNullValueAllowedBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_branches"); else _explicitNullProperties?.Remove("allowed_branches"); } }
+        public List<string>? AllowedBranches { get => _explicitNullValueAllowedBranches; set { _explicitNullValueAllowedBranches = value; AdditionalData?.Remove("allowed_branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_branches"); else _explicitNullProperties?.Remove("allowed_branches"); } }
         private List<string>? _explicitNullValueAllowedBranches = default!;
 #nullable restore
 #else
-        public List<string> AllowedBranches { get => _explicitNullValueAllowedBranches; set { _explicitNullValueAllowedBranches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_branches"); else _explicitNullProperties?.Remove("allowed_branches"); } }
+        public List<string> AllowedBranches { get => _explicitNullValueAllowedBranches; set { _explicitNullValueAllowedBranches = value; AdditionalData?.Remove("allowed_branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_branches"); else _explicitNullProperties?.Remove("allowed_branches"); } }
         private List<string> _explicitNullValueAllowedBranches = default!;
 #endif
         /// <summary>The build command to run. This is the command that Netlify runs to build your site. If a site has a netlify.toml file with a build command it will override this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        public string? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private string? _explicitNullValueCmd = default!;
 #nullable restore
 #else
-        public string Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        public string Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private string _explicitNullValueCmd = default!;
 #endif
         /// <summary>The deploy_key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployKeyId { get => _explicitNullValueDeployKeyId; set { _explicitNullValueDeployKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_key_id"); else _explicitNullProperties?.Remove("deploy_key_id"); } }
+        public string? DeployKeyId { get => _explicitNullValueDeployKeyId; set { _explicitNullValueDeployKeyId = value; AdditionalData?.Remove("deploy_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_key_id"); else _explicitNullProperties?.Remove("deploy_key_id"); } }
         private string? _explicitNullValueDeployKeyId = default!;
 #nullable restore
 #else
-        public string DeployKeyId { get => _explicitNullValueDeployKeyId; set { _explicitNullValueDeployKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_key_id"); else _explicitNullProperties?.Remove("deploy_key_id"); } }
+        public string DeployKeyId { get => _explicitNullValueDeployKeyId; set { _explicitNullValueDeployKeyId = value; AdditionalData?.Remove("deploy_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_key_id"); else _explicitNullProperties?.Remove("deploy_key_id"); } }
         private string _explicitNullValueDeployKeyId = default!;
 #endif
         /// <summary>The dir property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dir { get => _explicitNullValueDir; set { _explicitNullValueDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dir"); else _explicitNullProperties?.Remove("dir"); } }
+        public string? Dir { get => _explicitNullValueDir; set { _explicitNullValueDir = value; AdditionalData?.Remove("dir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dir"); else _explicitNullProperties?.Remove("dir"); } }
         private string? _explicitNullValueDir = default!;
 #nullable restore
 #else
-        public string Dir { get => _explicitNullValueDir; set { _explicitNullValueDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dir"); else _explicitNullProperties?.Remove("dir"); } }
+        public string Dir { get => _explicitNullValueDir; set { _explicitNullValueDir = value; AdditionalData?.Remove("dir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dir"); else _explicitNullProperties?.Remove("dir"); } }
         private string _explicitNullValueDir = default!;
 #endif
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty? _explicitNullValueEnv = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.RepoInfoEnvProperty _explicitNullValueEnv = default!;
 #endif
         /// <summary>The directory where Netlify can find your compiled functions to deploy them. Defaults to netlify/functions if not set. You can also define and override this setting in your project’s netlify.toml file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FunctionsDir { get => _explicitNullValueFunctionsDir; set { _explicitNullValueFunctionsDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_dir"); else _explicitNullProperties?.Remove("functions_dir"); } }
+        public string? FunctionsDir { get => _explicitNullValueFunctionsDir; set { _explicitNullValueFunctionsDir = value; AdditionalData?.Remove("functions_dir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_dir"); else _explicitNullProperties?.Remove("functions_dir"); } }
         private string? _explicitNullValueFunctionsDir = default!;
 #nullable restore
 #else
-        public string FunctionsDir { get => _explicitNullValueFunctionsDir; set { _explicitNullValueFunctionsDir = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_dir"); else _explicitNullProperties?.Remove("functions_dir"); } }
+        public string FunctionsDir { get => _explicitNullValueFunctionsDir; set { _explicitNullValueFunctionsDir = value; AdditionalData?.Remove("functions_dir"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("functions_dir"); else _explicitNullProperties?.Remove("functions_dir"); } }
         private string _explicitNullValueFunctionsDir = default!;
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>The installation_id property</summary>
-        public int? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installation_id"); else _explicitNullProperties?.Remove("installation_id"); } }
+        public int? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; AdditionalData?.Remove("installation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installation_id"); else _explicitNullProperties?.Remove("installation_id"); } }
         private int? _explicitNullValueInstallationId = default!;
         /// <summary>The private_logs property</summary>
-        public bool? PrivateLogs { get => _explicitNullValuePrivateLogs; set { _explicitNullValuePrivateLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_logs"); else _explicitNullProperties?.Remove("private_logs"); } }
+        public bool? PrivateLogs { get => _explicitNullValuePrivateLogs; set { _explicitNullValuePrivateLogs = value; AdditionalData?.Remove("private_logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_logs"); else _explicitNullProperties?.Remove("private_logs"); } }
         private bool? _explicitNullValuePrivateLogs = default!;
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The public_repo property</summary>
-        public bool? PublicRepo { get => _explicitNullValuePublicRepo; set { _explicitNullValuePublicRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_repo"); else _explicitNullProperties?.Remove("public_repo"); } }
+        public bool? PublicRepo { get => _explicitNullValuePublicRepo; set { _explicitNullValuePublicRepo = value; AdditionalData?.Remove("public_repo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_repo"); else _explicitNullProperties?.Remove("public_repo"); } }
         private bool? _explicitNullValuePublicRepo = default!;
         /// <summary>The repo_branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoBranch { get => _explicitNullValueRepoBranch; set { _explicitNullValueRepoBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_branch"); else _explicitNullProperties?.Remove("repo_branch"); } }
+        public string? RepoBranch { get => _explicitNullValueRepoBranch; set { _explicitNullValueRepoBranch = value; AdditionalData?.Remove("repo_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_branch"); else _explicitNullProperties?.Remove("repo_branch"); } }
         private string? _explicitNullValueRepoBranch = default!;
 #nullable restore
 #else
-        public string RepoBranch { get => _explicitNullValueRepoBranch; set { _explicitNullValueRepoBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_branch"); else _explicitNullProperties?.Remove("repo_branch"); } }
+        public string RepoBranch { get => _explicitNullValueRepoBranch; set { _explicitNullValueRepoBranch = value; AdditionalData?.Remove("repo_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_branch"); else _explicitNullProperties?.Remove("repo_branch"); } }
         private string _explicitNullValueRepoBranch = default!;
 #endif
         /// <summary>The repo_path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoPath { get => _explicitNullValueRepoPath; set { _explicitNullValueRepoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_path"); else _explicitNullProperties?.Remove("repo_path"); } }
+        public string? RepoPath { get => _explicitNullValueRepoPath; set { _explicitNullValueRepoPath = value; AdditionalData?.Remove("repo_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_path"); else _explicitNullProperties?.Remove("repo_path"); } }
         private string? _explicitNullValueRepoPath = default!;
 #nullable restore
 #else
-        public string RepoPath { get => _explicitNullValueRepoPath; set { _explicitNullValueRepoPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_path"); else _explicitNullProperties?.Remove("repo_path"); } }
+        public string RepoPath { get => _explicitNullValueRepoPath; set { _explicitNullValueRepoPath = value; AdditionalData?.Remove("repo_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_path"); else _explicitNullProperties?.Remove("repo_path"); } }
         private string _explicitNullValueRepoPath = default!;
 #endif
         /// <summary>The repo_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoUrl { get => _explicitNullValueRepoUrl; set { _explicitNullValueRepoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_url"); else _explicitNullProperties?.Remove("repo_url"); } }
+        public string? RepoUrl { get => _explicitNullValueRepoUrl; set { _explicitNullValueRepoUrl = value; AdditionalData?.Remove("repo_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_url"); else _explicitNullProperties?.Remove("repo_url"); } }
         private string? _explicitNullValueRepoUrl = default!;
 #nullable restore
 #else
-        public string RepoUrl { get => _explicitNullValueRepoUrl; set { _explicitNullValueRepoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_url"); else _explicitNullProperties?.Remove("repo_url"); } }
+        public string RepoUrl { get => _explicitNullValueRepoUrl; set { _explicitNullValueRepoUrl = value; AdditionalData?.Remove("repo_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_url"); else _explicitNullProperties?.Remove("repo_url"); } }
         private string _explicitNullValueRepoUrl = default!;
 #endif
         /// <summary>When true, Netlify will not build your project automatically. You can build locally via the CLI and then publish new deploys manually via the CLI or the API.</summary>
-        public bool? StopBuilds { get => _explicitNullValueStopBuilds; set { _explicitNullValueStopBuilds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_builds"); else _explicitNullProperties?.Remove("stop_builds"); } }
+        public bool? StopBuilds { get => _explicitNullValueStopBuilds; set { _explicitNullValueStopBuilds = value; AdditionalData?.Remove("stop_builds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_builds"); else _explicitNullProperties?.Remove("stop_builds"); } }
         private bool? _explicitNullValueStopBuilds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.RepoInfo"/> and sets the default values.

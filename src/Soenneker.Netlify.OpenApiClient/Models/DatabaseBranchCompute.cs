@@ -18,36 +18,41 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoscaling_limit_max_cu") is { } nullNodeAutoscalingLimitMaxCu && nullNodeAutoscalingLimitMaxCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoscalingLimitMaxCu = null;
-            if (parseNode.GetChildNode("autoscaling_limit_min_cu") is { } nullNodeAutoscalingLimitMinCu && nullNodeAutoscalingLimitMinCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoscalingLimitMinCu = null;
-            if (parseNode.GetChildNode("current_state") is { } nullNodeCurrentState && nullNodeCurrentState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentState = null;
-            if (parseNode.GetChildNode("last_active") is { } nullNodeLastActive && nullNodeLastActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActive = null;
-            if (parseNode.GetChildNode("suspend_timeout_seconds") is { } nullNodeSuspendTimeoutSeconds && nullNodeSuspendTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspendTimeoutSeconds = null;
+            if (parseNode.GetChildNode("autoscaling_limit_max_cu") is null) { _explicitNullValueAutoscalingLimitMaxCu = default!; _explicitNullProperties?.Remove("autoscaling_limit_max_cu"); }
+            else if (parseNode.GetChildNode("autoscaling_limit_max_cu") is { } nullNodeAutoscalingLimitMaxCu && nullNodeAutoscalingLimitMaxCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoscalingLimitMaxCu = null;
+            if (parseNode.GetChildNode("autoscaling_limit_min_cu") is null) { _explicitNullValueAutoscalingLimitMinCu = default!; _explicitNullProperties?.Remove("autoscaling_limit_min_cu"); }
+            else if (parseNode.GetChildNode("autoscaling_limit_min_cu") is { } nullNodeAutoscalingLimitMinCu && nullNodeAutoscalingLimitMinCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoscalingLimitMinCu = null;
+            if (parseNode.GetChildNode("current_state") is null) { _explicitNullValueCurrentState = default!; _explicitNullProperties?.Remove("current_state"); }
+            else if (parseNode.GetChildNode("current_state") is { } nullNodeCurrentState && nullNodeCurrentState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentState = null;
+            if (parseNode.GetChildNode("last_active") is null) { _explicitNullValueLastActive = default!; _explicitNullProperties?.Remove("last_active"); }
+            else if (parseNode.GetChildNode("last_active") is { } nullNodeLastActive && nullNodeLastActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActive = null;
+            if (parseNode.GetChildNode("suspend_timeout_seconds") is null) { _explicitNullValueSuspendTimeoutSeconds = default!; _explicitNullProperties?.Remove("suspend_timeout_seconds"); }
+            else if (parseNode.GetChildNode("suspend_timeout_seconds") is { } nullNodeSuspendTimeoutSeconds && nullNodeSuspendTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspendTimeoutSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum compute units for autoscaling</summary>
-        public double? AutoscalingLimitMaxCu { get => _explicitNullValueAutoscalingLimitMaxCu; set { _explicitNullValueAutoscalingLimitMaxCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling_limit_max_cu"); else _explicitNullProperties?.Remove("autoscaling_limit_max_cu"); } }
+        public double? AutoscalingLimitMaxCu { get => _explicitNullValueAutoscalingLimitMaxCu; set { _explicitNullValueAutoscalingLimitMaxCu = value; AdditionalData?.Remove("autoscaling_limit_max_cu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling_limit_max_cu"); else _explicitNullProperties?.Remove("autoscaling_limit_max_cu"); } }
         private double? _explicitNullValueAutoscalingLimitMaxCu = default!;
         /// <summary>Minimum compute units for autoscaling</summary>
-        public double? AutoscalingLimitMinCu { get => _explicitNullValueAutoscalingLimitMinCu; set { _explicitNullValueAutoscalingLimitMinCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling_limit_min_cu"); else _explicitNullProperties?.Remove("autoscaling_limit_min_cu"); } }
+        public double? AutoscalingLimitMinCu { get => _explicitNullValueAutoscalingLimitMinCu; set { _explicitNullValueAutoscalingLimitMinCu = value; AdditionalData?.Remove("autoscaling_limit_min_cu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling_limit_min_cu"); else _explicitNullProperties?.Remove("autoscaling_limit_min_cu"); } }
         private double? _explicitNullValueAutoscalingLimitMinCu = default!;
         /// <summary>The current state of the compute endpoint</summary>
-        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState? CurrentState { get => _explicitNullValueCurrentState; set { _explicitNullValueCurrentState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_state"); else _explicitNullProperties?.Remove("current_state"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState? CurrentState { get => _explicitNullValueCurrentState; set { _explicitNullValueCurrentState = value; AdditionalData?.Remove("current_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_state"); else _explicitNullProperties?.Remove("current_state"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState? _explicitNullValueCurrentState = default!;
         /// <summary>When the compute endpoint was last active</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
+        public string? LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; AdditionalData?.Remove("last_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
         private string? _explicitNullValueLastActive = default!;
 #nullable restore
 #else
-        public string LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
+        public string LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; AdditionalData?.Remove("last_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
         private string _explicitNullValueLastActive = default!;
 #endif
         /// <summary>Seconds of inactivity before the compute endpoint is suspended</summary>
-        public long? SuspendTimeoutSeconds { get => _explicitNullValueSuspendTimeoutSeconds; set { _explicitNullValueSuspendTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspend_timeout_seconds"); else _explicitNullProperties?.Remove("suspend_timeout_seconds"); } }
+        public long? SuspendTimeoutSeconds { get => _explicitNullValueSuspendTimeoutSeconds; set { _explicitNullValueSuspendTimeoutSeconds = value; AdditionalData?.Remove("suspend_timeout_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspend_timeout_seconds"); else _explicitNullProperties?.Remove("suspend_timeout_seconds"); } }
         private long? _explicitNullValueSuspendTimeoutSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute"/> and sets the default values.
@@ -76,7 +81,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
             {
                 { "autoscaling_limit_max_cu", n => { AutoscalingLimitMaxCu = n.GetDoubleValue(); } },
                 { "autoscaling_limit_min_cu", n => { AutoscalingLimitMinCu = n.GetDoubleValue(); } },
-                { "current_state", n => { CurrentState = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState>(); } },
+                { "current_state", n => { var parsed = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchComputeCurrentState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrentState = default; _explicitNullProperties?.Remove("current_state"); AdditionalData["current_state"] = unknown; } else { CurrentState = parsed; AdditionalData.Remove("current_state"); } } },
                 { "last_active", n => { LastActive = n.GetStringValue(); } },
                 { "suspend_timeout_seconds", n => { SuspendTimeoutSeconds = n.GetLongValue(); } },
             };

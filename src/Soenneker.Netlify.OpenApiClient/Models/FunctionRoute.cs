@@ -17,11 +17,16 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
-            if (parseNode.GetChildNode("literal") is { } nullNodeLiteral && nullNodeLiteral.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Literal = null;
-            if (parseNode.GetChildNode("methods") is { } nullNodeMethods && nullNodeMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Methods = null;
-            if (parseNode.GetChildNode("pattern") is { } nullNodePattern && nullNodePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pattern = null;
-            if (parseNode.GetChildNode("prefer_static") is { } nullNodePreferStatic && nullNodePreferStatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferStatic = null;
+            if (parseNode.GetChildNode("expression") is null) { _explicitNullValueExpression = default!; _explicitNullProperties?.Remove("expression"); }
+            else if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
+            if (parseNode.GetChildNode("literal") is null) { _explicitNullValueLiteral = default!; _explicitNullProperties?.Remove("literal"); }
+            else if (parseNode.GetChildNode("literal") is { } nullNodeLiteral && nullNodeLiteral.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Literal = null;
+            if (parseNode.GetChildNode("methods") is null) { _explicitNullValueMethods = default!; _explicitNullProperties?.Remove("methods"); }
+            else if (parseNode.GetChildNode("methods") is { } nullNodeMethods && nullNodeMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Methods = null;
+            if (parseNode.GetChildNode("pattern") is null) { _explicitNullValuePattern = default!; _explicitNullProperties?.Remove("pattern"); }
+            else if (parseNode.GetChildNode("pattern") is { } nullNodePattern && nullNodePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pattern = null;
+            if (parseNode.GetChildNode("prefer_static") is null) { _explicitNullValuePreferStatic = default!; _explicitNullProperties?.Remove("prefer_static"); }
+            else if (parseNode.GetChildNode("prefer_static") is { } nullNodePreferStatic && nullNodePreferStatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferStatic = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The expression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; AdditionalData?.Remove("expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
         private string? _explicitNullValueExpression = default!;
 #nullable restore
 #else
-        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; AdditionalData?.Remove("expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
         private string _explicitNullValueExpression = default!;
 #endif
         /// <summary>The literal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Literal { get => _explicitNullValueLiteral; set { _explicitNullValueLiteral = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("literal"); else _explicitNullProperties?.Remove("literal"); } }
+        public string? Literal { get => _explicitNullValueLiteral; set { _explicitNullValueLiteral = value; AdditionalData?.Remove("literal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("literal"); else _explicitNullProperties?.Remove("literal"); } }
         private string? _explicitNullValueLiteral = default!;
 #nullable restore
 #else
-        public string Literal { get => _explicitNullValueLiteral; set { _explicitNullValueLiteral = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("literal"); else _explicitNullProperties?.Remove("literal"); } }
+        public string Literal { get => _explicitNullValueLiteral; set { _explicitNullValueLiteral = value; AdditionalData?.Remove("literal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("literal"); else _explicitNullProperties?.Remove("literal"); } }
         private string _explicitNullValueLiteral = default!;
 #endif
         /// <summary>The methods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?>? Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?>? _explicitNullValueMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
+        public List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?> Methods { get => _explicitNullValueMethods; set { _explicitNullValueMethods = value; AdditionalData?.Remove("methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("methods"); else _explicitNullProperties?.Remove("methods"); } }
         private List<global::Soenneker.Netlify.OpenApiClient.Models.FunctionRouteMethodsItem?> _explicitNullValueMethods = default!;
 #endif
         /// <summary>The pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
+        public string? Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; AdditionalData?.Remove("pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
         private string? _explicitNullValuePattern = default!;
 #nullable restore
 #else
-        public string Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
+        public string Pattern { get => _explicitNullValuePattern; set { _explicitNullValuePattern = value; AdditionalData?.Remove("pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pattern"); else _explicitNullProperties?.Remove("pattern"); } }
         private string _explicitNullValuePattern = default!;
 #endif
         /// <summary>The prefer_static property</summary>
-        public bool? PreferStatic { get => _explicitNullValuePreferStatic; set { _explicitNullValuePreferStatic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefer_static"); else _explicitNullProperties?.Remove("prefer_static"); } }
+        public bool? PreferStatic { get => _explicitNullValuePreferStatic; set { _explicitNullValuePreferStatic = value; AdditionalData?.Remove("prefer_static"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefer_static"); else _explicitNullProperties?.Remove("prefer_static"); } }
         private bool? _explicitNullValuePreferStatic = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.FunctionRoute"/> and sets the default values.

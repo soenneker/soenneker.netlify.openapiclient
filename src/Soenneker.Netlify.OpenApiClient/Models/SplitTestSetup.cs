@@ -17,7 +17,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branch_tests") is { } nullNodeBranchTests && nullNodeBranchTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchTests = null;
+            if (parseNode.GetChildNode("branch_tests") is null) { _explicitNullValueBranchTests = default!; _explicitNullProperties?.Remove("branch_tests"); }
+            else if (parseNode.GetChildNode("branch_tests") is { } nullNodeBranchTests && nullNodeBranchTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchTests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The branch_tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty? BranchTests { get => _explicitNullValueBranchTests; set { _explicitNullValueBranchTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_tests"); else _explicitNullProperties?.Remove("branch_tests"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty? BranchTests { get => _explicitNullValueBranchTests; set { _explicitNullValueBranchTests = value; AdditionalData?.Remove("branch_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_tests"); else _explicitNullProperties?.Remove("branch_tests"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty? _explicitNullValueBranchTests = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty BranchTests { get => _explicitNullValueBranchTests; set { _explicitNullValueBranchTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_tests"); else _explicitNullProperties?.Remove("branch_tests"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty BranchTests { get => _explicitNullValueBranchTests; set { _explicitNullValueBranchTests = value; AdditionalData?.Remove("branch_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_tests"); else _explicitNullProperties?.Remove("branch_tests"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.SplitTestSetupBranchTestsProperty _explicitNullValueBranchTests = default!;
 #endif
         /// <summary>

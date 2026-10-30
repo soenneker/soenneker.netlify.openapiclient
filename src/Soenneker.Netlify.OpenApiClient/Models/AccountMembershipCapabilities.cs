@@ -17,8 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collaborators") is { } nullNodeCollaborators && nullNodeCollaborators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collaborators = null;
-            if (parseNode.GetChildNode("sites") is { } nullNodeSites && nullNodeSites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sites = null;
+            if (parseNode.GetChildNode("collaborators") is null) { _explicitNullValueCollaborators = default!; _explicitNullProperties?.Remove("collaborators"); }
+            else if (parseNode.GetChildNode("collaborators") is { } nullNodeCollaborators && nullNodeCollaborators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collaborators = null;
+            if (parseNode.GetChildNode("sites") is null) { _explicitNullValueSites = default!; _explicitNullProperties?.Remove("sites"); }
+            else if (parseNode.GetChildNode("sites") is { } nullNodeSites && nullNodeSites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sites = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The collaborators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? Collaborators { get => _explicitNullValueCollaborators; set { _explicitNullValueCollaborators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collaborators"); else _explicitNullProperties?.Remove("collaborators"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? Collaborators { get => _explicitNullValueCollaborators; set { _explicitNullValueCollaborators = value; AdditionalData?.Remove("collaborators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collaborators"); else _explicitNullProperties?.Remove("collaborators"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? _explicitNullValueCollaborators = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability Collaborators { get => _explicitNullValueCollaborators; set { _explicitNullValueCollaborators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collaborators"); else _explicitNullProperties?.Remove("collaborators"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability Collaborators { get => _explicitNullValueCollaborators; set { _explicitNullValueCollaborators = value; AdditionalData?.Remove("collaborators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collaborators"); else _explicitNullProperties?.Remove("collaborators"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability _explicitNullValueCollaborators = default!;
 #endif
         /// <summary>The sites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? Sites { get => _explicitNullValueSites; set { _explicitNullValueSites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sites"); else _explicitNullProperties?.Remove("sites"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? Sites { get => _explicitNullValueSites; set { _explicitNullValueSites = value; AdditionalData?.Remove("sites"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sites"); else _explicitNullProperties?.Remove("sites"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability? _explicitNullValueSites = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability Sites { get => _explicitNullValueSites; set { _explicitNullValueSites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sites"); else _explicitNullProperties?.Remove("sites"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability Sites { get => _explicitNullValueSites; set { _explicitNullValueSites = value; AdditionalData?.Remove("sites"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sites"); else _explicitNullProperties?.Remove("sites"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AccountUsageCapability _explicitNullValueSites = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deploy_id") is { } nullNodeDeployId && nullNodeDeployId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployId = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("secret_scan_result") is { } nullNodeSecretScanResult && nullNodeSecretScanResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretScanResult = null;
+            if (parseNode.GetChildNode("deploy_id") is null) { _explicitNullValueDeployId = default!; _explicitNullProperties?.Remove("deploy_id"); }
+            else if (parseNode.GetChildNode("deploy_id") is { } nullNodeDeployId && nullNodeDeployId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployId = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("secret_scan_result") is null) { _explicitNullValueSecretScanResult = default!; _explicitNullProperties?.Remove("secret_scan_result"); }
+            else if (parseNode.GetChildNode("secret_scan_result") is { } nullNodeSecretScanResult && nullNodeSecretScanResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretScanResult = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The id of the deploy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployId { get => _explicitNullValueDeployId; set { _explicitNullValueDeployId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_id"); else _explicitNullProperties?.Remove("deploy_id"); } }
+        public string? DeployId { get => _explicitNullValueDeployId; set { _explicitNullValueDeployId = value; AdditionalData?.Remove("deploy_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_id"); else _explicitNullProperties?.Remove("deploy_id"); } }
         private string? _explicitNullValueDeployId = default!;
 #nullable restore
 #else
-        public string DeployId { get => _explicitNullValueDeployId; set { _explicitNullValueDeployId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_id"); else _explicitNullProperties?.Remove("deploy_id"); } }
+        public string DeployId { get => _explicitNullValueDeployId; set { _explicitNullValueDeployId = value; AdditionalData?.Remove("deploy_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_id"); else _explicitNullProperties?.Remove("deploy_id"); } }
         private string _explicitNullValueDeployId = default!;
 #endif
         /// <summary>The id of the deploy validations report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The secret_scan_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult? SecretScanResult { get => _explicitNullValueSecretScanResult; set { _explicitNullValueSecretScanResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_scan_result"); else _explicitNullProperties?.Remove("secret_scan_result"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult? SecretScanResult { get => _explicitNullValueSecretScanResult; set { _explicitNullValueSecretScanResult = value; AdditionalData?.Remove("secret_scan_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_scan_result"); else _explicitNullProperties?.Remove("secret_scan_result"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult? _explicitNullValueSecretScanResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult SecretScanResult { get => _explicitNullValueSecretScanResult; set { _explicitNullValueSecretScanResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_scan_result"); else _explicitNullProperties?.Remove("secret_scan_result"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult SecretScanResult { get => _explicitNullValueSecretScanResult; set { _explicitNullValueSecretScanResult = value; AdditionalData?.Remove("secret_scan_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_scan_result"); else _explicitNullProperties?.Remove("secret_scan_result"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.DeployValidationsReportSecretScanResult _explicitNullValueSecretScanResult = default!;
 #endif
         /// <summary>

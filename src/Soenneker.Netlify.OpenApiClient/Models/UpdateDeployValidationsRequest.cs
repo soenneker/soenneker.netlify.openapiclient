@@ -17,7 +17,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("secrets_scan") is { } nullNodeSecretsScan && nullNodeSecretsScan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretsScan = null;
+            if (parseNode.GetChildNode("secrets_scan") is null) { _explicitNullValueSecretsScan = default!; _explicitNullProperties?.Remove("secrets_scan"); }
+            else if (parseNode.GetChildNode("secrets_scan") is { } nullNodeSecretsScan && nullNodeSecretsScan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretsScan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The secrets_scan property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan? SecretsScan { get => _explicitNullValueSecretsScan; set { _explicitNullValueSecretsScan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets_scan"); else _explicitNullProperties?.Remove("secrets_scan"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan? SecretsScan { get => _explicitNullValueSecretsScan; set { _explicitNullValueSecretsScan = value; AdditionalData?.Remove("secrets_scan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets_scan"); else _explicitNullProperties?.Remove("secrets_scan"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan? _explicitNullValueSecretsScan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan SecretsScan { get => _explicitNullValueSecretsScan; set { _explicitNullValueSecretsScan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets_scan"); else _explicitNullProperties?.Remove("secrets_scan"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan SecretsScan { get => _explicitNullValueSecretsScan; set { _explicitNullValueSecretsScan = value; AdditionalData?.Remove("secrets_scan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets_scan"); else _explicitNullProperties?.Remove("secrets_scan"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.UpdateDeployValidationsRequestSecretsScan _explicitNullValueSecretsScan = default!;
 #endif
         /// <summary>

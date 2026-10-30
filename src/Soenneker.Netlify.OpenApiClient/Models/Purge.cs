@@ -17,9 +17,12 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cache_tags") is { } nullNodeCacheTags && nullNodeCacheTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheTags = null;
-            if (parseNode.GetChildNode("site_id") is { } nullNodeSiteId && nullNodeSiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteId = null;
-            if (parseNode.GetChildNode("site_slug") is { } nullNodeSiteSlug && nullNodeSiteSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteSlug = null;
+            if (parseNode.GetChildNode("cache_tags") is null) { _explicitNullValueCacheTags = default!; _explicitNullProperties?.Remove("cache_tags"); }
+            else if (parseNode.GetChildNode("cache_tags") is { } nullNodeCacheTags && nullNodeCacheTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheTags = null;
+            if (parseNode.GetChildNode("site_id") is null) { _explicitNullValueSiteId = default!; _explicitNullProperties?.Remove("site_id"); }
+            else if (parseNode.GetChildNode("site_id") is { } nullNodeSiteId && nullNodeSiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteId = null;
+            if (parseNode.GetChildNode("site_slug") is null) { _explicitNullValueSiteSlug = default!; _explicitNullProperties?.Remove("site_slug"); }
+            else if (parseNode.GetChildNode("site_slug") is { } nullNodeSiteSlug && nullNodeSiteSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SiteSlug = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The cache_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CacheTags { get => _explicitNullValueCacheTags; set { _explicitNullValueCacheTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_tags"); else _explicitNullProperties?.Remove("cache_tags"); } }
+        public List<string>? CacheTags { get => _explicitNullValueCacheTags; set { _explicitNullValueCacheTags = value; AdditionalData?.Remove("cache_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_tags"); else _explicitNullProperties?.Remove("cache_tags"); } }
         private List<string>? _explicitNullValueCacheTags = default!;
 #nullable restore
 #else
-        public List<string> CacheTags { get => _explicitNullValueCacheTags; set { _explicitNullValueCacheTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_tags"); else _explicitNullProperties?.Remove("cache_tags"); } }
+        public List<string> CacheTags { get => _explicitNullValueCacheTags; set { _explicitNullValueCacheTags = value; AdditionalData?.Remove("cache_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_tags"); else _explicitNullProperties?.Remove("cache_tags"); } }
         private List<string> _explicitNullValueCacheTags = default!;
 #endif
         /// <summary>The site_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        public string? SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; AdditionalData?.Remove("site_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
         private string? _explicitNullValueSiteId = default!;
 #nullable restore
 #else
-        public string SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
+        public string SiteId { get => _explicitNullValueSiteId; set { _explicitNullValueSiteId = value; AdditionalData?.Remove("site_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_id"); else _explicitNullProperties?.Remove("site_id"); } }
         private string _explicitNullValueSiteId = default!;
 #endif
         /// <summary>The site_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteSlug { get => _explicitNullValueSiteSlug; set { _explicitNullValueSiteSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_slug"); else _explicitNullProperties?.Remove("site_slug"); } }
+        public string? SiteSlug { get => _explicitNullValueSiteSlug; set { _explicitNullValueSiteSlug = value; AdditionalData?.Remove("site_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_slug"); else _explicitNullProperties?.Remove("site_slug"); } }
         private string? _explicitNullValueSiteSlug = default!;
 #nullable restore
 #else
-        public string SiteSlug { get => _explicitNullValueSiteSlug; set { _explicitNullValueSiteSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_slug"); else _explicitNullProperties?.Remove("site_slug"); } }
+        public string SiteSlug { get => _explicitNullValueSiteSlug; set { _explicitNullValueSiteSlug = value; AdditionalData?.Remove("site_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("site_slug"); else _explicitNullProperties?.Remove("site_slug"); } }
         private string _explicitNullValueSiteSlug = default!;
 #endif
         /// <summary>

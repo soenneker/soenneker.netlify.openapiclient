@@ -17,23 +17,25 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scannedFilesCount") is { } nullNodeScannedFilesCount && nullNodeScannedFilesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedFilesCount = null;
-            if (parseNode.GetChildNode("secretsScanMatches") is { } nullNodeSecretsScanMatches && nullNodeSecretsScanMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretsScanMatches = null;
+            if (parseNode.GetChildNode("scannedFilesCount") is null) { _explicitNullValueScannedFilesCount = default!; _explicitNullProperties?.Remove("scannedFilesCount"); }
+            else if (parseNode.GetChildNode("scannedFilesCount") is { } nullNodeScannedFilesCount && nullNodeScannedFilesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedFilesCount = null;
+            if (parseNode.GetChildNode("secretsScanMatches") is null) { _explicitNullValueSecretsScanMatches = default!; _explicitNullProperties?.Remove("secretsScanMatches"); }
+            else if (parseNode.GetChildNode("secretsScanMatches") is { } nullNodeSecretsScanMatches && nullNodeSecretsScanMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretsScanMatches = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of files scanned</summary>
-        public int? ScannedFilesCount { get => _explicitNullValueScannedFilesCount; set { _explicitNullValueScannedFilesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scannedFilesCount"); else _explicitNullProperties?.Remove("scannedFilesCount"); } }
+        public int? ScannedFilesCount { get => _explicitNullValueScannedFilesCount; set { _explicitNullValueScannedFilesCount = value; AdditionalData?.Remove("scannedFilesCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scannedFilesCount"); else _explicitNullProperties?.Remove("scannedFilesCount"); } }
         private int? _explicitNullValueScannedFilesCount = default!;
         /// <summary>The list of secrets scan matches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SecretsScanMatches { get => _explicitNullValueSecretsScanMatches; set { _explicitNullValueSecretsScanMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsScanMatches"); else _explicitNullProperties?.Remove("secretsScanMatches"); } }
+        public List<string>? SecretsScanMatches { get => _explicitNullValueSecretsScanMatches; set { _explicitNullValueSecretsScanMatches = value; AdditionalData?.Remove("secretsScanMatches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsScanMatches"); else _explicitNullProperties?.Remove("secretsScanMatches"); } }
         private List<string>? _explicitNullValueSecretsScanMatches = default!;
 #nullable restore
 #else
-        public List<string> SecretsScanMatches { get => _explicitNullValueSecretsScanMatches; set { _explicitNullValueSecretsScanMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsScanMatches"); else _explicitNullProperties?.Remove("secretsScanMatches"); } }
+        public List<string> SecretsScanMatches { get => _explicitNullValueSecretsScanMatches; set { _explicitNullValueSecretsScanMatches = value; AdditionalData?.Remove("secretsScanMatches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secretsScanMatches"); else _explicitNullProperties?.Remove("secretsScanMatches"); } }
         private List<string> _explicitNullValueSecretsScanMatches = default!;
 #endif
         /// <summary>

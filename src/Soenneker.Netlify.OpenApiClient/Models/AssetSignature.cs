@@ -17,8 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asset") is { } nullNodeAsset && nullNodeAsset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asset = null;
-            if (parseNode.GetChildNode("form") is { } nullNodeForm && nullNodeForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Form = null;
+            if (parseNode.GetChildNode("asset") is null) { _explicitNullValueAsset = default!; _explicitNullProperties?.Remove("asset"); }
+            else if (parseNode.GetChildNode("asset") is { } nullNodeAsset && nullNodeAsset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asset = null;
+            if (parseNode.GetChildNode("form") is null) { _explicitNullValueForm = default!; _explicitNullProperties?.Remove("form"); }
+            else if (parseNode.GetChildNode("form") is { } nullNodeForm && nullNodeForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Form = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The asset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.Asset? Asset { get => _explicitNullValueAsset; set { _explicitNullValueAsset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset"); else _explicitNullProperties?.Remove("asset"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.Asset? Asset { get => _explicitNullValueAsset; set { _explicitNullValueAsset = value; AdditionalData?.Remove("asset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset"); else _explicitNullProperties?.Remove("asset"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.Asset? _explicitNullValueAsset = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.Asset Asset { get => _explicitNullValueAsset; set { _explicitNullValueAsset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset"); else _explicitNullProperties?.Remove("asset"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.Asset Asset { get => _explicitNullValueAsset; set { _explicitNullValueAsset = value; AdditionalData?.Remove("asset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset"); else _explicitNullProperties?.Remove("asset"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.Asset _explicitNullValueAsset = default!;
 #endif
         /// <summary>The form property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm? Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm? Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; AdditionalData?.Remove("form"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AssetForm? _explicitNullValueForm = default!;
 #nullable restore
 #else
-        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
+        public global::Soenneker.Netlify.OpenApiClient.Models.AssetForm Form { get => _explicitNullValueForm; set { _explicitNullValueForm = value; AdditionalData?.Remove("form"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form"); else _explicitNullProperties?.Remove("form"); } }
         private global::Soenneker.Netlify.OpenApiClient.Models.AssetForm _explicitNullValueForm = default!;
 #endif
         /// <summary>

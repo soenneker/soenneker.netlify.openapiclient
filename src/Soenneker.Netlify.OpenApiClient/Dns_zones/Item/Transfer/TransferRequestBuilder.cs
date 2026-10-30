@@ -70,7 +70,7 @@ namespace Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Dns_zones.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.netlify.com/api/v1", "/dns_zones/{zoneId}/transfer", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

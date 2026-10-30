@@ -17,10 +17,14 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("instruction") is { } nullNodeInstruction && nullNodeInstruction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instruction = null;
-            if (parseNode.GetChildNode("refId") is { } nullNodeRefId && nullNodeRefId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefId = null;
-            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
-            if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
+            if (parseNode.GetChildNode("instruction") is null) { _explicitNullValueInstruction = default!; _explicitNullProperties?.Remove("instruction"); }
+            else if (parseNode.GetChildNode("instruction") is { } nullNodeInstruction && nullNodeInstruction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instruction = null;
+            if (parseNode.GetChildNode("refId") is null) { _explicitNullValueRefId = default!; _explicitNullProperties?.Remove("refId"); }
+            else if (parseNode.GetChildNode("refId") is { } nullNodeRefId && nullNodeRefId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefId = null;
+            if (parseNode.GetChildNode("response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("response"); }
+            else if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("skipped") is null) { _explicitNullValueSkipped = default!; _explicitNullProperties?.Remove("skipped"); }
+            else if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,35 +32,35 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>Instruction for the agent when skipping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Instruction { get => _explicitNullValueInstruction; set { _explicitNullValueInstruction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruction"); else _explicitNullProperties?.Remove("instruction"); } }
+        public string? Instruction { get => _explicitNullValueInstruction; set { _explicitNullValueInstruction = value; AdditionalData?.Remove("instruction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruction"); else _explicitNullProperties?.Remove("instruction"); } }
         private string? _explicitNullValueInstruction = default!;
 #nullable restore
 #else
-        public string Instruction { get => _explicitNullValueInstruction; set { _explicitNullValueInstruction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruction"); else _explicitNullProperties?.Remove("instruction"); } }
+        public string Instruction { get => _explicitNullValueInstruction; set { _explicitNullValueInstruction = value; AdditionalData?.Remove("instruction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruction"); else _explicitNullProperties?.Remove("instruction"); } }
         private string _explicitNullValueInstruction = default!;
 #endif
         /// <summary>Key of the pending interaction in the session&apos;s `interactions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RefId { get => _explicitNullValueRefId; set { _explicitNullValueRefId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refId"); else _explicitNullProperties?.Remove("refId"); } }
+        public string? RefId { get => _explicitNullValueRefId; set { _explicitNullValueRefId = value; AdditionalData?.Remove("refId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refId"); else _explicitNullProperties?.Remove("refId"); } }
         private string? _explicitNullValueRefId = default!;
 #nullable restore
 #else
-        public string RefId { get => _explicitNullValueRefId; set { _explicitNullValueRefId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refId"); else _explicitNullProperties?.Remove("refId"); } }
+        public string RefId { get => _explicitNullValueRefId; set { _explicitNullValueRefId = value; AdditionalData?.Remove("refId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refId"); else _explicitNullProperties?.Remove("refId"); } }
         private string _explicitNullValueRefId = default!;
 #endif
         /// <summary>One entry per question in the interaction&apos;s `payload`: a string, an array of strings for a multi-select question, or null to skip that question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public UntypedNode? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private UntypedNode? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public UntypedNode Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public UntypedNode Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private UntypedNode _explicitNullValueResponse = default!;
 #endif
         /// <summary>Skip the whole interaction instead of answering it.</summary>
-        public bool? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        public bool? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; AdditionalData?.Remove("skipped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
         private bool? _explicitNullValueSkipped = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionAnswer"/> and sets the default values.

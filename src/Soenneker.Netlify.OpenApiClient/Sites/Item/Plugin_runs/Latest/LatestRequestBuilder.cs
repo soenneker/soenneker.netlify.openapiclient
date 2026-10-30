@@ -71,7 +71,7 @@ namespace Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs.Latest
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Netlify.OpenApiClient.Sites.Item.Plugin_runs.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.netlify.com/api/v1", "/sites/{siteId}/plugin_runs/latest", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

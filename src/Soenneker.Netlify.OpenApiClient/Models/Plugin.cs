@@ -17,8 +17,10 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("package") is { } nullNodePackage && nullNodePackage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Package = null;
-            if (parseNode.GetChildNode("pinned_version") is { } nullNodePinnedVersion && nullNodePinnedVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinnedVersion = null;
+            if (parseNode.GetChildNode("package") is null) { _explicitNullValuePackage = default!; _explicitNullProperties?.Remove("package"); }
+            else if (parseNode.GetChildNode("package") is { } nullNodePackage && nullNodePackage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Package = null;
+            if (parseNode.GetChildNode("pinned_version") is null) { _explicitNullValuePinnedVersion = default!; _explicitNullProperties?.Remove("pinned_version"); }
+            else if (parseNode.GetChildNode("pinned_version") is { } nullNodePinnedVersion && nullNodePinnedVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinnedVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The package property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
+        public string? Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; AdditionalData?.Remove("package"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
         private string? _explicitNullValuePackage = default!;
 #nullable restore
 #else
-        public string Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
+        public string Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; AdditionalData?.Remove("package"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
         private string _explicitNullValuePackage = default!;
 #endif
         /// <summary>The pinned_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PinnedVersion { get => _explicitNullValuePinnedVersion; set { _explicitNullValuePinnedVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinned_version"); else _explicitNullProperties?.Remove("pinned_version"); } }
+        public string? PinnedVersion { get => _explicitNullValuePinnedVersion; set { _explicitNullValuePinnedVersion = value; AdditionalData?.Remove("pinned_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinned_version"); else _explicitNullProperties?.Remove("pinned_version"); } }
         private string? _explicitNullValuePinnedVersion = default!;
 #nullable restore
 #else
-        public string PinnedVersion { get => _explicitNullValuePinnedVersion; set { _explicitNullValuePinnedVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinned_version"); else _explicitNullProperties?.Remove("pinned_version"); } }
+        public string PinnedVersion { get => _explicitNullValuePinnedVersion; set { _explicitNullValuePinnedVersion = value; AdditionalData?.Remove("pinned_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinned_version"); else _explicitNullProperties?.Remove("pinned_version"); } }
         private string _explicitNullValuePinnedVersion = default!;
 #endif
         /// <summary>

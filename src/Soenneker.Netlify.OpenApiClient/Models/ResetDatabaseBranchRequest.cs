@@ -18,7 +18,8 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
+            if (parseNode.GetChildNode("source_branch_id") is null) { _explicitNullValueSourceBranchId = default!; _explicitNullProperties?.Remove("source_branch_id"); }
+            else if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <summary>The ID of the branch to re-fork the target branch from. Defaults to &quot;production&quot; if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; AdditionalData?.Remove("source_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
         private string? _explicitNullValueSourceBranchId = default!;
 #nullable restore
 #else
-        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; AdditionalData?.Remove("source_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
         private string _explicitNullValueSourceBranchId = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Netlify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_cu") is { } nullNodeMaxCu && nullNodeMaxCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCu = null;
-            if (parseNode.GetChildNode("min_cu") is { } nullNodeMinCu && nullNodeMinCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinCu = null;
-            if (parseNode.GetChildNode("sleep_timeout_seconds") is { } nullNodeSleepTimeoutSeconds && nullNodeSleepTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SleepTimeoutSeconds = null;
+            if (parseNode.GetChildNode("max_cu") is null) { _explicitNullValueMaxCu = default!; _explicitNullProperties?.Remove("max_cu"); }
+            else if (parseNode.GetChildNode("max_cu") is { } nullNodeMaxCu && nullNodeMaxCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCu = null;
+            if (parseNode.GetChildNode("min_cu") is null) { _explicitNullValueMinCu = default!; _explicitNullProperties?.Remove("min_cu"); }
+            else if (parseNode.GetChildNode("min_cu") is { } nullNodeMinCu && nullNodeMinCu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinCu = null;
+            if (parseNode.GetChildNode("sleep_timeout_seconds") is null) { _explicitNullValueSleepTimeoutSeconds = default!; _explicitNullProperties?.Remove("sleep_timeout_seconds"); }
+            else if (parseNode.GetChildNode("sleep_timeout_seconds") is { } nullNodeSleepTimeoutSeconds && nullNodeSleepTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SleepTimeoutSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum compute units (0.25 to 16.0). Must be greater than or equal to min_cu. max_cu - min_cu must not exceed 8.0.</summary>
-        public double? MaxCu { get => _explicitNullValueMaxCu; set { _explicitNullValueMaxCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_cu"); else _explicitNullProperties?.Remove("max_cu"); } }
+        public double? MaxCu { get => _explicitNullValueMaxCu; set { _explicitNullValueMaxCu = value; AdditionalData?.Remove("max_cu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_cu"); else _explicitNullProperties?.Remove("max_cu"); } }
         private double? _explicitNullValueMaxCu = default!;
         /// <summary>Minimum compute units (0.25 to 16.0). Must be less than or equal to max_cu.</summary>
-        public double? MinCu { get => _explicitNullValueMinCu; set { _explicitNullValueMinCu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_cu"); else _explicitNullProperties?.Remove("min_cu"); } }
+        public double? MinCu { get => _explicitNullValueMinCu; set { _explicitNullValueMinCu = value; AdditionalData?.Remove("min_cu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_cu"); else _explicitNullProperties?.Remove("min_cu"); } }
         private double? _explicitNullValueMinCu = default!;
         /// <summary>Seconds of inactivity before the compute endpoint is suspended. Use -1 for always on, or a non-negative value.</summary>
-        public long? SleepTimeoutSeconds { get => _explicitNullValueSleepTimeoutSeconds; set { _explicitNullValueSleepTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sleep_timeout_seconds"); else _explicitNullProperties?.Remove("sleep_timeout_seconds"); } }
+        public long? SleepTimeoutSeconds { get => _explicitNullValueSleepTimeoutSeconds; set { _explicitNullValueSleepTimeoutSeconds = value; AdditionalData?.Remove("sleep_timeout_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sleep_timeout_seconds"); else _explicitNullProperties?.Remove("sleep_timeout_seconds"); } }
         private long? _explicitNullValueSleepTimeoutSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Netlify.OpenApiClient.Models.DatabaseComputeSettingsRequest"/> and sets the default values.

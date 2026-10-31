@@ -102,6 +102,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -465,6 +476,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateEnvVars201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -734,6 +756,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created (success)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvVar"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1074,6 +1107,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssetSignature"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1392,6 +1436,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Snippet"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1655,6 +1710,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuildHook"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2099,6 +2165,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Cancelled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deploy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2142,6 +2219,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deploy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3263,6 +3351,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "CREATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PluginRun"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-internal": true
@@ -3397,6 +3496,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Hook"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3628,6 +3738,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3696,6 +3817,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessToken"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3742,6 +3874,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeployKey"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3898,6 +4041,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Site"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4214,6 +4368,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMembership"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -5634,6 +5799,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceInstance"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -5984,6 +6160,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "retrieving from provider",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowServiceManifest201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6084,6 +6271,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitTest"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6176,6 +6374,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitTest"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6312,6 +6521,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DnsZone"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6508,6 +6728,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DnsRecord"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6902,6 +7133,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DevServerHook"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -7097,6 +7339,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentRunnerHookCreated"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-internal": true
@@ -8079,6 +8332,17 @@
           },
           "default": {
             "$ref": "#/components/responses/error"
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatabaseSnapshot"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }

@@ -8560,17 +8560,17 @@
           "created_at": {
             "type": "string",
             "description": "When the branch was created",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
             "description": "When the branch was last updated",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "last_active_at": {
             "type": "string",
             "description": "When the branch was last active",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "compute": {
             "$ref": "#/components/schemas/DatabaseBranchCompute"
@@ -8605,7 +8605,7 @@
           "last_active": {
             "type": "string",
             "description": "When the compute endpoint was last active",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         },
         "description": "Compute endpoint status for a branch"
@@ -8645,17 +8645,17 @@
           "created_at": {
             "type": "string",
             "description": "When the snapshot was created",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "expires_at": {
             "type": "string",
             "description": "When the snapshot expires",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "timestamp": {
             "type": "string",
             "description": "The point-in-time timestamp of the snapshot",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "metadata": {
             "$ref": "#/components/schemas/DatabaseSnapshotMetadata"
@@ -8885,12 +8885,6 @@
           }
         }
       },
-      "SplitTests": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SplitTest"
-        }
-      },
       "SplitTest": {
         "type": "object",
         "properties": {
@@ -8917,15 +8911,15 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "unpublished_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -8967,11 +8961,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -9022,11 +9016,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -9080,11 +9074,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "user_id": {
             "type": "string"
@@ -9202,11 +9196,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "user_id": {
             "type": "string"
@@ -9369,7 +9363,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "site_url": {
             "type": "string"
@@ -9493,7 +9487,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -9514,27 +9508,27 @@
           },
           "confirmed_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "invited_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "confirmation_sent_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "recovery_sent_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "email_change_sent_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "last_sign_in_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "app_metadata": {
             "$ref": "#/components/schemas/IdentityUserAppMetadata"
@@ -9544,11 +9538,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -9592,11 +9586,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "disabled": {
             "type": "boolean"
@@ -9773,15 +9767,15 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "published_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "title": {
             "type": "string"
@@ -9959,7 +9953,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10032,9 +10026,6 @@
           }
         }
       },
-      "Metadata": {
-        "type": "object"
-      },
       "DnsZoneSetup": {
         "type": "object",
         "properties": {
@@ -10047,12 +10038,6 @@
           "name": {
             "type": "string"
           }
-        }
-      },
-      "DnsZones": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DnsZone"
         }
       },
       "DnsZone": {
@@ -10081,11 +10066,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "records": {
             "type": "array",
@@ -10159,12 +10144,6 @@
           }
         }
       },
-      "DnsRecords": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DnsRecord"
-        }
-      },
       "DnsRecord": {
         "type": "object",
         "properties": {
@@ -10219,15 +10198,15 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "expires_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10245,7 +10224,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10266,7 +10245,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10306,11 +10285,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10355,7 +10334,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10399,11 +10378,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10567,11 +10546,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -10607,15 +10586,15 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "done_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "title": {
             "type": "string"
@@ -10675,7 +10654,7 @@
           },
           "active_session_created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "has_result_diff": {
             "type": "boolean",
@@ -10747,20 +10726,20 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "done_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "paused_at": {
             "type": "string",
             "description": "When the session paused waiting on an interaction. Null once it resumes.",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "title": {
             "type": "string"
@@ -10997,7 +10976,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -11047,7 +11026,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "secret": {
             "type": "string"
@@ -11062,17 +11041,6 @@
           },
           "used": {
             "type": "integer"
-          }
-        }
-      },
-      "BuildSetup": {
-        "type": "object",
-        "properties": {
-          "image": {
-            "type": "string"
-          },
-          "clear_cache": {
-            "type": "boolean"
           }
         }
       },
@@ -11107,7 +11075,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           }
         }
       },
@@ -11161,11 +11129,11 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "last_login": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "login_providers": {
             "type": "array",
@@ -11333,7 +11301,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "functions": {
             "type": "array",
@@ -11372,27 +11340,27 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "starting_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "error_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "live_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "done_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "title": {
             "type": "string"
@@ -11419,7 +11387,7 @@
           },
           "created_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "type": {
             "$ref": "#/components/schemas/DevServerHookType"
@@ -11475,86 +11443,6 @@
           }
         }
       },
-      "SiteSetupAllOf2": {
-        "type": "object",
-        "properties": {
-          "repo": {
-            "$ref": "#/components/schemas/RepoInfo"
-          }
-        }
-      },
-      "PluginRunAllOf2": {
-        "type": "object",
-        "properties": {
-          "deploy_id": {
-            "type": "string"
-          }
-        }
-      },
-      "AgentRunnerErrorAllOf2": {
-        "type": "object",
-        "properties": {
-          "error_code": {
-            "type": "string",
-            "description": "Machine-readable reason. Each operation lists the codes it can return."
-          }
-        }
-      },
-      "AgentRunnerHookCreatedAllOf2": {
-        "type": "object",
-        "properties": {
-          "secret": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateDatabaseBranchRequestMetadata": {
-        "type": "object",
-        "description": "Arbitrary metadata to associate with the branch"
-      },
-      "DatabaseBranchResponseMetadata": {
-        "type": "object",
-        "description": "Metadata associated with the branch"
-      },
-      "DatabaseBranchDetailMetadata": {
-        "type": "object",
-        "description": "Metadata associated with the branch"
-      },
-      "DatabaseSnapshotMetadataDeploy": {
-        "type": "object",
-        "description": "Deploy information associated with the snapshot"
-      },
-      "ResetDatabaseBranchResponseMetadata": {
-        "type": "object",
-        "description": "Metadata associated with the branch"
-      },
-      "SplitTestSetupBranchTests": {
-        "type": "object"
-      },
-      "SplitTestBranchesItem": {
-        "type": "object"
-      },
-      "ServiceInstanceConfig": {
-        "type": "object"
-      },
-      "ServiceInstanceExternalAttributes": {
-        "type": "object"
-      },
-      "ServiceInstanceEnv": {
-        "type": "object"
-      },
-      "ServiceInstanceSnippetsItem": {
-        "type": "object"
-      },
-      "ServiceEventsItem": {
-        "type": "object"
-      },
-      "SiteCapabilities": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/SiteCapabilitiesAdditionalPropertiesProperty"
-        }
-      },
       "SiteProcessingSettings": {
         "type": "object",
         "properties": {
@@ -11571,18 +11459,6 @@
           }
         }
       },
-      "RepoInfoEnv": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "SubmissionData": {
-        "type": "object"
-      },
-      "FormFieldsItem": {
-        "type": "object"
-      },
       "IdentityUserAppMetadata": {
         "type": "object",
         "properties": {
@@ -11597,15 +11473,6 @@
           }
         }
       },
-      "IdentityUserUserMetadata": {
-        "type": "object"
-      },
-      "HookTypeFieldsItem": {
-        "type": "object"
-      },
-      "HookData": {
-        "type": "object"
-      },
       "DeployFunctionsRegionOverridesItem": {
         "type": "object",
         "properties": {
@@ -11616,17 +11483,6 @@
             "type": "string"
           }
         }
-      },
-      "DeployFilesFiles": {
-        "type": "object",
-        "description": "A hash mapping file paths to SHA1 digests of the file contents."
-      },
-      "DeployFilesFunctions": {
-        "type": "object"
-      },
-      "DeployFilesEdgeFunctions": {
-        "type": "object",
-        "description": "A hash mapping edge-function bundle formats to the code_sha of each bundle. The\nresponse\u0027s required_edge_functions lists which of these still need to be uploaded.\n"
       },
       "DeployFilesServer": {
         "required": [
@@ -11671,12 +11527,6 @@
         },
         "description": "The deploy\u0027s Netlify Server. A deploy has at most one. The response\u0027s\nrequired_server says whether it still needs to be uploaded.\n"
       },
-      "DeployFilesFunctionsConfig": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FunctionConfig"
-        }
-      },
       "BuildStatusMinutes": {
         "type": "object",
         "properties": {
@@ -11691,15 +11541,15 @@
           },
           "period_start_date": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "period_end_date": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "last_updated_at": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "included_minutes": {
             "type": "string"
@@ -11707,12 +11557,6 @@
           "included_minutes_with_packs": {
             "type": "string"
           }
-        }
-      },
-      "AssetFormFields": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
         }
       },
       "PaymentMethodData": {
@@ -11728,9 +11572,6 @@
             "type": "string"
           }
         }
-      },
-      "AccountTypeCapabilities": {
-        "type": "object"
       },
       "AccountMembershipCapabilities": {
         "type": "object",
@@ -11760,7 +11601,7 @@
           },
           "timestamp": {
             "type": "string",
-            "format": "dateTime"
+            "x-client-original-format": "dateTime"
           },
           "log_type": {
             "type": "string"
@@ -11770,13 +11611,6 @@
           "$ref": "#/components/schemas/AuditLogPayloadAdditionalPropertiesProperty"
         }
       },
-      "AgentRunnerSessionInteractions": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/AgentRunnerSessionInteraction"
-        },
-        "description": "Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in \u0060await_input\u0060 until it\u0027s answered or skipped."
-      },
       "UserOnboardingProgress": {
         "type": "object",
         "properties": {
@@ -11784,9 +11618,6 @@
             "type": "string"
           }
         }
-      },
-      "FunctionConfigBuildData": {
-        "type": "object"
       },
       "TrafficRulesConfigAction": {
         "type": "object",
@@ -11806,12 +11637,6 @@
             "$ref": "#/components/schemas/TrafficRulesAggregateConfigKeysItemType"
           }
         }
-      },
-      "SiteFunctionFunctionsItem": {
-        "type": "object"
-      },
-      "SiteCapabilitiesAdditionalProperties": {
-        "type": "object"
       },
       "SiteProcessingSettingsHtml": {
         "type": "object",
@@ -11841,9 +11666,6 @@
         },
         "description": "How many instances of the server run."
       },
-      "AuditLogPayloadAdditionalProperties": {
-        "type": "object"
-      },
       "TrafficRulesConfigActionConfig": {
         "type": "object",
         "properties": {
@@ -11856,42 +11678,6 @@
           "aggregate": {
             "$ref": "#/components/schemas/TrafficRulesAggregateConfig"
           }
-        }
-      },
-      "ListSites200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Site"
-        }
-      },
-      "GetAllCertificates200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SniCertificate"
-        }
-      },
-      "GetEnvVars200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVar"
-        }
-      },
-      "CreateEnvVarsRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/CreateEnvVarsRequestItem"
-        }
-      },
-      "CreateEnvVars201Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVar"
-        }
-      },
-      "GetSiteEnvVars200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/EnvVar"
         }
       },
       "UpdateEnvVarRequest": {
@@ -11936,60 +11722,6 @@
           }
         }
       },
-      "SearchSiteFunctions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SiteFunction"
-        }
-      },
-      "ListSiteForms200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Form"
-        }
-      },
-      "ListSiteSubmissions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Submission"
-        }
-      },
-      "ListSiteFiles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/File"
-        }
-      },
-      "ListSiteAssets200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Asset"
-        }
-      },
-      "ListSiteSnippets200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Snippet"
-        }
-      },
-      "ListSiteBuildHooks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/BuildHook"
-        }
-      },
-      "ListSiteDeploys200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Deploy"
-        }
-      },
-      "ListSiteBuilds200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Build"
-        }
-      },
       "CreateSiteBuildFormDataRequest": {
         "type": "object",
         "properties": {
@@ -12000,30 +11732,6 @@
           }
         }
       },
-      "ListSiteDeployedBranches200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DeployedBranch"
-        }
-      },
-      "GetAccountBuildStatus200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/BuildStatus"
-        }
-      },
-      "GetDnsForSite200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DnsZone"
-        }
-      },
-      "ConfigureDnsForSite200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DnsZone"
-        }
-      },
       "UpdateDeployValidationsRequest": {
         "type": "object",
         "properties": {
@@ -12032,106 +11740,12 @@
           }
         }
       },
-      "UploadDeployFileOctetStreamRequest": {
-        "type": "string",
-        "format": "binary"
-      },
-      "UploadDeployFunctionOctetStreamRequest": {
-        "type": "string",
-        "format": "binary"
-      },
-      "UploadDeployServerOctetStreamRequest": {
-        "type": "string",
-        "format": "binary"
-      },
-      "UploadDeployEdgeFunctionOctetStreamRequest": {
-        "type": "string",
-        "format": "binary"
-      },
-      "GetLatestPluginRuns200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PluginRun"
-        }
-      },
-      "ListFormSubmissions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Submission"
-        }
-      },
-      "ListHooksBySiteId200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Hook"
-        }
-      },
-      "ListHookTypes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/HookType"
-        }
-      },
       "CreateTicketRequest": {
         "type": "object",
         "properties": {
           "message": {
             "type": "string"
           }
-        }
-      },
-      "ListDeployKeys200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DeployKey"
-        }
-      },
-      "ListSitesForAccount200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Site"
-        }
-      },
-      "ListMembersForAccount200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Member"
-        }
-      },
-      "AddMemberToAccount200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Member"
-        }
-      },
-      "ListPaymentMethodsForUser200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PaymentMethod"
-        }
-      },
-      "ListAccountTypesForUser200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountType"
-        }
-      },
-      "ListAccountsForUser200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountMembership"
-        }
-      },
-      "ListAccountAuditEvents200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AuditLog"
-        }
-      },
-      "ListAgentRunners200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AgentRunner"
         }
       },
       "CreateAgentRunnerUploadUrl200Response": {
@@ -12151,33 +11765,6 @@
           }
         }
       },
-      "GetAgentRunnerDiff200PlainResponse": {
-        "type": "string"
-      },
-      "ListAgentRunnerSessions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AgentRunnerSession"
-        }
-      },
-      "ListFormSubmission200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Submission"
-        }
-      },
-      "ListServiceInstancesForSite200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ServiceInstance"
-        }
-      },
-      "CreateServiceInstanceRequest": {
-        "type": "object"
-      },
-      "UpdateServiceInstanceRequest": {
-        "type": "object"
-      },
       "LookupIdentityUserRequest": {
         "required": [
           "email"
@@ -12187,27 +11774,6 @@
           "email": {
             "type": "string"
           }
-        }
-      },
-      "GetServices200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Service"
-        }
-      },
-      "ShowServiceManifest201Response": {
-        "type": "object"
-      },
-      "ListSiteDevServers200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DevServer"
-        }
-      },
-      "CreateSiteDevServer200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DevServer"
         }
       },
       "UpdateDevServerStateRequest": {
@@ -12227,18 +11793,6 @@
           }
         }
       },
-      "ListSiteDevServerHooks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DevServerHook"
-        }
-      },
-      "ListSiteAgentRunnerHooks200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AgentRunnerHook"
-        }
-      },
       "GetAiGatewayProviders200Response": {
         "type": "object",
         "properties": {
@@ -12246,10 +11800,6 @@
             "$ref": "#/components/schemas/GetAiGatewayProviders200ResponseProviders"
           }
         }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "ListSites200ResponseSchema": {
         "type": "array",
@@ -12656,37 +12206,8 @@
       "SiteFunctionFunctionsItemProperty": {
         "type": "object"
       },
-      "SiteCapabilitiesAdditionalPropertiesProperty": {
-        "type": "object"
-      },
       "AuditLogPayloadAdditionalPropertiesProperty": {
         "type": "object"
-      },
-      "CreateEnvVarsRequestItem": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "The existing or new name of the key, if you wish to rename it (case-sensitive)"
-          },
-          "scopes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateEnvVarsRequestItemScopesItem"
-            },
-            "description": "The scopes that this environment variable is set to (Pro plans and above)"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EnvVarValue"
-            }
-          },
-          "is_secret": {
-            "type": "boolean",
-            "description": "Secret values are only readable by code running on Netlify\u0027s systems. With secrets, only the local development context values are readable from the UI, API, and CLI. By default, environment variable values are not secret."
-          }
-        }
       },
       "UpdateDeployValidationsRequestSecretsScan": {
         "type": "object"
@@ -14131,5 +13652,486 @@
         "assetPublicSignature"
       ]
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "SplitTests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SplitTest"
+      }
+    },
+    "Metadata": {
+      "type": "object"
+    },
+    "DnsZones": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DnsZone"
+      }
+    },
+    "DnsRecords": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DnsRecord"
+      }
+    },
+    "BuildSetup": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string"
+        },
+        "clear_cache": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SiteSetupAllOf2": {
+      "type": "object",
+      "properties": {
+        "repo": {
+          "$ref": "#/components/schemas/RepoInfo"
+        }
+      }
+    },
+    "PluginRunAllOf2": {
+      "type": "object",
+      "properties": {
+        "deploy_id": {
+          "type": "string"
+        }
+      }
+    },
+    "AgentRunnerErrorAllOf2": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "description": "Machine-readable reason. Each operation lists the codes it can return."
+        }
+      }
+    },
+    "AgentRunnerHookCreatedAllOf2": {
+      "type": "object",
+      "properties": {
+        "secret": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateDatabaseBranchRequestMetadata": {
+      "type": "object",
+      "description": "Arbitrary metadata to associate with the branch"
+    },
+    "DatabaseBranchResponseMetadata": {
+      "type": "object",
+      "description": "Metadata associated with the branch"
+    },
+    "DatabaseBranchDetailMetadata": {
+      "type": "object",
+      "description": "Metadata associated with the branch"
+    },
+    "DatabaseSnapshotMetadataDeploy": {
+      "type": "object",
+      "description": "Deploy information associated with the snapshot"
+    },
+    "ResetDatabaseBranchResponseMetadata": {
+      "type": "object",
+      "description": "Metadata associated with the branch"
+    },
+    "SplitTestSetupBranchTests": {
+      "type": "object"
+    },
+    "SplitTestBranchesItem": {
+      "type": "object"
+    },
+    "ServiceInstanceConfig": {
+      "type": "object"
+    },
+    "ServiceInstanceExternalAttributes": {
+      "type": "object"
+    },
+    "ServiceInstanceEnv": {
+      "type": "object"
+    },
+    "ServiceInstanceSnippetsItem": {
+      "type": "object"
+    },
+    "ServiceEventsItem": {
+      "type": "object"
+    },
+    "SiteCapabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SiteCapabilitiesAdditionalPropertiesProperty"
+      }
+    },
+    "RepoInfoEnv": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "SubmissionData": {
+      "type": "object"
+    },
+    "FormFieldsItem": {
+      "type": "object"
+    },
+    "IdentityUserUserMetadata": {
+      "type": "object"
+    },
+    "HookTypeFieldsItem": {
+      "type": "object"
+    },
+    "HookData": {
+      "type": "object"
+    },
+    "DeployFilesFiles": {
+      "type": "object",
+      "description": "A hash mapping file paths to SHA1 digests of the file contents."
+    },
+    "DeployFilesFunctions": {
+      "type": "object"
+    },
+    "DeployFilesEdgeFunctions": {
+      "type": "object",
+      "description": "A hash mapping edge-function bundle formats to the code_sha of each bundle. The\nresponse\u0027s required_edge_functions lists which of these still need to be uploaded.\n"
+    },
+    "DeployFilesFunctionsConfig": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FunctionConfig"
+      }
+    },
+    "AssetFormFields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "AccountTypeCapabilities": {
+      "type": "object"
+    },
+    "AgentRunnerSessionInteractions": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/AgentRunnerSessionInteraction"
+      },
+      "description": "Questions and requests from the agent, keyed by reference ID. A pending one pauses the session in \u0060await_input\u0060 until it\u0027s answered or skipped."
+    },
+    "FunctionConfigBuildData": {
+      "type": "object"
+    },
+    "SiteFunctionFunctionsItem": {
+      "type": "object"
+    },
+    "SiteCapabilitiesAdditionalProperties": {
+      "type": "object"
+    },
+    "AuditLogPayloadAdditionalProperties": {
+      "type": "object"
+    },
+    "ListSites200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Site"
+      }
+    },
+    "GetAllCertificates200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SniCertificate"
+      }
+    },
+    "GetEnvVars200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      }
+    },
+    "CreateEnvVarsRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CreateEnvVarsRequestItem"
+      }
+    },
+    "CreateEnvVars201Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      }
+    },
+    "GetSiteEnvVars200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      }
+    },
+    "SearchSiteFunctions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SiteFunction"
+      }
+    },
+    "ListSiteForms200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Form"
+      }
+    },
+    "ListSiteSubmissions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Submission"
+      }
+    },
+    "ListSiteFiles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/File"
+      }
+    },
+    "ListSiteAssets200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Asset"
+      }
+    },
+    "ListSiteSnippets200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Snippet"
+      }
+    },
+    "ListSiteBuildHooks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BuildHook"
+      }
+    },
+    "ListSiteDeploys200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Deploy"
+      }
+    },
+    "ListSiteBuilds200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Build"
+      }
+    },
+    "ListSiteDeployedBranches200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeployedBranch"
+      }
+    },
+    "GetAccountBuildStatus200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BuildStatus"
+      }
+    },
+    "GetDnsForSite200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DnsZone"
+      }
+    },
+    "ConfigureDnsForSite200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DnsZone"
+      }
+    },
+    "UploadDeployFileOctetStreamRequest": {
+      "type": "string",
+      "format": "binary"
+    },
+    "UploadDeployFunctionOctetStreamRequest": {
+      "type": "string",
+      "format": "binary"
+    },
+    "UploadDeployServerOctetStreamRequest": {
+      "type": "string",
+      "format": "binary"
+    },
+    "UploadDeployEdgeFunctionOctetStreamRequest": {
+      "type": "string",
+      "format": "binary"
+    },
+    "GetLatestPluginRuns200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PluginRun"
+      }
+    },
+    "ListFormSubmissions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Submission"
+      }
+    },
+    "ListHooksBySiteId200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Hook"
+      }
+    },
+    "ListHookTypes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HookType"
+      }
+    },
+    "ListDeployKeys200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeployKey"
+      }
+    },
+    "ListSitesForAccount200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Site"
+      }
+    },
+    "ListMembersForAccount200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Member"
+      }
+    },
+    "AddMemberToAccount200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Member"
+      }
+    },
+    "ListPaymentMethodsForUser200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PaymentMethod"
+      }
+    },
+    "ListAccountTypesForUser200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountType"
+      }
+    },
+    "ListAccountsForUser200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountMembership"
+      }
+    },
+    "ListAccountAuditEvents200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AuditLog"
+      }
+    },
+    "ListAgentRunners200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AgentRunner"
+      }
+    },
+    "GetAgentRunnerDiff200PlainResponse": {
+      "type": "string"
+    },
+    "ListAgentRunnerSessions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AgentRunnerSession"
+      }
+    },
+    "ListFormSubmission200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Submission"
+      }
+    },
+    "ListServiceInstancesForSite200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ServiceInstance"
+      }
+    },
+    "CreateServiceInstanceRequest": {
+      "type": "object"
+    },
+    "UpdateServiceInstanceRequest": {
+      "type": "object"
+    },
+    "GetServices200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Service"
+      }
+    },
+    "ShowServiceManifest201Response": {
+      "type": "object"
+    },
+    "ListSiteDevServers200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DevServer"
+      }
+    },
+    "CreateSiteDevServer200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DevServer"
+      }
+    },
+    "ListSiteDevServerHooks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DevServerHook"
+      }
+    },
+    "ListSiteAgentRunnerHooks200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AgentRunnerHook"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "SiteCapabilitiesAdditionalPropertiesProperty": {
+      "type": "object"
+    },
+    "CreateEnvVarsRequestItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The existing or new name of the key, if you wish to rename it (case-sensitive)"
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CreateEnvVarsRequestItemScopesItem"
+          },
+          "description": "The scopes that this environment variable is set to (Pro plans and above)"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EnvVarValue"
+          }
+        },
+        "is_secret": {
+          "type": "boolean",
+          "description": "Secret values are only readable by code running on Netlify\u0027s systems. With secrets, only the local development context values are readable from the UI, API, and CLI. By default, environment variable values are not secret."
+        }
+      }
+    }
+  }
 }

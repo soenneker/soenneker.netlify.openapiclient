@@ -122,7 +122,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "excluded_routes", n => { ExcludedRoutes = n.GetCollectionOfObjectValues<global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute>(global::Soenneker.Netlify.OpenApiClient.Models.ExcludedFunctionRoute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "instance_size", n => { var parsed = n.GetEnumValue<global::Soenneker.Netlify.OpenApiClient.Models.DeployFilesServerInstanceSize>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInstanceSize = default; _explicitNullProperties?.Remove("instance_size"); AdditionalData["instance_size"] = unknown; } else { InstanceSize = parsed; AdditionalData.Remove("instance_size"); } } },

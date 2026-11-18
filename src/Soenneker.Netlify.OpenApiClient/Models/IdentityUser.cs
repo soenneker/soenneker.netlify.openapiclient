@@ -212,7 +212,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "app_metadata", n => { AppMetadata = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.IdentityUserAppMetadata>(global::Soenneker.Netlify.OpenApiClient.Models.IdentityUserAppMetadata.CreateFromDiscriminatorValue); } },
                 { "aud", n => { Aud = n.GetStringValue(); } },

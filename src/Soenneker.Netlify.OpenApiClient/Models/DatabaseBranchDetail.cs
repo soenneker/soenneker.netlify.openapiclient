@@ -151,7 +151,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute>(global::Soenneker.Netlify.OpenApiClient.Models.DatabaseBranchCompute.CreateFromDiscriminatorValue); } },

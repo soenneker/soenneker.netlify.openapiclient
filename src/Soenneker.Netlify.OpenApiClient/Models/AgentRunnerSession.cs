@@ -318,7 +318,7 @@ namespace Soenneker.Netlify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(24)
             {
                 { "agent_config", n => { AgentConfig = n.GetObjectValue<global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionConfig>(global::Soenneker.Netlify.OpenApiClient.Models.AgentRunnerSessionConfig.CreateFromDiscriminatorValue); } },
                 { "agent_runner_id", n => { AgentRunnerId = n.GetStringValue(); } },

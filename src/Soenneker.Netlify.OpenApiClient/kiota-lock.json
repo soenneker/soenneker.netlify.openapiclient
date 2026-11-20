@@ -2,7 +2,7 @@
   "descriptionHash": "AD75F62468861500894F8921969B9701D0A793138841F575EEEF238DDB1D51C74030F52BC8BBDD8296399CFDE9B114007873493183920CE8F2D868E5CC8C5163",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.38.0",
+  "kiotaVersion": "1.39.0",
   "clientClassName": "NetlifyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Netlify.OpenApiClient",
